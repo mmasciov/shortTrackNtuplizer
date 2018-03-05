@@ -1,0 +1,623 @@
+DEBUG 2017-09-26 17:12:19,614: 	 Executing command: 'submit'
+DEBUG 2017-09-26 17:12:19,615: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-26 17:12:19,622: 	 Checking credentials
+DEBUG 2017-09-26 17:12:19,622: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-26 17:12:19,622: 	 Getting proxy life time left
+DEBUG 2017-09-26 17:12:19,725: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 591376
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:19,828: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 591376
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:19,829: 	 Proxy valid for 164:16:16 hours
+INFO 2017-09-26 17:12:19,829: 	 Will use CRAB configuration file crabConfig_MC.py
+DEBUG 2017-09-26 17:12:19,829: 	 Loading CRAB configuration file.
+DEBUG 2017-09-26 17:12:19,832: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2017-09-26 17:12:19,954: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:19,954: 	 Checking credentials
+DEBUG 2017-09-26 17:12:19,955: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-26 17:12:19,955: 	 Getting proxy life time left
+DEBUG 2017-09-26 17:12:20,058: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 591376
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:20,161: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 591375
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:20,162: 	 Proxy valid for 164:16:16 hours
+DEBUG 2017-09-26 17:12:20,265: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u31607 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:21,776: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-26 17:12:21,884: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:21,885: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-26 17:12:21,885: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-26 17:12:23,291: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 716:15:32  (29.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-26 17:12:23,292: 	 Myproxy is valid: 2578532
+DEBUG 2017-09-26 17:12:23,293: 	 Command use: submit
+DEBUG 2017-09-26 17:12:23,293: 	 Options use: ['-c', 'crabConfig_MC.py']
+DEBUG 2017-09-26 17:12:24,551: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-26 17:12:24,552: 	 Instance is prod
+DEBUG 2017-09-26 17:12:24,552: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-26 17:12:24,552: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-26 17:12:24,552: 	 Started submission
+DEBUG 2017-09-26 17:12:24,552: 	 Working on /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-26 17:12:25,850: 	 Loading required information from the environment
+DEBUG 2017-09-26 17:12:25,850: 	 Found CMSSW_8_0_26 for slc6_amd64_gcc530 with base /home/users/mmasciov/MT2/8_0_26
+DEBUG 2017-09-26 17:12:25,850: 	 Loading required information from the environment
+DEBUG 2017-09-26 17:12:25,850: 	 Found CMSSW_8_0_26 for slc6_amd64_gcc530 with base /home/users/mmasciov/MT2/8_0_26
+DEBUG 2017-09-26 17:12:25,862: 	 UNIQUE NAME: tarUUID f7755d9f-54c7-4dc2-9a87-8944aee14e65 
+DEBUG 2017-09-26 17:12:25,862: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = False
+config.General.transferOutputs = True
+config.General.workArea = 'crab_projects'
+config.General.requestName = 'stoppedTracks_wlnu_ht2500toInf_Sep2017'
+config.section_('JobType')
+config.JobType.psetName = 'ConfFile_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.section_('Data')
+config.Data.inputDataset = '/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
+config.Data.outputDatasetTag = 'WJetsLNu_HT2500toInf_Sep2017'
+config.Data.publication = False
+config.Data.unitsPerJob = 10
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/mmasciov/'
+config.section_('Site')
+config.Site.storageSite = 'T2_US_UCSD'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2017-09-26 17:12:25,862: 	 self.config.JobType.psetName: ConfFile_cfg.py
+INFO 2017-09-26 17:12:25,863: 	 Importing CMSSW configuration ConfFile_cfg.py
+INFO 2017-09-26 17:12:25,982: 	 Finished importing CMSSW configuration ConfFile_cfg.py
+DEBUG 2017-09-26 17:12:25,982: 	 Writing CMSSW configuration to /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/inputs/PSet.py
+DEBUG 2017-09-26 17:12:26,006: 	 The following EDM output files will be collected: []
+DEBUG 2017-09-26 17:12:26,006: 	 The following TFile output files will be collected: ['wlnu_ht2500toInf.root']
+DEBUG 2017-09-26 17:12:26,006: 	 The following user output files will be collected: []
+DEBUG 2017-09-26 17:12:26,006: 	 Loading required information from the environment
+DEBUG 2017-09-26 17:12:26,006: 	 Found CMSSW_8_0_26 for slc6_amd64_gcc530 with base /home/users/mmasciov/MT2/8_0_26
+DEBUG 2017-09-26 17:12:26,006: 	 Making tarball in /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/inputs/f7755d9f-54c7-4dc2-9a87-8944aee14e65default.tgz
+DEBUG 2017-09-26 17:12:26,073: 	 Checking directory /home/users/mmasciov/MT2/8_0_26/lib
+DEBUG 2017-09-26 17:12:26,073: 	 Adding directory /home/users/mmasciov/MT2/8_0_26/lib to tarball
+DEBUG 2017-09-26 17:12:26,330: 	 Checking directory /home/users/mmasciov/MT2/8_0_26/biglib
+DEBUG 2017-09-26 17:12:26,330: 	 Adding directory /home/users/mmasciov/MT2/8_0_26/biglib to tarball
+DEBUG 2017-09-26 17:12:26,332: 	 Checking directory /home/users/mmasciov/MT2/8_0_26/module
+DEBUG 2017-09-26 17:12:28,677: 	 Adding data directory /home/users/mmasciov/MT2/8_0_26/src/PhysicsTools/HepMCCandAlgos/data to tarball
+DEBUG 2017-09-26 17:12:28,800: 	 Adding data directory /home/users/mmasciov/MT2/8_0_26/src/PhysicsTools/HepMCCandAlgos/interface to tarball
+DEBUG 2017-09-26 17:12:29,726: 	 Uploading archive /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/inputs/f7755d9f-54c7-4dc2-9a87-8944aee14e65default.tgz (0.693359.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-09-26 17:12:32,869: 	 Loading required information from the environment
+DEBUG 2017-09-26 17:12:32,869: 	 Found CMSSW_8_0_26 for slc6_amd64_gcc530 with base /home/users/mmasciov/MT2/8_0_26
+DEBUG 2017-09-26 17:12:32,869: 	 Making tarball in /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/inputs/debugFiles.tgz
+DEBUG 2017-09-26 17:12:32,873: 	 Uploading archive /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/inputs/debugFiles.tgz (1 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-09-26 17:12:34,379: 	 Result uploading input files: 9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz 
+INFO 2017-09-26 17:12:34,379: 	 Sending the request to the server
+DEBUG 2017-09-26 17:12:34,379: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T2_US_UCSD', 'algoargs': 10, 'cachefilename': '9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_8_0_26', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM', 'lfn': '/store/user/mmasciov/', 'dryrun': 0, 'workflow': 'crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 0, 'tfileoutfiles': ['wlnu_ht2500toInf.root'], 'oneEventMode': 0, 'debugfilename': '68bbf3ef1766f92488b4b030f665e5ae91440b320043246533dd2f6ceda39db0.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc530', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'WJetsLNu_HT2500toInf_Sep2017'} 
+DEBUG 2017-09-26 17:12:34,380: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_US_UCSD&algoargs=10&cachefilename=9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_26&primarydataset=&inputdata=%2FWJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8%2FRunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1%2FAODSIM&lfn=%2Fstore%2Fuser%2Fmmasciov%2F&dryrun=0&workflow=crab_stoppedTracks_wlnu_ht2500toInf_Sep2017&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=0&oneEventMode=0&debugfilename=68bbf3ef1766f92488b4b030f665e5ae91440b320043246533dd2f6ceda39db0.tar.gz&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc530&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=WJetsLNu_HT2500toInf_Sep2017&tfileoutfiles=wlnu_ht2500toInf.root
+DEBUG 2017-09-26 17:12:36,686: 	 Result: {u'result': [{u'RequestName': u'170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017'}]}
+INFO 2017-09-26 17:12:36,688: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2017-09-26 17:12:36,688: 	 Task name: 170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-26 17:12:36,688: 	 Please use 'crab status' to check how the submission process proceeds.
+DEBUG 2017-09-26 17:12:36,689: 	 About to return
+INFO 2017-09-26 17:12:36,696: 	 Log file is /home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/crab.log
+DEBUG 2017-09-27 07:52:04,085: 	 Executing command: 'resubmit'
+DEBUG 2017-09-27 07:52:04,086: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 07:52:04,093: 	 Checking credentials
+DEBUG 2017-09-27 07:52:04,093: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 07:52:04,093: 	 Getting proxy life time left
+DEBUG 2017-09-27 07:52:04,196: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 538591
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:04,300: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 538591
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:04,300: 	 Proxy valid for 149:36:31 hours
+DEBUG 2017-09-27 07:52:04,898: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:04,899: 	 Checking credentials
+DEBUG 2017-09-27 07:52:04,899: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 07:52:04,899: 	 Getting proxy life time left
+DEBUG 2017-09-27 07:52:05,002: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 538591
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:05,105: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 538590
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:05,106: 	 Proxy valid for 149:36:31 hours
+DEBUG 2017-09-27 07:52:06,261: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 07:52:06,369: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:06,369: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 07:52:06,369: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 07:52:07,775: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 701:35:48  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:07,777: 	 Myproxy is valid: 2525748
+DEBUG 2017-09-27 07:52:07,777: 	 Command use: resubmit
+DEBUG 2017-09-27 07:52:07,777: 	 Options use: ['-d', 'crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/']
+DEBUG 2017-09-27 07:52:08,963: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 07:52:08,963: 	 Instance is prod
+DEBUG 2017-09-27 07:52:08,963: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 07:52:08,963: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 07:52:08,963: 	 Executing command: 'status'
+DEBUG 2017-09-27 07:52:08,964: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 07:52:08,970: 	 Checking credentials
+DEBUG 2017-09-27 07:52:08,970: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 07:52:08,970: 	 Getting proxy life time left
+DEBUG 2017-09-27 07:52:09,073: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 538586
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:09,177: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 538586
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:09,177: 	 Proxy valid for 149:36:26 hours
+DEBUG 2017-09-27 07:52:09,300: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:09,300: 	 Checking credentials
+DEBUG 2017-09-27 07:52:09,300: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 07:52:09,300: 	 Getting proxy life time left
+DEBUG 2017-09-27 07:52:09,404: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 538586
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:09,507: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 538586
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:09,508: 	 Proxy valid for 149:36:26 hours
+DEBUG 2017-09-27 07:52:10,723: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 07:52:10,832: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:10,832: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 07:52:10,832: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 07:52:11,837: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 701:35:44  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 07:52:11,837: 	 Myproxy is valid: 2525744
+DEBUG 2017-09-27 07:52:11,837: 	 Command use: status
+DEBUG 2017-09-27 07:52:11,837: 	 Options use: []
+DEBUG 2017-09-27 07:52:12,984: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 07:52:12,984: 	 Instance is prod
+DEBUG 2017-09-27 07:52:12,984: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 07:52:12,984: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 07:52:14,170: 	 Got information from server oracle database: {u'result': [u'170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'SUBMITTED', u'2017-09-27 00:12:36.590825', u'None', u'2017-09-27 00:13:54.315352', u'None', u'CMSSW_8_0_26', u'slc6_amd64_gcc530', u'/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'0', u'9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'mmasciov', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio', u'cms', u'None', u'None', u'WJetsLNu_HT2500toInf_Sep2017-00000000000000000000000000000000', u'T2_US_UCSD', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'F', u'vocms052', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'None', u'[]', u'[]', u'[]', u'pythia', u'[]', u"['wlnu_ht2500toInf.root']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0197.cern.ch', u'F', u'[]', u'T', u'/store/user/mmasciov/', u'F', u'None', u'F', u'F', u'F', u'None', u'WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', u'filetransfers', u'SUBMIT', u'10459400', u'68bbf3ef1766f92488b4b030f665e5ae91440b320043246533dd2f6ceda39db0.tar.gz', u'169.228.130.5', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-09-27 07:52:14,171: 	 CRAB project directory:		/home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 07:52:14,171: 	 Task name:			170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 07:52:14,171: 	 Grid scheduler:			crab3@vocms0197.cern.ch
+INFO 2017-09-27 07:52:14,171: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-09-27 07:52:14,171: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 07:52:14,171: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mmasciov&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 07:52:14,172: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 10459400)
+DEBUG 2017-09-27 07:52:14,172: 	 Webdir is located at http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 07:52:15,380: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 07:52:15,380: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/status_cache
+DEBUG 2017-09-27 07:52:16,529: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [11.0, 7779.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459408.0'], 'EndTimes': [1506479369.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805352], 'TotalUserCpuTimeHistory': [7598], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [55]}, '3': {'Retries': 0, 'WallDurations': [10.0, 7157.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459405.0'], 'EndTimes': [1506478747.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [757252], 'TotalUserCpuTimeHistory': [6981], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [48]}, '2': {'Retries': 0, 'WallDurations': [10.0, 6825.0], 'StartTimes': [1506471591.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459406.0'], 'EndTimes': [1506478416.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [806016], 'TotalUserCpuTimeHistory': [6657], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [44]}, '5': {'Retries': 0, 'WallDurations': [10.0, 6233.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459407.0'], 'EndTimes': [1506477823.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [800956], 'TotalUserCpuTimeHistory': [6074], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [43]}, '4': {'Retries': 0, 'WallDurations': [10.0, 6948.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459403.0'], 'EndTimes': [1506478538.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [727700], 'TotalUserCpuTimeHistory': [6749], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [42]}, '6': {'Retries': 0, 'WallDurations': [10.0, 3813.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459404.0'], 'EndTimes': [1506475403.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [726500], 'TotalUserCpuTimeHistory': [3696], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [31]}}
+INFO 2017-09-27 07:52:16,529: 	 Status on the scheduler:	COMPLETED
+INFO 2017-09-27 07:52:16,529: 	 
+Jobs status:                    finished      100.0% (6/6)
+INFO 2017-09-27 07:52:16,529: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+DEBUG 2017-09-27 07:52:16,557: 	 Requesting resubmission of failed jobs in task 170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+ERROR 2017-09-27 07:52:16,557: 	 Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+ERROR 2017-09-27 07:52:16,557: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 148, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 60, in __call__
+    self.jobids = self.processJobIds(jobList)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 161, in processJobIds
+    raise ConfigurationException(msg)
+ConfigurationException: Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+DEBUG 2017-09-27 11:15:32,193: 	 Executing command: 'resubmit'
+DEBUG 2017-09-27 11:15:32,193: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 11:15:32,201: 	 Checking credentials
+DEBUG 2017-09-27 11:15:32,201: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 11:15:32,201: 	 Getting proxy life time left
+DEBUG 2017-09-27 11:15:32,304: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 526383
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:32,407: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 526383
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:32,407: 	 Proxy valid for 146:13:03 hours
+DEBUG 2017-09-27 11:15:32,555: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:32,555: 	 Checking credentials
+DEBUG 2017-09-27 11:15:32,555: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 11:15:32,555: 	 Getting proxy life time left
+DEBUG 2017-09-27 11:15:32,658: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 526383
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:32,761: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 526383
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:32,762: 	 Proxy valid for 146:13:03 hours
+DEBUG 2017-09-27 11:15:33,940: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 11:15:34,047: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:34,047: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 11:15:34,047: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 11:15:35,453: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 698:12:20  (29.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:35,454: 	 Myproxy is valid: 2513540
+DEBUG 2017-09-27 11:15:35,455: 	 Command use: resubmit
+DEBUG 2017-09-27 11:15:35,455: 	 Options use: ['-d', 'crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/']
+DEBUG 2017-09-27 11:15:36,600: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 11:15:36,600: 	 Instance is prod
+DEBUG 2017-09-27 11:15:36,600: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 11:15:36,600: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 11:15:36,600: 	 Executing command: 'status'
+DEBUG 2017-09-27 11:15:36,600: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 11:15:36,607: 	 Checking credentials
+DEBUG 2017-09-27 11:15:36,607: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 11:15:36,607: 	 Getting proxy life time left
+DEBUG 2017-09-27 11:15:36,710: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 526379
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:36,814: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 526379
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:36,814: 	 Proxy valid for 146:12:59 hours
+DEBUG 2017-09-27 11:15:36,944: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:36,944: 	 Checking credentials
+DEBUG 2017-09-27 11:15:36,945: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 11:15:36,945: 	 Getting proxy life time left
+DEBUG 2017-09-27 11:15:37,048: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 526379
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:37,151: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 526378
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:37,152: 	 Proxy valid for 146:12:59 hours
+DEBUG 2017-09-27 11:15:38,840: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 11:15:38,947: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:38,947: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 11:15:38,947: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 11:15:40,253: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 698:12:15  (29.1 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 11:15:40,253: 	 Myproxy is valid: 2513535
+DEBUG 2017-09-27 11:15:40,253: 	 Command use: status
+DEBUG 2017-09-27 11:15:40,253: 	 Options use: []
+DEBUG 2017-09-27 11:15:41,399: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 11:15:41,399: 	 Instance is prod
+DEBUG 2017-09-27 11:15:41,399: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 11:15:41,399: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 11:15:42,583: 	 Got information from server oracle database: {u'result': [u'170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'SUBMITTED', u'2017-09-27 00:12:36.590825', u'None', u'2017-09-27 00:13:54.315352', u'None', u'CMSSW_8_0_26', u'slc6_amd64_gcc530', u'/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'0', u'9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'mmasciov', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio', u'cms', u'None', u'None', u'WJetsLNu_HT2500toInf_Sep2017-00000000000000000000000000000000', u'T2_US_UCSD', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'F', u'vocms052', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'None', u'[]', u'[]', u'[]', u'pythia', u'[]', u"['wlnu_ht2500toInf.root']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0197.cern.ch', u'F', u'[]', u'T', u'/store/user/mmasciov/', u'F', u'None', u'F', u'F', u'F', u'None', u'WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', u'filetransfers', u'SUBMIT', u'10459400', u'68bbf3ef1766f92488b4b030f665e5ae91440b320043246533dd2f6ceda39db0.tar.gz', u'169.228.130.5', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-09-27 11:15:42,584: 	 CRAB project directory:		/home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 11:15:42,584: 	 Task name:			170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 11:15:42,584: 	 Grid scheduler:			crab3@vocms0197.cern.ch
+INFO 2017-09-27 11:15:42,584: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-09-27 11:15:42,584: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 11:15:42,584: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mmasciov&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 11:15:42,584: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 10459400)
+DEBUG 2017-09-27 11:15:42,584: 	 Webdir is located at http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 11:15:43,742: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 11:15:43,742: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/status_cache
+DEBUG 2017-09-27 11:15:44,868: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [11.0, 7779.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459408.0'], 'EndTimes': [1506479369.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805352], 'TotalUserCpuTimeHistory': [7598], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [55]}, '3': {'Retries': 0, 'WallDurations': [10.0, 7157.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459405.0'], 'EndTimes': [1506478747.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [757252], 'TotalUserCpuTimeHistory': [6981], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [48]}, '2': {'Retries': 0, 'WallDurations': [10.0, 6825.0], 'StartTimes': [1506471591.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459406.0'], 'EndTimes': [1506478416.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [806016], 'TotalUserCpuTimeHistory': [6657], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [44]}, '5': {'Retries': 0, 'WallDurations': [10.0, 6233.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459407.0'], 'EndTimes': [1506477823.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [800956], 'TotalUserCpuTimeHistory': [6074], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [43]}, '4': {'Retries': 0, 'WallDurations': [10.0, 6948.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459403.0'], 'EndTimes': [1506478538.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [727700], 'TotalUserCpuTimeHistory': [6749], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [42]}, '6': {'Retries': 0, 'WallDurations': [10.0, 3813.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459404.0'], 'EndTimes': [1506475403.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [726500], 'TotalUserCpuTimeHistory': [3696], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [31]}}
+INFO 2017-09-27 11:15:44,868: 	 Status on the scheduler:	COMPLETED
+INFO 2017-09-27 11:15:44,868: 	 
+Jobs status:                    finished      100.0% (6/6)
+INFO 2017-09-27 11:15:44,868: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+DEBUG 2017-09-27 11:15:44,895: 	 Requesting resubmission of failed jobs in task 170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+ERROR 2017-09-27 11:15:44,895: 	 Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+ERROR 2017-09-27 11:15:44,895: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 148, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 60, in __call__
+    self.jobids = self.processJobIds(jobList)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 161, in processJobIds
+    raise ConfigurationException(msg)
+ConfigurationException: Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+DEBUG 2017-09-27 17:15:26,171: 	 Executing command: 'resubmit'
+DEBUG 2017-09-27 17:15:26,171: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 17:15:26,183: 	 Checking credentials
+DEBUG 2017-09-27 17:15:26,184: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 17:15:26,184: 	 Getting proxy life time left
+DEBUG 2017-09-27 17:15:26,288: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 86334
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:26,391: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 86334
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:26,392: 	 Proxy valid for 23:58:54 hours
+DEBUG 2017-09-27 17:15:26,713: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:26,714: 	 Checking credentials
+DEBUG 2017-09-27 17:15:26,714: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 17:15:26,714: 	 Getting proxy life time left
+DEBUG 2017-09-27 17:15:26,818: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 86334
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:26,921: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 86334
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:26,922: 	 Proxy valid for 23:58:54 hours
+DEBUG 2017-09-27 17:15:28,013: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 17:15:28,123: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:28,123: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 17:15:28,123: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 17:15:29,431: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 692:12:26  (28.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:29,433: 	 Myproxy is valid: 2491946
+DEBUG 2017-09-27 17:15:29,433: 	 Command use: resubmit
+DEBUG 2017-09-27 17:15:29,433: 	 Options use: ['-d', 'crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/']
+DEBUG 2017-09-27 17:15:30,558: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 17:15:30,558: 	 Instance is prod
+DEBUG 2017-09-27 17:15:30,558: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 17:15:30,559: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 17:15:30,559: 	 Executing command: 'status'
+DEBUG 2017-09-27 17:15:30,559: 	 Found CRAB cache file /home/users/mmasciov/.crab3
+DEBUG 2017-09-27 17:15:30,567: 	 Checking credentials
+DEBUG 2017-09-27 17:15:30,567: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 17:15:30,567: 	 Getting proxy life time left
+DEBUG 2017-09-27 17:15:30,672: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 86330
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:30,776: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 86330
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:30,776: 	 Proxy valid for 23:58:50 hours
+DEBUG 2017-09-27 17:15:30,909: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:30,909: 	 Checking credentials
+DEBUG 2017-09-27 17:15:30,910: 	 Found proxy file /tmp/x509up_u31607
+DEBUG 2017-09-27 17:15:30,910: 	 Getting proxy life time left
+DEBUG 2017-09-27 17:15:31,014: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -timeleft
+ output : 86330
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:31,118: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u31607 -actimeleft
+ output : 86329
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:31,118: 	 Proxy valid for 23:58:50 hours
+DEBUG 2017-09-27 17:15:32,266: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-09-27 17:15:32,375: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:32,375: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-09-27 17:15:32,376: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio_cmsweb.cern.ch for credential name
+DEBUG 2017-09-27 17:15:33,482: 	 Executing : 
+ command : myproxy-info -l 675d286d0e68c23071389f9d911f5838308f7790 -s myproxy.cern.ch
+ output : username: 675d286d0e68c23071389f9d911f5838308f7790
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 692:12:22  (28.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-09-27 17:15:33,482: 	 Myproxy is valid: 2491942
+DEBUG 2017-09-27 17:15:33,482: 	 Command use: status
+DEBUG 2017-09-27 17:15:33,482: 	 Options use: []
+DEBUG 2017-09-27 17:15:34,591: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-09-27 17:15:34,591: 	 Instance is prod
+DEBUG 2017-09-27 17:15:34,591: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-09-27 17:15:34,591: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-09-27 17:15:35,689: 	 Got information from server oracle database: {u'result': [u'170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'SUBMITTED', u'2017-09-27 00:12:36.590825', u'None', u'2017-09-27 00:13:54.315352', u'None', u'CMSSW_8_0_26', u'slc6_amd64_gcc530', u'/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'0', u'9646d8be7b4a45cc70439efe8ae781782ecd9842cb6adde6e9435a4e0a6412e5.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'mmasciov', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=mmasciov/CN=720044/CN=Mario Masciovecchio', u'cms', u'None', u'None', u'WJetsLNu_HT2500toInf_Sep2017-00000000000000000000000000000000', u'T2_US_UCSD', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'F', u'vocms052', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017', u'None', u'None', u'[]', u'[]', u'[]', u'pythia', u'[]', u"['wlnu_ht2500toInf.root']", u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0197.cern.ch', u'F', u'[]', u'T', u'/store/user/mmasciov/', u'F', u'None', u'F', u'F', u'F', u'None', u'WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8', u'filetransfers', u'SUBMIT', u'10459400', u'68bbf3ef1766f92488b4b030f665e5ae91440b320043246533dd2f6ceda39db0.tar.gz', u'169.228.130.5', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-09-27 17:15:35,690: 	 CRAB project directory:		/home/users/mmasciov/MT2/8_0_26/src/Histo/HistoAnalyzer/python/crab_projects/crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 17:15:35,690: 	 Task name:			170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 17:15:35,690: 	 Grid scheduler:			crab3@vocms0197.cern.ch
+INFO 2017-09-27 17:15:35,690: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-09-27 17:15:35,690: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+INFO 2017-09-27 17:15:35,690: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=mmasciov&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=170927_001235%3Ammasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 17:15:35,690: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 10459400)
+DEBUG 2017-09-27 17:15:35,690: 	 Webdir is located at http://vocms0197.cern.ch/mon/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 17:15:36,782: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+DEBUG 2017-09-27 17:15:36,783: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0197/cms1422/170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017/status_cache
+DEBUG 2017-09-27 17:15:37,853: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [11.0, 7779.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459408.0'], 'EndTimes': [1506479369.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [805352], 'TotalUserCpuTimeHistory': [7598], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [55]}, '3': {'Retries': 0, 'WallDurations': [10.0, 7157.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459405.0'], 'EndTimes': [1506478747.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [757252], 'TotalUserCpuTimeHistory': [6981], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [48]}, '2': {'Retries': 0, 'WallDurations': [10.0, 6825.0], 'StartTimes': [1506471591.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459406.0'], 'EndTimes': [1506478416.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [806016], 'TotalUserCpuTimeHistory': [6657], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [44]}, '5': {'Retries': 0, 'WallDurations': [10.0, 6233.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459407.0'], 'EndTimes': [1506477823.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [800956], 'TotalUserCpuTimeHistory': [6074], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [43]}, '4': {'Retries': 0, 'WallDurations': [10.0, 6948.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459403.0'], 'EndTimes': [1506478538.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [727700], 'TotalUserCpuTimeHistory': [6749], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [42]}, '6': {'Retries': 0, 'WallDurations': [10.0, 3813.0], 'StartTimes': [1506471590.0], 'SubmitTimes': [1506471231.0], 'JobIds': ['10459404.0'], 'EndTimes': [1506475403.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [726500], 'TotalUserCpuTimeHistory': [3696], 'SiteHistory': ['Unknown', 'T2_BE_UCL'], 'TotalSysCpuTimeHistory': [31]}}
+INFO 2017-09-27 17:15:37,853: 	 Status on the scheduler:	COMPLETED
+INFO 2017-09-27 17:15:37,853: 	 
+Jobs status:                    finished      100.0% (6/6)
+INFO 2017-09-27 17:15:37,853: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+DEBUG 2017-09-27 17:15:37,887: 	 Requesting resubmission of failed jobs in task 170927_001235:mmasciov_crab_stoppedTracks_wlnu_ht2500toInf_Sep2017
+ERROR 2017-09-27 17:15:37,887: 	 Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
+ERROR 2017-09-27 17:15:37,888: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 148, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 60, in __call__
+    self.jobids = self.processJobIds(jobList)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/resubmit.py", line 161, in processJobIds
+    raise ConfigurationException(msg)
+ConfigurationException: Found no jobs to resubmit. Only jobs in status failed can be resubmitted. Jobs in status finished can also be resubmitted, but only if the jobids are specified and the force option is set.
