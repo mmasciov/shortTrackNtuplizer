@@ -46,3 +46,11 @@ cmsRun python/ConfFile_cfg.py
 source /cvmfs/cms.cern.ch/crab3/crab.sh
 
 crab submit -c python/crabConfig_MC.py (or python/crabConfig_Data.py)
+
+
+
+7. Sorting/friending
+
+- once a consistent set of mt2 babies and short track babies are there, one can run treesort.py (for both), and treefriend.py. Header of each is self-explanatory.
+
+- Then, can run the updated looper.
