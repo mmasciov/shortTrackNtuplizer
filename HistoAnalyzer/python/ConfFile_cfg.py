@@ -8,7 +8,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("CommonTools.ParticleFlow.pfParticleSelection_cff")
 process.load("CommonTools.ParticleFlow.pfNoPileUpIso_cff")
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
 
 process.options = cms.untracked.PSet( allowUnscheduled = cms.untracked.bool(True))
 
@@ -16,8 +16,8 @@ process.source = cms.Source("PoolSource",
     # replace 'myfile.root' with the source file you want to use
 #    duplicateCheckMode = cms.untracked.string("noDuplicateCheck"),                        
     fileNames = cms.untracked.vstring(
-#        "root://cms-xrd-global.cern.ch//store/data/Run2016H/SingleMuon/AOD/PromptReco-v3/000/284/036/00000/00F92752-919F-E611-9558-02163E01347A.root"
-        "root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/046DF0DE-4DBB-E611-98B6-0CC47AD98BEE.root"
+#        "root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/60000/C8862546-47BB-E611-A1A8-001E674FAF23.root"
+        "root://cms-xrd-global.cern.ch//store/data/Run2016G/MET/AOD/23Sep2016-v1/90001/064B5624-258B-E611-A1BC-0090FAA573B0.root"
     )                       
 )
 
@@ -36,11 +36,11 @@ process.newtree = cms.EDAnalyzer('HistoAnalyzer',
                               pfAllPhs = cms.untracked.InputTag('pfAllPhotons'),
                               pfAllChPs = cms.untracked.InputTag('pfAllChargedParticles'),
                               pfAllPUChPs = cms.untracked.InputTag('pfPileUpAllChargedParticles'),
-                              genparts = cms.untracked.InputTag('genParticles'),
+                              genparts = cms.untracked.InputTag('generalTracks'),
                               )
 
 process.TFileService = cms.Service("TFileService",
-                                   fileName = cms.string('wlnu_ht2500toInf.root')
+                                   fileName = cms.string('mc-data_shorttracktree.root')
                                    )
 
 

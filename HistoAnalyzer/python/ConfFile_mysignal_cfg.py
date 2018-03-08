@@ -38,7 +38,7 @@ process.newtree = cms.EDAnalyzer('HistoAnalyzer',
                               )
 
 process.TFileService = cms.Service("TFileService",
-                                   fileName = cms.string('mySignal_2016_tracktree.root')
+                                   fileName = cms.string('signal_shorttracktree.root')
                                    )
 
 

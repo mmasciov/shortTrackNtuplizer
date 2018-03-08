@@ -59,6 +59,9 @@
 // constructor "usesResource("TFileService");"
 // This will improve performance in multithreaded jobs.
 
+
+bool issignal=false;
+
 class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
    public:
       explicit HistoAnalyzer(const edm::ParameterSet&);
@@ -259,7 +262,6 @@ HistoAnalyzer::HistoAnalyzer(const edm::ParameterSet& iConfig)
    //now do what ever initialization is needed
    usesResource("TFileService");
    edm::Service<TFileService> fs;
-   //   histo = fs->make<TH1D>("charge" , "Charges" , 200 , -2 , 2 );
    myTree = fs->make<TTree>("myTree","myTree");
        
    consumes<reco::TrackCollection>(trackTags_);
@@ -275,7 +277,11 @@ HistoAnalyzer::HistoAnalyzer(const edm::ParameterSet& iConfig)
    consumes<std::vector<reco::PFCandidate>>(pfPUChPTags_);
    consumes<reco::PFJetCollection>(pfjetTags_);
    consumes<std::vector<reco::PFMET>>(pfmetTags_);
-   consumes<std::vector<reco::GenParticle>>(genpartTags_);
+   
+   if(issignal)
+     consumes<std::vector<reco::GenParticle>>(genpartTags_);
+   else
+     consumes<reco::TrackCollection>(genpartTags_);
 }
 
 
@@ -299,7 +305,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    using namespace edm;
 
    using reco::TrackCollection;
-   
+
    Handle<TrackCollection> tracks;
    iEvent.getByLabel(trackTags_,tracks);
 
@@ -341,135 +347,77 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    iEvent.getByLabel(pfmetTags_,pfmet);
 
    Handle<std::vector<reco::GenParticle>> genparts;
-   iEvent.getByLabel(genpartTags_, genparts);
+   if(issignal){
+     iEvent.getByLabel(genpartTags_, genparts);
+   }
 
    reco::PFMET Met = (*pfmet->begin());
 
    reco::Vertex PV0 = *(vertexs->begin());
 
-//   pileup=0;
-//   for(std::vector<reco::Vertex>::const_iterator itV = vertexs->begin();
-//       itV != vertexs->end();                      
-//       ++itV) {
-//     
-//     if( !(itV->isFake() || itV->ndof()<=4 || fabs(itV->z())>24.0 || itV->position().Rho()>2.0) )
-//       pileup+=1;
-//   
-//   }
-
    run = iEvent.eventAuxiliary().run() ;
    lumi = iEvent.eventAuxiliary().luminosityBlock();
    evt = iEvent.eventAuxiliary().event();
    
-//   met_pt = Met.pt();
-//   met_phi = Met.phi();
-//   
-//   ht = 0.0;
-//
-//   njets = pfjets->size();
-//   for(reco::PFJetCollection::const_iterator itJet = pfjets->begin();
-//       itJet != pfjets->end();                      
-//       ++itJet) {
-//     
-//     if( itJet->pt()<30.0 || fabs(itJet->eta())>2.4 ){
-//
-//       njets--;
-//       continue;
-//
-//     }
-//     
-//     ht+=itJet->pt();
-//
-//   }
+   if(issignal){
+     std::vector<TVector3> gpvecCollection;
+     int ich=0;
+     for(std::vector<reco::GenParticle>::const_iterator itgp = genparts->begin();
+	 itgp != genparts->end();                      
+	 ++itgp) {
+       
+       TVector3 gpvec;
+       unsigned int thisD=0;
+       bool isGoodCh=false;
+       
+       if( abs(itgp->pdgId())!=1000024 )
+	 continue;
+       if( itgp->numberOfDaughters()<2 )
+	 continue;
+       
+       for(unsigned int d=0; d<itgp->numberOfDaughters()-1; ++d){
 
-
-   std::vector<TVector3> gpvecCollection;
-   int ich=0;
-   for(std::vector<reco::GenParticle>::const_iterator itgp = genparts->begin();
-       itgp != genparts->end();                      
-       ++itgp) {
-     
-     TVector3 gpvec;
-     unsigned int thisD=0;
-     bool isGoodCh=false;
-     
-     //     if( abs(itgp->pdgId())==1000024  && itgp->numberOfDaughters()==2 && abs(itgp->daughter(0)->pdgId())!=1000024 && abs(itgp->daughter(1)->pdgId())!=1000024 ) {
-
-     if( abs(itgp->pdgId())!=1000024 )
-       continue;
-     if( itgp->numberOfDaughters()<2 )
-       continue;
-
-     for(unsigned int d=0; d<itgp->numberOfDaughters()-1; ++d){
-       //     for(unsigned int d=0; d<itgp->numberOfDaughters(); ++d){
-
-       if( (abs(itgp->daughter(d)->pdgId())==1000022 && abs(itgp->daughter(d+1)->pdgId())==211) || (abs(itgp->daughter(d+1)->pdgId())==1000022 && abs(itgp->daughter(d)->pdgId())==211) ){
-
-	 isGoodCh=true;
-	 thisD = d;
-	 break;
+	 if( (abs(itgp->daughter(d)->pdgId())==1000022 && abs(itgp->daughter(d+1)->pdgId())==211) || (abs(itgp->daughter(d+1)->pdgId())==1000022 && abs(itgp->daughter(d)->pdgId())==211) ){
+	   
+	   isGoodCh=true;
+	   thisD = d;
+	   break;
+	   
+	 }
 	 
        }
-	 
-     }
-
-     if(isGoodCh){
-
-       gpvec.SetPtEtaPhi(itgp->pt(),itgp->eta(),itgp->phi());
-       gpvecCollection.push_back(gpvec);
-
-       gp_pdgid[ich]=itgp->pdgId();
-       gp_pt[ich]=itgp->pt();
-       gp_eta[ich]=itgp->eta();
-       gp_phi[ich]=itgp->phi();
-          
-       TVector3 pv;
-       pv.SetXYZ(itgp->vertex().x(),itgp->vertex().y(),itgp->vertex().z());
-
-       TVector3 dv;
-       dv.SetXYZ(itgp->daughter(thisD)->vertex().x(),itgp->daughter(thisD)->vertex().y(),itgp->daughter(thisD)->vertex().z());
        
-       TVector3 decayvec = dv-pv;
-       gp_decayXY[ich]=TMath::Sqrt(decayvec.X()*decayvec.X()+decayvec.Y()*decayvec.Y());
-
-       ++ich;
- 
-     }
-     else
-       continue;
+       if(isGoodCh){
+	 
+	 gpvec.SetPtEtaPhi(itgp->pt(),itgp->eta(),itgp->phi());
+	 gpvecCollection.push_back(gpvec);
+	 
+	 gp_pdgid[ich]=itgp->pdgId();
+	 gp_pt[ich]=itgp->pt();
+	 gp_eta[ich]=itgp->eta();
+	 gp_phi[ich]=itgp->phi();
+	 
+	 TVector3 pv;
+	 pv.SetXYZ(itgp->vertex().x(),itgp->vertex().y(),itgp->vertex().z());
+	 
+	 TVector3 dv;
+	 dv.SetXYZ(itgp->daughter(thisD)->vertex().x(),itgp->daughter(thisD)->vertex().y(),itgp->daughter(thisD)->vertex().z());
+	 
+	 TVector3 decayvec = dv-pv;
+	 gp_decayXY[ich]=TMath::Sqrt(decayvec.X()*decayvec.X()+decayvec.Y()*decayvec.Y());
+	 
+	 ++ich;
+	 
+       }
+       else
+	 continue;
+       
+     }   
      
-   }   
-
-//   std::vector<TVector3> gpvecCollection;
-//   int ich=0;
-//   for(std::vector<reco::GenParticle>::const_iterator itgp = genparts->begin();
-//       itgp != genparts->end();                      
-//       ++itgp) {
-//     
-//     TVector3 gpvec;
-//
-//     if( itgp->charge()==0 || std::abs(itgp->pdgId())!=1000024 )
-//       continue;
-//     if( itgp->status()!=1 )
-//       continue;
-//     
-//
-//     gpvec.SetPtEtaPhi(itgp->pt(),itgp->eta(),itgp->phi());
-//     gpvecCollection.push_back(gpvec);
-//     
-//     gp_pdgid[ich]=itgp->pdgId();
-//     gp_status[ich]=itgp->status();
-//     gp_pt[ich]=itgp->pt();
-//     gp_eta[ich]=itgp->eta();
-//     gp_phi[ich]=itgp->phi();
-//          
-//     ++ich;
-//       
-//   }
-
-   //
-   ncharginos = gpvecCollection.size();
-
+     ncharginos = gpvecCollection.size();
+     
+   }
+   
    int it=0;
    int itref=0;
    ntracks=tracks->size();
@@ -477,7 +425,6 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    nshorttracks_short=0;
    nshorttracks_trkshort=0;
    nshorttracks_trklong=0;
-   //   std::cout <<"Found " << ntracks << " tracks" << std::endl;
    for(TrackCollection::const_iterator itTrack = tracks->begin();
        itTrack != tracks->end();                      
        ++itTrack) {
@@ -820,11 +767,8 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        }
 
      ++it;
-     //     histo->Fill( charge );
 
    }
-   //   std::cout <<"Found " << ntracks << " tracks" << std::endl;
-   //   ntracks = it;
 
    for(int c=0; c<ncharginos; ++c){
      
@@ -862,51 +806,6 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
    myTree->Fill();
 
-//   for(std::vector<reco::PFCandidate>::const_iterator itPFNeuH = pfcands->begin();
-//       itPFNeuH != pfcands->end();
-//       ++itPFNeuH) {
-//     
-//     std::cout << "Found pf neutral hadron" << std::endl;
-//
-//   }
-
-
- //  for(std::vector<reco::PFCandidate>::const_iterator itPFNeuH = pfAllNeuHs->begin();
- //      itPFNeuH != pfAllNeuHs->end();
- //      ++itPFNeuH) {
- //    
- //    std::cout << "Found pf neutral hadron" << std::endl;
- //
- //  }
- //  for(std::vector<reco::PFCandidate>::const_iterator itPFChH = pfAllChHs->begin();
- //      itPFChH != pfAllChHs->end();
- //      ++itPFChH) {
- //    
- //    std::cout << "Found pf charged hadron" << std::endl;
- //
- //  }
- //  for(std::vector<reco::PFCandidate>::const_iterator itPh = pfAllPhs->begin();
- //      itPh != pfAllPhs->end();
- //      ++itPh) {
- //    
- //    std::cout << "Found photon" << std::endl;
- //
- //  }
- //  for(std::vector<reco::PFCandidate>::const_iterator itPFChP = pfAllChPs->begin();
- //      itPFChP != pfAllChPs->end();
- //      ++itPFChP) {
- //    
- //    std::cout << "Found pf charged particle" << std::endl;
- //
- //  }
- //  for(std::vector<reco::PFCandidate>::const_iterator itPFPUChP = pfAllPUChPs->begin();
- //      itPFPUChP != pfAllPUChPs->end();
- //      ++itPFPUChP) {
- //    
- //    std::cout << "Found PU pf charged particle" << std::endl;
- //
- //  }
-
    
 #ifdef THIS_IS_AN_EVENT_EXAMPLE
    Handle<ExampleData> pIn;
@@ -928,13 +827,6 @@ HistoAnalyzer::beginJob()
   myTree->Branch("run", &run, "run/I");
   myTree->Branch("lumi", &lumi, "lumi/I");
   myTree->Branch("evt", &evt, "evt/L");
-
-//  myTree->Branch("pileup", &pileup, "pileup/I");
-//
-//  myTree->Branch("njets", &njets, "njets/I");
-//  myTree->Branch("ht", &ht, "ht/D");
-//  myTree->Branch("met_pt", &met_pt, "met_pt/D");
-//  myTree->Branch("met_phi", &met_phi, "met_phi/D");
 
   myTree->Branch("ntracks", &ntracks, "ntracks/I");
   myTree->Branch("nshorttracks", &nshorttracks, "nshorttracks/I");
