@@ -1,4 +1,4 @@
-B1;95;0cimport ROOT
+import ROOT
 import os,sys
 
 if len(sys.argv)!=6:
