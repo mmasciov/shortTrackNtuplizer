@@ -1,0 +1,2032 @@
+nohup: ignoring input
+****************************
+* Welcome to ROOT v6.06/01 *
+****************************
+Loading libFWCoreFWLite.so from /home/users/dpgilber/CMSSW_8_0_26.
+WARNING: AutoLibraryloader::enable() and AutoLibraryLoader.h are deprecated.
+Use FWLiteEnabler::enable() and FWLiteEnabler.h instead
+processing branch  run
+processing branch  lumi
+processing branch  evt
+processing branch  isData
+processing branch  isGolden
+processing branch  evt_scale1fb
+processing branch  evt_xsec
+processing branch  evt_kfactor
+processing branch  evt_filter
+processing branch  evt_nEvts
+processing branch  evt_id
+processing branch  genWeight
+processing branch  puWeight
+processing branch  nVert
+processing branch  nTrueInt
+processing branch  rho
+processing branch  nJet30
+processing branch  nJet30JECup
+processing branch  nJet30JECdn
+processing branch  nJet40
+processing branch  nBJet20
+processing branch  nBJet20csv
+processing branch  nBJet20mva
+processing branch  nBJet20JECup
+processing branch  nBJet20JECdn
+processing branch  nBJet25
+processing branch  nBJet30
+processing branch  nBJet30csv
+processing branch  nBJet30mva
+processing branch  nBJet40
+processing branch  nJet30FailId
+processing branch  nJet100FailId
+processing branch  nJet20BadFastsim
+processing branch  nJet200MuFrac50DphiMet
+processing branch  nMuons10
+processing branch  nBadMuons20
+processing branch  nElectrons10
+processing branch  nLepLowMT
+processing branch  nTaus20
+processing branch  nGammas20
+processing branch  nPFCHCand3
+processing branch  deltaPhiMin
+processing branch  deltaPhiMin_genmet
+processing branch  diffMetMht
+processing branch  diffMetMht_genmet
+processing branch  deltaPhiMinJECup
+processing branch  deltaPhiMinJECdn
+processing branch  diffMetMhtJECup
+processing branch  diffMetMhtJECdn
+processing branch  minMTBMet
+processing branch  zll_minMTBMet
+processing branch  gamma_minMTBMet
+processing branch  ht
+processing branch  htJECup
+processing branch  htJECdn
+processing branch  mt2
+processing branch  mt2JECup
+processing branch  mt2JECdn
+processing branch  mt2_gen
+processing branch  mt2_genmet
+processing branch  jet1_pt
+processing branch  jet2_pt
+processing branch  jet1_ptJECup
+processing branch  jet2_ptJECup
+processing branch  jet1_ptJECdn
+processing branch  jet2_ptJECdn
+processing branch  jet_failFSveto
+processing branch  gamma_jet1_pt
+processing branch  gamma_jet2_pt
+processing branch  pseudoJet1_pt
+processing branch  pseudoJet1_eta
+processing branch  pseudoJet1_phi
+processing branch  pseudoJet1_mass
+processing branch  pseudoJet2_pt
+processing branch  pseudoJet2_eta
+processing branch  pseudoJet2_phi
+processing branch  pseudoJet2_mass
+processing branch  mht_pt
+processing branch  mht_phi
+processing branch  mht_ptJECup
+processing branch  mht_phiJECup
+processing branch  mht_ptJECdn
+processing branch  mht_phiJECdn
+processing branch  met_pt
+processing branch  met_phi
+processing branch  met_ptJECup
+processing branch  met_phiJECup
+processing branch  met_ptJECdn
+processing branch  met_phiJECdn
+processing branch  met_rawPt
+processing branch  met_rawPhi
+processing branch  met_caloPt
+processing branch  met_caloPhi
+processing branch  met_trkPt
+processing branch  met_trkPhi
+processing branch  met_genPt
+processing branch  met_genPhi
+processing branch  met_miniaodPt
+processing branch  met_miniaodPhi
+processing branch  Flag_EcalDeadCellTriggerPrimitiveFilter
+processing branch  Flag_trkPOG_manystripclus53X
+processing branch  Flag_ecalLaserCorrFilter
+processing branch  Flag_trkPOG_toomanystripclus53X
+processing branch  Flag_hcalLaserEventFilter
+processing branch  Flag_trkPOG_logErrorTooManyClusters
+processing branch  Flag_trkPOGFilters
+processing branch  Flag_trackingFailureFilter
+processing branch  Flag_CSCTightHalo2015Filter
+processing branch  Flag_CSCTightHaloFilter
+processing branch  Flag_globalTightHalo2016Filter
+processing branch  Flag_globalSuperTightHalo2016Filter
+processing branch  Flag_HBHENoiseFilter
+processing branch  Flag_HBHENoiseIsoFilter
+processing branch  Flag_goodVertices
+processing branch  Flag_eeBadScFilter
+processing branch  Flag_badMuonFilter
+processing branch  Flag_badMuonFilterV2
+processing branch  Flag_badMuons
+processing branch  Flag_duplicateMuons
+processing branch  Flag_noBadMuons
+processing branch  Flag_badChargedHadronFilter
+processing branch  Flag_badChargedHadronFilterV2
+processing branch  Flag_METFilters
+processing branch  HLT_PFHT800
+processing branch  HLT_PFHT900
+processing branch  HLT_PFMET170
+processing branch  HLT_PFHT300_PFMET100
+processing branch  HLT_PFHT300_PFMET110
+processing branch  HLT_PFHT350_PFMET100
+processing branch  HLT_PFHT350_PFMET120
+processing branch  HLT_PFMETNoMu90_PFMHTNoMu90
+processing branch  HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHTNoMu90
+processing branch  HLT_PFMETNoMu100_PFMHTNoMu100
+processing branch  HLT_PFMETNoMu110_PFMHTNoMu110
+processing branch  HLT_PFMETNoMu120_PFMHTNoMu120
+processing branch  HLT_PFMET90_PFMHT90
+processing branch  HLT_PFMET100_PFMHT100
+processing branch  HLT_PFMET110_PFMHT110
+processing branch  HLT_PFMET120_PFMHT120
+processing branch  HLT_PFJet450
+processing branch  HLT_PFJet500
+processing branch  HLT_ECALHT800
+processing branch  HLT_SingleMu
+processing branch  HLT_SingleMu_NonIso
+processing branch  HLT_SingleEl
+processing branch  HLT_SingleEl_NonIso
+processing branch  HLT_DoubleEl
+processing branch  HLT_DoubleEl33
+processing branch  HLT_MuX_Ele12
+processing branch  HLT_Mu8_EleX
+processing branch  HLT_Mu30_Ele30_NonIso
+processing branch  HLT_Mu33_Ele33_NonIso
+processing branch  HLT_DoubleMu
+processing branch  HLT_DoubleMu_NonIso
+processing branch  HLT_Photon120
+processing branch  HLT_Photon165_HE10
+processing branch  HLT_Photon250_NoHE
+processing branch  HLT_PFHT125_Prescale
+processing branch  HLT_PFHT200_Prescale
+processing branch  HLT_PFHT300_Prescale
+processing branch  HLT_PFHT350_Prescale
+processing branch  HLT_PFHT475_Prescale
+processing branch  HLT_PFHT600_Prescale
+processing branch  HLT_DiCentralPFJet70_PFMET120
+processing branch  HLT_DiCentralPFJet55_PFMET110
+processing branch  nlep
+processing branch  lep_pt
+processing branch  lep_eta
+processing branch  lep_phi
+processing branch  lep_mass
+processing branch  lep_charge
+processing branch  lep_pdgId
+processing branch  lep_dxy
+processing branch  lep_dz
+processing branch  lep_tightId
+processing branch  lep_heepId
+processing branch  lep_highPtFit_pt
+processing branch  lep_highPtFit_eta
+processing branch  lep_highPtFit_phi
+processing branch  lep_relIso03
+processing branch  lep_relIso04
+processing branch  lep_miniRelIso
+processing branch  lep_relIsoAn04
+processing branch  lep_mcMatchId
+processing branch  lep_lostHits
+processing branch  lep_convVeto
+processing branch  lep_tightCharge
+processing branch  nisoTrack
+processing branch  isoTrack_pt
+processing branch  isoTrack_eta
+processing branch  isoTrack_phi
+processing branch  isoTrack_mass
+processing branch  isoTrack_absIso
+processing branch  isoTrack_relIsoAn04
+processing branch  isoTrack_dz
+processing branch  isoTrack_pdgId
+processing branch  isoTrack_mcMatchId
+processing branch  nhighPtPFcands
+processing branch  highPtPFcands_pt
+processing branch  highPtPFcands_eta
+processing branch  highPtPFcands_phi
+processing branch  highPtPFcands_mass
+processing branch  highPtPFcands_absIso
+processing branch  highPtPFcands_relIsoAn04
+processing branch  highPtPFcands_dz
+processing branch  highPtPFcands_pdgId
+processing branch  highPtPFcands_mcMatchId
+processing branch  nPFLep5LowMT
+processing branch  nPFHad10LowMT
+processing branch  ntau
+processing branch  tau_pt
+processing branch  tau_eta
+processing branch  tau_phi
+processing branch  tau_mass
+processing branch  tau_charge
+processing branch  tau_dxy
+processing branch  tau_dz
+processing branch  tau_idCI3hit
+processing branch  tau_isoCI3hit
+processing branch  tau_mcMatchId
+processing branch  ngamma
+processing branch  gamma_pt
+processing branch  gamma_eta
+processing branch  gamma_phi
+processing branch  gamma_mass
+processing branch  gamma_mcMatchId
+processing branch  gamma_genIso04
+processing branch  gamma_drMinParton
+processing branch  gamma_chHadIso
+processing branch  gamma_neuHadIso
+processing branch  gamma_phIso
+processing branch  gamma_sigmaIetaIeta
+processing branch  gamma_r9
+processing branch  gamma_hOverE
+processing branch  gamma_hOverE015
+processing branch  gamma_idCutBased
+processing branch  gamma_mt2
+processing branch  gamma_nJet30
+processing branch  gamma_nJet40
+processing branch  gamma_nJet30FailId
+processing branch  gamma_nJet100FailId
+processing branch  gamma_nBJet20
+processing branch  gamma_nBJet20csv
+processing branch  gamma_nBJet20mva
+processing branch  gamma_nBJet25
+processing branch  gamma_nBJet30
+processing branch  gamma_nBJet40
+processing branch  gamma_ht
+processing branch  gamma_deltaPhiMin
+processing branch  gamma_diffMetMht
+processing branch  gamma_mht_pt
+processing branch  gamma_mht_phi
+processing branch  gamma_met_pt
+processing branch  gamma_met_phi
+processing branch  zll_mt2
+processing branch  zll_deltaPhiMin
+processing branch  zll_diffMetMht
+processing branch  zll_met_pt
+processing branch  zll_met_phi
+processing branch  zll_mht_pt
+processing branch  zll_mht_phi
+processing branch  zll_mass
+processing branch  zll_pt
+processing branch  zll_eta
+processing branch  zll_phi
+processing branch  zll_ht
+processing branch  zll_mt2JECup
+processing branch  zll_deltaPhiMinJECup
+processing branch  zll_diffMetMhtJECup
+processing branch  zll_met_ptJECup
+processing branch  zll_met_phiJECup
+processing branch  zll_mht_ptJECup
+processing branch  zll_mht_phiJECup
+processing branch  zll_htJECup
+processing branch  zll_mt2JECdn
+processing branch  zll_deltaPhiMinJECdn
+processing branch  zll_diffMetMhtJECdn
+processing branch  zll_met_ptJECdn
+processing branch  zll_met_phiJECdn
+processing branch  zll_mht_ptJECdn
+processing branch  zll_mht_phiJECdn
+processing branch  zll_htJECdn
+processing branch  zllmt_mt2
+processing branch  zllmt_deltaPhiMin
+processing branch  zllmt_diffMetMht
+processing branch  zllmt_met_pt
+processing branch  zllmt_met_phi
+processing branch  zllmt_mht_pt
+processing branch  zllmt_mht_phi
+processing branch  zllmt_ht
+processing branch  zllmt_mt
+processing branch  rl_mt2
+processing branch  rl_deltaPhiMin
+processing branch  rl_diffMetMht
+processing branch  rl_met_pt
+processing branch  rl_met_phi
+processing branch  rl_mht_pt
+processing branch  rl_mht_phi
+processing branch  rl_mass
+processing branch  rl_pt
+processing branch  rl_eta
+processing branch  rl_phi
+processing branch  rl_ht
+processing branch  ngenLep
+processing branch  genLep_pt
+processing branch  genLep_eta
+processing branch  genLep_phi
+processing branch  genLep_mass
+processing branch  genLep_pdgId
+processing branch  genLep_status
+processing branch  genLep_charge
+processing branch  genLep_sourceId
+processing branch  ngenStat23
+processing branch  genStat23_pt
+processing branch  genStat23_eta
+processing branch  genStat23_phi
+processing branch  genStat23_mass
+processing branch  genStat23_pdgId
+processing branch  genStat23_status
+processing branch  genStat23_charge
+processing branch  genStat23_sourceId
+processing branch  ngenGamma
+processing branch  genGamma_pt
+processing branch  genGamma_eta
+processing branch  genGamma_phi
+processing branch  genGamma_motherId
+processing branch  ngenTau
+processing branch  ngenTau1Prong
+processing branch  ngenTau3Prong
+processing branch  genTau_pt
+processing branch  genTau_eta
+processing branch  genTau_phi
+processing branch  genTau_mass
+processing branch  genTau_pdgId
+processing branch  genTau_status
+processing branch  genTau_charge
+processing branch  genTau_sourceId
+processing branch  genTau_decayMode
+processing branch  genTau_leadTrackPt
+processing branch  genTau_neutralDaughters
+processing branch  ngenLepFromTau
+processing branch  genLepFromTau_pt
+processing branch  genLepFromTau_eta
+processing branch  genLepFromTau_phi
+processing branch  genLepFromTau_mass
+processing branch  genLepFromTau_pdgId
+processing branch  genLepFromTau_status
+processing branch  genLepFromTau_charge
+processing branch  genLepFromTau_sourceId
+processing branch  ngenLepFromZ
+processing branch  ngenNuFromZ
+processing branch  GenSusyMScan1
+processing branch  GenSusyMScan2
+processing branch  GenSusyMScan3
+processing branch  GenSusyMScan4
+processing branch  nLHEweight
+processing branch  LHEweight_wgt
+processing branch  njet
+processing branch  jet_pt
+processing branch  jet_eta
+processing branch  jet_phi
+processing branch  jet_mass
+processing branch  jet_btagCSV
+processing branch  jet_btagMVA
+processing branch  jet_rawPt
+processing branch  jet_mcPt
+processing branch  jet_mcFlavour
+processing branch  jet_hadronFlavour
+processing branch  jet_qgl
+processing branch  jet_area
+processing branch  jet_id
+processing branch  jet_puId
+processing branch  jet_muf
+processing branch  weight_lepsf
+processing branch  weight_lepsf_UP
+processing branch  weight_lepsf_DN
+processing branch  weight_lepsf_0l
+processing branch  weight_lepsf_0l_UP
+processing branch  weight_lepsf_0l_DN
+processing branch  weight_btagsf
+processing branch  weight_btagsf_heavy_UP
+processing branch  weight_btagsf_light_UP
+processing branch  weight_btagsf_heavy_DN
+processing branch  weight_btagsf_light_DN
+processing branch  weight_sigtrigsf
+processing branch  weight_dileptrigsf
+processing branch  weight_phottrigsf
+processing branch  weight_pu
+processing branch  weight_isr
+processing branch  weight_isr_UP
+processing branch  weight_isr_DN
+processing branch  weight_scales_UP
+processing branch  weight_scales_DN
+processing branch  weight_pdfs_UP
+processing branch  weight_pdfs_DN
+processing branch  weight_toppt
+processing branch  genRecoil_pt
+processing branch  genTop_pt
+processing branch  genTbar_pt
+processing branch  genProd_pdgId
+processing branch  weight_pol_L
+processing branch  weight_pol_R
+processing branch  nisrMatch
+******************************************************************************
+*Tree    :mt2       : A Baby Ntuple                                          *
+*Entries :  3779141 : Total =      8726784954 bytes  File  Size = 2966351962 *
+*        :          : Tree compression factor =   2.94                       *
+******************************************************************************
+*Br    0 :run       : run/I                                                  *
+*Entries :  3779141 : Total  Size=   15127873 bytes  File Size  =      82305 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 182.23     *
+*............................................................................*
+*Br    1 :lumi      : lumi/I                                                 *
+*Entries :  3779141 : Total  Size=   15127972 bytes  File Size  =     178505 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  84.02     *
+*............................................................................*
+*Br    2 :evt       : evt/l                                                  *
+*Entries :  3779141 : Total  Size=   30246845 bytes  File Size  =    8467295 *
+*Baskets :       93 : Basket Size=     322560 bytes  Compression=   3.54     *
+*............................................................................*
+*Br    3 :isData    : isData/I                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =      75051 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 199.85     *
+*............................................................................*
+*Br    4 :isGolden  : isGolden/I                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =      75237 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 199.35     *
+*............................................................................*
+*Br    5 :evt_scale1fb : evt_scale1fb/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =      83607 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.40     *
+*............................................................................*
+*Br    6 :evt_xsec  : evt_xsec/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =      83049 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.60     *
+*............................................................................*
+*Br    7 :evt_kfactor : evt_kfactor/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =      83514 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.60     *
+*............................................................................*
+*Br    8 :evt_filter : evt_filter/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =      83235 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.20     *
+*............................................................................*
+*Br    9 :evt_nEvts : evt_nEvts/l                                            *
+*Entries :  3779141 : Total  Size=   30247439 bytes  File Size  =     170748 *
+*Baskets :       93 : Basket Size=     322560 bytes  Compression= 175.68     *
+*............................................................................*
+*Br   10 :evt_id    : evt_id/I                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =      82770 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 181.21     *
+*............................................................................*
+*Br   11 :genWeight : genWeight/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =      83142 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.40     *
+*............................................................................*
+*Br   12 :puWeight  : puWeight/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =      83049 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.60     *
+*............................................................................*
+*Br   13 :nVert     : nVert/I                                                *
+*Entries :  3779141 : Total  Size=   15128071 bytes  File Size  =    4131804 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   3.63     *
+*............................................................................*
+*Br   14 :nTrueInt  : nTrueInt/I                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =    4273642 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   3.51     *
+*............................................................................*
+*Br   15 :rho       : rho/F                                                  *
+*Entries :  3779141 : Total  Size=   15127873 bytes  File Size  =   13223699 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.13     *
+*............................................................................*
+*Br   16 :nJet30    : nJet30/I                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    2552859 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.88     *
+*............................................................................*
+*Br   17 :nJet30JECup : nJet30JECup/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =    2568984 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.84     *
+*............................................................................*
+*Br   18 :nJet30JECdn : nJet30JECdn/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =    2545336 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.89     *
+*............................................................................*
+*Br   19 :nJet40    : nJet40/I                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    2419189 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   6.20     *
+*............................................................................*
+*Br   20 :nBJet20   : nBJet20/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1240984 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.09     *
+*............................................................................*
+*Br   21 :nBJet20csv : nBJet20csv/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    1241232 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.08     *
+*............................................................................*
+*Br   22 :nBJet20mva : nBJet20mva/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    1303459 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.51     *
+*............................................................................*
+*Br   23 :nBJet20JECup : nBJet20JECup/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1247829 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.02     *
+*............................................................................*
+*Br   24 :nBJet20JECdn : nBJet20JECdn/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1243820 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.06     *
+*............................................................................*
+*Br   25 :nBJet25   : nBJet25/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1206917 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.43     *
+*............................................................................*
+*Br   26 :nBJet30   : nBJet30/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1175839 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.76     *
+*............................................................................*
+*Br   27 :nBJet30csv : nBJet30csv/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    1176079 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.75     *
+*............................................................................*
+*Br   28 :nBJet30mva : nBJet30mva/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    1251967 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.98     *
+*............................................................................*
+*Br   29 :nBJet40   : nBJet40/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1119735 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  13.39     *
+*............................................................................*
+*Br   30 :nJet30FailId : nJet30FailId/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     179851 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  83.40     *
+*............................................................................*
+*Br   31 :nJet100FailId : nJet100FailId/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     105072 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 142.75     *
+*............................................................................*
+*Br   32 :nJet20BadFastsim : nJet20BadFastsim/I                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =      75981 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 197.40     *
+*............................................................................*
+*Br   33 :nJet200MuFrac50DphiMet : nJet200MuFrac50DphiMet/I                  *
+*Entries :  3779141 : Total  Size=   15130234 bytes  File Size  =      78453 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 191.18     *
+*............................................................................*
+*Br   34 :nMuons10  : nMuons10/I                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =    1443002 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.39     *
+*............................................................................*
+*Br   35 :nBadMuons20 : nBadMuons20/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     120874 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 124.09     *
+*............................................................................*
+*Br   36 :nElectrons10 : nElectrons10/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1393456 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.76     *
+*............................................................................*
+*Br   37 :nLepLowMT : nLepLowMT/I                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    1678309 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   8.94     *
+*............................................................................*
+*Br   38 :nTaus20   : nTaus20/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1614820 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.29     *
+*............................................................................*
+*Br   39 :nGammas20 : nGammas20/I                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    1368164 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.96     *
+*............................................................................*
+*Br   40 :nPFCHCand3 : nPFCHCand3/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    4266679 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   3.52     *
+*............................................................................*
+*Br   41 :deltaPhiMin : deltaPhiMin/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13500301 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   42 :deltaPhiMin_genmet : deltaPhiMin_genmet/F                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =   13500424 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   43 :diffMetMht : diffMetMht/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   13555154 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   44 :diffMetMht_genmet : diffMetMht_genmet/F                            *
+*Entries :  3779141 : Total  Size=   15129259 bytes  File Size  =   13541081 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   45 :deltaPhiMinJECup : deltaPhiMinJECup/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =   13500919 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   46 :deltaPhiMinJECdn : deltaPhiMinJECdn/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =   13501524 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   47 :diffMetMhtJECup : diffMetMhtJECup/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =   13541688 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   48 :diffMetMhtJECdn : diffMetMhtJECdn/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =   13542181 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   49 :minMTBMet : minMTBMet/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    3252025 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   4.61     *
+*............................................................................*
+*Br   50 :zll_minMTBMet : zll_minMTBMet/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     105801 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 141.77     *
+*............................................................................*
+*Br   51 :gamma_minMTBMet : gamma_minMTBMet/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =    3109407 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   4.82     *
+*............................................................................*
+*Br   52 :ht        : ht/F                                                   *
+*Entries :  3779141 : Total  Size=   15127774 bytes  File Size  =   13004687 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   53 :htJECup   : htJECup/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   12964026 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.16     *
+*............................................................................*
+*Br   54 :htJECdn   : htJECdn/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   12972955 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.16     *
+*............................................................................*
+*Br   55 :mt2       : mt2/F                                                  *
+*Entries :  3779141 : Total  Size=   15127873 bytes  File Size  =   12116095 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.24     *
+*............................................................................*
+*Br   56 :mt2JECup  : mt2JECup/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =   12144076 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.24     *
+*............................................................................*
+*Br   57 :mt2JECdn  : mt2JECdn/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =   12199153 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.23     *
+*............................................................................*
+*Br   58 :mt2_gen   : mt2_gen/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   12264564 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.22     *
+*............................................................................*
+*Br   59 :mt2_genmet : mt2_genmet/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   12186408 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.23     *
+*............................................................................*
+*Br   60 :jet1_pt   : jet1_pt/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   13006678 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   61 :jet2_pt   : jet2_pt/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   13091646 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   62 :jet1_ptJECup : jet1_ptJECup/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13002986 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   63 :jet2_ptJECup : jet2_ptJECup/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13102421 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.14     *
+*............................................................................*
+*Br   64 :jet1_ptJECdn : jet1_ptJECdn/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13000239 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   65 :jet2_ptJECdn : jet2_ptJECdn/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13102911 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.14     *
+*............................................................................*
+*Br   66 :jet_failFSveto : jet_failFSveto/I                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =      75795 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 197.88     *
+*............................................................................*
+*Br   67 :gamma_jet1_pt : gamma_jet1_pt/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13034572 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   68 :gamma_jet2_pt : gamma_jet2_pt/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13012125 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   69 :pseudoJet1_pt : pseudoJet1_pt/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13030519 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.15     *
+*............................................................................*
+*Br   70 :pseudoJet1_eta : pseudoJet1_eta/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =   13877495 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   71 :pseudoJet1_phi : pseudoJet1_phi/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =   13887955 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   72 :pseudoJet1_mass : pseudoJet1_mass/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =   13566418 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   73 :pseudoJet2_pt : pseudoJet2_pt/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13168248 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.14     *
+*............................................................................*
+*Br   74 :pseudoJet2_eta : pseudoJet2_eta/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =   13881856 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   75 :pseudoJet2_phi : pseudoJet2_phi/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =   13885548 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   76 :pseudoJet2_mass : pseudoJet2_mass/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =   13487361 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   77 :mht_pt    : mht_pt/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =   13526772 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   78 :mht_phi   : mht_phi/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   13900227 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   79 :mht_ptJECup : mht_ptJECup/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13525568 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   80 :mht_phiJECup : mht_phiJECup/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13900745 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   81 :mht_ptJECdn : mht_ptJECdn/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13523620 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   82 :mht_phiJECdn : mht_phiJECdn/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13900716 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   83 :met_pt    : met_pt/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =   13518825 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   84 :met_phi   : met_phi/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =   13885213 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   85 :met_ptJECup : met_ptJECup/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13518341 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   86 :met_phiJECup : met_phiJECup/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13885625 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   87 :met_ptJECdn : met_ptJECdn/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13519957 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   88 :met_phiJECdn : met_phiJECdn/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13885844 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   89 :met_rawPt : met_rawPt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =   13515813 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   90 :met_rawPhi : met_rawPhi/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   13886438 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   91 :met_caloPt : met_caloPt/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   13491350 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   92 :met_caloPhi : met_caloPhi/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =   13889248 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   93 :met_trkPt : met_trkPt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =   13477617 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   94 :met_trkPhi : met_trkPhi/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   13900275 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   95 :met_genPt : met_genPt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =   13569422 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   96 :met_genPhi : met_genPhi/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =   13902851 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   97 :met_miniaodPt : met_miniaodPt/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13519317 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br   98 :met_miniaodPhi : met_miniaodPhi/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =   13887174 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br   99 :Flag_EcalDeadCellTriggerPrimitiveFilter :                          *
+*         | Flag_EcalDeadCellTriggerPrimitiveFilter/I                        *
+*Entries :  3779141 : Total  Size=   15131917 bytes  File Size  =     109257 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 137.28     *
+*............................................................................*
+*Br  100 :Flag_trkPOG_manystripclus53X : Flag_trkPOG_manystripclus53X/I      *
+*Entries :  3779141 : Total  Size=   15130828 bytes  File Size  =    1608583 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.32     *
+*............................................................................*
+*Br  101 :Flag_ecalLaserCorrFilter : Flag_ecalLaserCorrFilter/I              *
+*Entries :  3779141 : Total  Size=   15130432 bytes  File Size  =      96011 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 156.22     *
+*............................................................................*
+*Br  102 :Flag_trkPOG_toomanystripclus53X : Flag_trkPOG_toomanystripclus53X/I*
+*Entries :  3779141 : Total  Size=   15131125 bytes  File Size  =    1573188 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.53     *
+*............................................................................*
+*Br  103 :Flag_hcalLaserEventFilter : Flag_hcalLaserEventFilter/I            *
+*Entries :  3779141 : Total  Size=   15130531 bytes  File Size  =      84444 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 177.62     *
+*............................................................................*
+*Br  104 :Flag_trkPOG_logErrorTooManyClusters :                              *
+*         | Flag_trkPOG_logErrorTooManyClusters/I                            *
+*Entries :  3779141 : Total  Size=   15131521 bytes  File Size  =      85379 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 175.67     *
+*............................................................................*
+*Br  105 :Flag_trkPOGFilters : Flag_trkPOGFilters/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =    1607758 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.33     *
+*............................................................................*
+*Br  106 :Flag_trackingFailureFilter : Flag_trackingFailureFilter/I          *
+*Entries :  3779141 : Total  Size=   15130630 bytes  File Size  =      76911 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 195.01     *
+*............................................................................*
+*Br  107 :Flag_CSCTightHalo2015Filter : Flag_CSCTightHalo2015Filter/I        *
+*Entries :  3779141 : Total  Size=   15130729 bytes  File Size  =     330788 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  45.34     *
+*............................................................................*
+*Br  108 :Flag_CSCTightHaloFilter : Flag_CSCTightHaloFilter/I                *
+*Entries :  3779141 : Total  Size=   15130333 bytes  File Size  =     295907 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  50.69     *
+*............................................................................*
+*Br  109 :Flag_globalTightHalo2016Filter : Flag_globalTightHalo2016Filter/I  *
+*Entries :  3779141 : Total  Size=   15131026 bytes  File Size  =     175313 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  85.55     *
+*............................................................................*
+*Br  110 :Flag_globalSuperTightHalo2016Filter :                              *
+*         | Flag_globalSuperTightHalo2016Filter/I                            *
+*Entries :  3779141 : Total  Size=   15131521 bytes  File Size  =      86447 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 173.50     *
+*............................................................................*
+*Br  111 :Flag_HBHENoiseFilter : Flag_HBHENoiseFilter/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      90699 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 165.37     *
+*............................................................................*
+*Br  112 :Flag_HBHENoiseIsoFilter : Flag_HBHENoiseIsoFilter/I                *
+*Entries :  3779141 : Total  Size=   15130333 bytes  File Size  =     101322 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 148.03     *
+*............................................................................*
+*Br  113 :Flag_goodVertices : Flag_goodVertices/I                            *
+*Entries :  3779141 : Total  Size=   15129259 bytes  File Size  =      83620 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.37     *
+*............................................................................*
+*Br  114 :Flag_eeBadScFilter : Flag_eeBadScFilter/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =      83700 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.20     *
+*............................................................................*
+*Br  115 :Flag_badMuonFilter : Flag_badMuonFilter/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =      84297 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 177.93     *
+*............................................................................*
+*Br  116 :Flag_badMuonFilterV2 : Flag_badMuonFilterV2/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      85477 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 175.47     *
+*............................................................................*
+*Br  117 :Flag_badMuons : Flag_badMuons/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      83514 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.60     *
+*............................................................................*
+*Br  118 :Flag_duplicateMuons : Flag_duplicateMuons/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =      84072 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.40     *
+*............................................................................*
+*Br  119 :Flag_noBadMuons : Flag_noBadMuons/I                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =      83700 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.20     *
+*............................................................................*
+*Br  120 :Flag_badChargedHadronFilter : Flag_badChargedHadronFilter/I        *
+*Entries :  3779141 : Total  Size=   15130729 bytes  File Size  =      84645 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 177.20     *
+*............................................................................*
+*Br  121 :Flag_badChargedHadronFilterV2 : Flag_badChargedHadronFilterV2/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =      84841 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 176.79     *
+*............................................................................*
+*Br  122 :Flag_METFilters : Flag_METFilters/I                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     320896 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  46.74     *
+*............................................................................*
+*Br  123 :HLT_PFHT800 : HLT_PFHT800/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =    1353097 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.08     *
+*............................................................................*
+*Br  124 :HLT_PFHT900 : HLT_PFHT900/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     768182 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  19.53     *
+*............................................................................*
+*Br  125 :HLT_PFMET170 : HLT_PFMET170/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1086097 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  13.81     *
+*............................................................................*
+*Br  126 :HLT_PFHT300_PFMET100 : HLT_PFHT300_PFMET100/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =    1491177 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.06     *
+*............................................................................*
+*Br  127 :HLT_PFHT300_PFMET110 : HLT_PFHT300_PFMET110/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =    1437899 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.43     *
+*............................................................................*
+*Br  128 :HLT_PFHT350_PFMET100 : HLT_PFHT350_PFMET100/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      76353 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 196.44     *
+*............................................................................*
+*Br  129 :HLT_PFHT350_PFMET120 : HLT_PFHT350_PFMET120/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      76353 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 196.44     *
+*............................................................................*
+*Br  130 :HLT_PFMETNoMu90_PFMHTNoMu90 : HLT_PFMETNoMu90_PFMHTNoMu90/I        *
+*Entries :  3779141 : Total  Size=   15130729 bytes  File Size  =    1541497 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.73     *
+*............................................................................*
+*Br  131 :HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHTNoMu90 :                   *
+*         | HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHTNoMu90/I                 *
+*Entries :  3779141 : Total  Size=   15132610 bytes  File Size  =    1547779 *
+*Baskets :       93 : Basket Size=     161792 bytes  Compression=   9.72     *
+*............................................................................*
+*Br  132 :HLT_PFMETNoMu100_PFMHTNoMu100 : HLT_PFMETNoMu100_PFMHTNoMu100/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =    1518437 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.88     *
+*............................................................................*
+*Br  133 :HLT_PFMETNoMu110_PFMHTNoMu110 : HLT_PFMETNoMu110_PFMHTNoMu110/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =    1490268 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.06     *
+*............................................................................*
+*Br  134 :HLT_PFMETNoMu120_PFMHTNoMu120 : HLT_PFMETNoMu120_PFMHTNoMu120/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =    1445326 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.38     *
+*............................................................................*
+*Br  135 :HLT_PFMET90_PFMHT90 : HLT_PFMET90_PFMHT90/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =    1491588 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.06     *
+*............................................................................*
+*Br  136 :HLT_PFMET100_PFMHT100 : HLT_PFMET100_PFMHT100/I                    *
+*Entries :  3779141 : Total  Size=   15130135 bytes  File Size  =    1435676 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.45     *
+*............................................................................*
+*Br  137 :HLT_PFMET110_PFMHT110 : HLT_PFMET110_PFMHT110/I                    *
+*Entries :  3779141 : Total  Size=   15130135 bytes  File Size  =    1388057 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.81     *
+*............................................................................*
+*Br  138 :HLT_PFMET120_PFMHT120 : HLT_PFMET120_PFMHT120/I                    *
+*Entries :  3779141 : Total  Size=   15130135 bytes  File Size  =    1327203 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.30     *
+*............................................................................*
+*Br  139 :HLT_PFJet450 : HLT_PFJet450/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     736079 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  20.38     *
+*............................................................................*
+*Br  140 :HLT_PFJet500 : HLT_PFJet500/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     479212 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  31.30     *
+*............................................................................*
+*Br  141 :HLT_ECALHT800 : HLT_ECALHT800/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     112063 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 133.84     *
+*............................................................................*
+*Br  142 :HLT_SingleMu : HLT_SingleMu/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1324883 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.32     *
+*............................................................................*
+*Br  143 :HLT_SingleMu_NonIso : HLT_SingleMu_NonIso/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =    1140571 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  13.15     *
+*............................................................................*
+*Br  144 :HLT_SingleEl : HLT_SingleEl/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1225237 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.24     *
+*............................................................................*
+*Br  145 :HLT_SingleEl_NonIso : HLT_SingleEl_NonIso/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =     788727 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  19.02     *
+*............................................................................*
+*Br  146 :HLT_DoubleEl : HLT_DoubleEl/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     185312 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  80.94     *
+*............................................................................*
+*Br  147 :HLT_DoubleEl33 : HLT_DoubleEl33/I                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =     281772 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  53.23     *
+*............................................................................*
+*Br  148 :HLT_MuX_Ele12 : HLT_MuX_Ele12/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     236183 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  63.51     *
+*............................................................................*
+*Br  149 :HLT_Mu8_EleX : HLT_Mu8_EleX/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     261028 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  57.46     *
+*............................................................................*
+*Br  150 :HLT_Mu30_Ele30_NonIso : HLT_Mu30_Ele30_NonIso/I                    *
+*Entries :  3779141 : Total  Size=   15130135 bytes  File Size  =     310905 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  48.24     *
+*............................................................................*
+*Br  151 :HLT_Mu33_Ele33_NonIso : HLT_Mu33_Ele33_NonIso/I                    *
+*Entries :  3779141 : Total  Size=   15130135 bytes  File Size  =     290876 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  51.56     *
+*............................................................................*
+*Br  152 :HLT_DoubleMu : HLT_DoubleMu/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     209387 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  71.63     *
+*............................................................................*
+*Br  153 :HLT_DoubleMu_NonIso : HLT_DoubleMu_NonIso/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =     460544 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  32.57     *
+*............................................................................*
+*Br  154 :HLT_Photon120 : HLT_Photon120/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     956709 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  15.68     *
+*............................................................................*
+*Br  155 :HLT_Photon165_HE10 : HLT_Photon165_HE10/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =     659818 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  22.73     *
+*............................................................................*
+*Br  156 :HLT_Photon250_NoHE : HLT_Photon250_NoHE/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =     513157 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  29.23     *
+*............................................................................*
+*Br  157 :HLT_PFHT125_Prescale : HLT_PFHT125_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      84012 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.53     *
+*............................................................................*
+*Br  158 :HLT_PFHT200_Prescale : HLT_PFHT200_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      84422 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 177.67     *
+*............................................................................*
+*Br  159 :HLT_PFHT300_Prescale : HLT_PFHT300_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      90997 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 164.83     *
+*............................................................................*
+*Br  160 :HLT_PFHT350_Prescale : HLT_PFHT350_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =     103942 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 144.30     *
+*............................................................................*
+*Br  161 :HLT_PFHT475_Prescale : HLT_PFHT475_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =     207770 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  72.19     *
+*............................................................................*
+*Br  162 :HLT_PFHT600_Prescale : HLT_PFHT600_Prescale/I                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =    1035094 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  14.49     *
+*............................................................................*
+*Br  163 :HLT_DiCentralPFJet70_PFMET120 : HLT_DiCentralPFJet70_PFMET120/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =      77190 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 194.31     *
+*............................................................................*
+*Br  164 :HLT_DiCentralPFJet55_PFMET110 : HLT_DiCentralPFJet55_PFMET110/I    *
+*Entries :  3779141 : Total  Size=   15130927 bytes  File Size  =      77190 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 194.31     *
+*............................................................................*
+*Br  165 :nlep      : nlep/I                                                 *
+*Entries :  3779141 : Total  Size=   15127972 bytes  File Size  =    1650167 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.09     *
+*............................................................................*
+*Br  166 :lep_pt    : lep_pt[nlep]/F                                         *
+*Entries :  3779141 : Total  Size=   23158361 bytes  File Size  =   10686382 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.16     *
+*............................................................................*
+*Br  167 :lep_eta   : lep_eta[nlep]/F                                        *
+*Entries :  3779141 : Total  Size=   23158521 bytes  File Size  =   10920168 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.11     *
+*............................................................................*
+*Br  168 :lep_phi   : lep_phi[nlep]/F                                        *
+*Entries :  3779141 : Total  Size=   23158521 bytes  File Size  =   10926047 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.11     *
+*............................................................................*
+*Br  169 :lep_mass  : lep_mass[nlep]/F                                       *
+*Entries :  3779141 : Total  Size=   23158681 bytes  File Size  =    8170261 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.82     *
+*............................................................................*
+*Br  170 :lep_charge : lep_charge[nlep]/I                                    *
+*Entries :  3779141 : Total  Size=   23158994 bytes  File Size  =    4608908 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   5.00     *
+*............................................................................*
+*Br  171 :lep_pdgId : lep_pdgId[nlep]/I                                      *
+*Entries :  3779141 : Total  Size=   23158834 bytes  File Size  =    5281504 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   4.36     *
+*............................................................................*
+*Br  172 :lep_dxy   : lep_dxy[nlep]/F                                        *
+*Entries :  3779141 : Total  Size=   23158521 bytes  File Size  =   11088669 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.08     *
+*............................................................................*
+*Br  173 :lep_dz    : lep_dz[nlep]/F                                         *
+*Entries :  3779141 : Total  Size=   23158361 bytes  File Size  =   11068369 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.08     *
+*............................................................................*
+*Br  174 :lep_tightId : lep_tightId[nlep]/I                                  *
+*Entries :  3779141 : Total  Size=   23159154 bytes  File Size  =    4778193 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   4.82     *
+*............................................................................*
+*Br  175 :lep_heepId : lep_heepId[nlep]/I                                    *
+*Entries :  3779141 : Total  Size=   23158994 bytes  File Size  =    4217169 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   5.46     *
+*............................................................................*
+*Br  176 :lep_highPtFit_pt : lep_highPtFit_pt[nlep]/F                        *
+*Entries :  3779141 : Total  Size=   23159961 bytes  File Size  =    8441505 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   2.74     *
+*............................................................................*
+*Br  177 :lep_highPtFit_eta : lep_highPtFit_eta[nlep]/F                      *
+*Entries :  3779141 : Total  Size=   23160121 bytes  File Size  =    8572441 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   2.69     *
+*............................................................................*
+*Br  178 :lep_highPtFit_phi : lep_highPtFit_phi[nlep]/F                      *
+*Entries :  3779141 : Total  Size=   23160121 bytes  File Size  =    8573145 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   2.69     *
+*............................................................................*
+*Br  179 :lep_relIso03 : lep_relIso03[nlep]/F                                *
+*Entries :  3779141 : Total  Size=   23159321 bytes  File Size  =    9067966 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   2.54     *
+*............................................................................*
+*Br  180 :lep_relIso04 : lep_relIso04[nlep]/F                                *
+*Entries :  3779141 : Total  Size=   23159321 bytes  File Size  =    7518419 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   3.06     *
+*............................................................................*
+*Br  181 :lep_miniRelIso : lep_miniRelIso[nlep]/F                            *
+*Entries :  3779141 : Total  Size=   23159641 bytes  File Size  =    7281926 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   3.17     *
+*............................................................................*
+*Br  182 :lep_relIsoAn04 : lep_relIsoAn04[nlep]/F                            *
+*Entries :  3779141 : Total  Size=   23159641 bytes  File Size  =    9717823 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   2.38     *
+*............................................................................*
+*Br  183 :lep_mcMatchId : lep_mcMatchId[nlep]/I                              *
+*Entries :  3779141 : Total  Size=   23159474 bytes  File Size  =    4780519 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   4.82     *
+*............................................................................*
+*Br  184 :lep_lostHits : lep_lostHits[nlep]/I                                *
+*Entries :  3779141 : Total  Size=   23159314 bytes  File Size  =    3964948 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   5.81     *
+*............................................................................*
+*Br  185 :lep_convVeto : lep_convVeto[nlep]/I                                *
+*Entries :  3779141 : Total  Size=   23159314 bytes  File Size  =    3560476 *
+*Baskets :      154 : Basket Size=     247296 bytes  Compression=   6.47     *
+*............................................................................*
+*Br  186 :lep_tightCharge : lep_tightCharge[nlep]/I                          *
+*Entries :  3779141 : Total  Size=   23159794 bytes  File Size  =    3930842 *
+*Baskets :      154 : Basket Size=     247808 bytes  Compression=   5.87     *
+*............................................................................*
+*Br  187 :nisoTrack : nisoTrack/I                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    1971239 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   7.61     *
+*............................................................................*
+*Br  188 :isoTrack_pt : isoTrack_pt[nisoTrack]/F                             *
+*Entries :  3779141 : Total  Size=   27880215 bytes  File Size  =   12380167 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   2.25     *
+*............................................................................*
+*Br  189 :isoTrack_eta : isoTrack_eta[nisoTrack]/F                           *
+*Entries :  3779141 : Total  Size=   27880365 bytes  File Size  =   15094464 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   1.84     *
+*............................................................................*
+*Br  190 :isoTrack_phi : isoTrack_phi[nisoTrack]/F                           *
+*Entries :  3779141 : Total  Size=   27880365 bytes  File Size  =   15845249 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   1.76     *
+*............................................................................*
+*Br  191 :isoTrack_mass : isoTrack_mass[nisoTrack]/F                         *
+*Entries :  3779141 : Total  Size=   27880515 bytes  File Size  =    9261319 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   3.00     *
+*............................................................................*
+*Br  192 :isoTrack_absIso : isoTrack_absIso[nisoTrack]/F                     *
+*Entries :  3779141 : Total  Size=   27880815 bytes  File Size  =    9511191 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   2.93     *
+*............................................................................*
+*Br  193 :isoTrack_relIsoAn04 : isoTrack_relIsoAn04[nisoTrack]/F             *
+*Entries :  3779141 : Total  Size=   27881415 bytes  File Size  =   13356735 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   2.08     *
+*............................................................................*
+*Br  194 :isoTrack_dz : isoTrack_dz[nisoTrack]/F                             *
+*Entries :  3779141 : Total  Size=   27880215 bytes  File Size  =   12826666 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   2.17     *
+*............................................................................*
+*Br  195 :isoTrack_pdgId : isoTrack_pdgId[nisoTrack]/I                       *
+*Entries :  3779141 : Total  Size=   27880658 bytes  File Size  =    7079281 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   3.93     *
+*............................................................................*
+*Br  196 :isoTrack_mcMatchId : isoTrack_mcMatchId[nisoTrack]/I               *
+*Entries :  3779141 : Total  Size=   27881258 bytes  File Size  =    4225224 *
+*Baskets :      144 : Basket Size=     297984 bytes  Compression=   6.58     *
+*............................................................................*
+*Br  197 :nhighPtPFcands : nhighPtPFcands/I                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =    1262733 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.88     *
+*............................................................................*
+*Br  198 :highPtPFcands_pt : highPtPFcands_pt[nhighPtPFcands]/F              *
+*Entries :  3779141 : Total  Size=   17977705 bytes  File Size  =    3829374 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   4.67     *
+*............................................................................*
+*Br  199 :highPtPFcands_eta : highPtPFcands_eta[nhighPtPFcands]/F            *
+*Entries :  3779141 : Total  Size=   17977883 bytes  File Size  =    4444919 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   4.02     *
+*............................................................................*
+*Br  200 :highPtPFcands_phi : highPtPFcands_phi[nhighPtPFcands]/F            *
+*Entries :  3779141 : Total  Size=   17977883 bytes  File Size  =    4453897 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   4.02     *
+*............................................................................*
+*Br  201 :highPtPFcands_mass : highPtPFcands_mass[nhighPtPFcands]/F          *
+*Entries :  3779141 : Total  Size=   17978061 bytes  File Size  =    2236254 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   8.00     *
+*............................................................................*
+*Br  202 :highPtPFcands_absIso : highPtPFcands_absIso[nhighPtPFcands]/F      *
+*Entries :  3779141 : Total  Size=   17978417 bytes  File Size  =    3350415 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   5.34     *
+*............................................................................*
+*Br  203 :highPtPFcands_relIsoAn04 :                                         *
+*         | highPtPFcands_relIsoAn04[nhighPtPFcands]/F                       *
+*Entries :  3779141 : Total  Size=   17979129 bytes  File Size  =    3980774 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   4.49     *
+*............................................................................*
+*Br  204 :highPtPFcands_dz : highPtPFcands_dz[nhighPtPFcands]/F              *
+*Entries :  3779141 : Total  Size=   17977705 bytes  File Size  =    4040222 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   4.43     *
+*............................................................................*
+*Br  205 :highPtPFcands_pdgId : highPtPFcands_pdgId[nhighPtPFcands]/I        *
+*Entries :  3779141 : Total  Size=   17978232 bytes  File Size  =    2375751 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   7.53     *
+*............................................................................*
+*Br  206 :highPtPFcands_mcMatchId : highPtPFcands_mcMatchId[nhighPtPFcands]/I*
+*Entries :  3779141 : Total  Size=   17978944 bytes  File Size  =    1841983 *
+*Baskets :      172 : Basket Size=     191488 bytes  Compression=   9.71     *
+*............................................................................*
+*Br  207 :nPFLep5LowMT : nPFLep5LowMT/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    1665054 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.01     *
+*............................................................................*
+*Br  208 :nPFHad10LowMT : nPFHad10LowMT/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     819270 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  18.31     *
+*............................................................................*
+*Br  209 :ntau      : ntau/I                                                 *
+*Entries :  3779141 : Total  Size=   15127972 bytes  File Size  =    1614599 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.29     *
+*............................................................................*
+*Br  210 :tau_pt    : tau_pt[ntau]/F                                         *
+*Entries :  3779141 : Total  Size=   21100885 bytes  File Size  =    8438812 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   2.49     *
+*............................................................................*
+*Br  211 :tau_eta   : tau_eta[ntau]/F                                        *
+*Entries :  3779141 : Total  Size=   21101051 bytes  File Size  =    8594602 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   2.45     *
+*............................................................................*
+*Br  212 :tau_phi   : tau_phi[ntau]/F                                        *
+*Entries :  3779141 : Total  Size=   21101051 bytes  File Size  =    8614522 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   2.44     *
+*............................................................................*
+*Br  213 :tau_mass  : tau_mass[ntau]/F                                       *
+*Entries :  3779141 : Total  Size=   21101217 bytes  File Size  =    4957201 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   4.25     *
+*............................................................................*
+*Br  214 :tau_charge : tau_charge[ntau]/I                                    *
+*Entries :  3779141 : Total  Size=   21101542 bytes  File Size  =    3780638 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   5.57     *
+*............................................................................*
+*Br  215 :tau_dxy   : tau_dxy[ntau]/F                                        *
+*Entries :  3779141 : Total  Size=   21101051 bytes  File Size  =    3000760 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   7.01     *
+*............................................................................*
+*Br  216 :tau_dz    : tau_dz[ntau]/F                                         *
+*Entries :  3779141 : Total  Size=   21100885 bytes  File Size  =    2998502 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   7.02     *
+*............................................................................*
+*Br  217 :tau_idCI3hit : tau_idCI3hit[ntau]/I                                *
+*Entries :  3779141 : Total  Size=   21101874 bytes  File Size  =    3826876 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   5.50     *
+*............................................................................*
+*Br  218 :tau_isoCI3hit : tau_isoCI3hit[ntau]/F                              *
+*Entries :  3779141 : Total  Size=   21102047 bytes  File Size  =    6291466 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   3.35     *
+*............................................................................*
+*Br  219 :tau_mcMatchId : tau_mcMatchId[ntau]/I                              *
+*Entries :  3779141 : Total  Size=   21102040 bytes  File Size  =    3005482 *
+*Baskets :      160 : Basket Size=     225792 bytes  Compression=   7.00     *
+*............................................................................*
+*Br  220 :ngamma    : ngamma/I                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    1367885 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  10.96     *
+*............................................................................*
+*Br  221 :gamma_pt  : gamma_pt[ngamma]/F                                     *
+*Entries :  3779141 : Total  Size=   18457247 bytes  File Size  =    5010167 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.66     *
+*............................................................................*
+*Br  222 :gamma_eta : gamma_eta[ngamma]/F                                    *
+*Entries :  3779141 : Total  Size=   18457422 bytes  File Size  =    5084151 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.61     *
+*............................................................................*
+*Br  223 :gamma_phi : gamma_phi[ngamma]/F                                    *
+*Entries :  3779141 : Total  Size=   18457422 bytes  File Size  =    5096958 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.60     *
+*............................................................................*
+*Br  224 :gamma_mass : gamma_mass[ngamma]/F                                  *
+*Entries :  3779141 : Total  Size=   18457597 bytes  File Size  =    3645533 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   5.04     *
+*............................................................................*
+*Br  225 :gamma_mcMatchId : gamma_mcMatchId[ngamma]/I                        *
+*Entries :  3779141 : Total  Size=   18458465 bytes  File Size  =    2096644 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   8.76     *
+*............................................................................*
+*Br  226 :gamma_genIso04 : gamma_genIso04[ngamma]/F                          *
+*Entries :  3779141 : Total  Size=   18458297 bytes  File Size  =    2354001 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   7.80     *
+*............................................................................*
+*Br  227 :gamma_drMinParton : gamma_drMinParton[ngamma]/F                    *
+*Entries :  3779141 : Total  Size=   18458822 bytes  File Size  =    2367393 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   7.76     *
+*............................................................................*
+*Br  228 :gamma_chHadIso : gamma_chHadIso[ngamma]/F                          *
+*Entries :  3779141 : Total  Size=   18458297 bytes  File Size  =    4867096 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.77     *
+*............................................................................*
+*Br  229 :gamma_neuHadIso : gamma_neuHadIso[ngamma]/F                        *
+*Entries :  3779141 : Total  Size=   18458472 bytes  File Size  =    4417964 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   4.16     *
+*............................................................................*
+*Br  230 :gamma_phIso : gamma_phIso[ngamma]/F                                *
+*Entries :  3779141 : Total  Size=   18457772 bytes  File Size  =    4987087 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.68     *
+*............................................................................*
+*Br  231 :gamma_sigmaIetaIeta : gamma_sigmaIetaIeta[ngamma]/F                *
+*Entries :  3779141 : Total  Size=   18459172 bytes  File Size  =    4858377 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.78     *
+*............................................................................*
+*Br  232 :gamma_r9  : gamma_r9[ngamma]/F                                     *
+*Entries :  3779141 : Total  Size=   18457247 bytes  File Size  =    4912854 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.74     *
+*............................................................................*
+*Br  233 :gamma_hOverE : gamma_hOverE[ngamma]/F                              *
+*Entries :  3779141 : Total  Size=   18457947 bytes  File Size  =    4149371 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   4.42     *
+*............................................................................*
+*Br  234 :gamma_hOverE015 : gamma_hOverE015[ngamma]/F                        *
+*Entries :  3779141 : Total  Size=   18458472 bytes  File Size  =    4781725 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   3.84     *
+*............................................................................*
+*Br  235 :gamma_idCutBased : gamma_idCutBased[ngamma]/I                      *
+*Entries :  3779141 : Total  Size=   18458640 bytes  File Size  =    2341698 *
+*Baskets :      169 : Basket Size=     197632 bytes  Compression=   7.84     *
+*............................................................................*
+*Br  236 :gamma_mt2 : gamma_mt2/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =   11848281 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.27     *
+*............................................................................*
+*Br  237 :gamma_nJet30 : gamma_nJet30/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    2556890 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.87     *
+*............................................................................*
+*Br  238 :gamma_nJet40 : gamma_nJet40/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    2429238 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   6.17     *
+*............................................................................*
+*Br  239 :gamma_nJet30FailId : gamma_nJet30FailId/I                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =     165990 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  90.36     *
+*............................................................................*
+*Br  240 :gamma_nJet100FailId : gamma_nJet100FailId/I                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =      99067 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 151.40     *
+*............................................................................*
+*Br  241 :gamma_nBJet20 : gamma_nBJet20/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    1208510 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.41     *
+*............................................................................*
+*Br  242 :gamma_nBJet20csv : gamma_nBJet20csv/I                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =    1208797 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.41     *
+*............................................................................*
+*Br  243 :gamma_nBJet20mva : gamma_nBJet20mva/I                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =    1268001 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  11.83     *
+*............................................................................*
+*Br  244 :gamma_nBJet25 : gamma_nBJet25/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    1172604 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.79     *
+*............................................................................*
+*Br  245 :gamma_nBJet30 : gamma_nBJet30/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    1140160 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  13.16     *
+*............................................................................*
+*Br  246 :gamma_nBJet40 : gamma_nBJet40/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    1081727 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  13.87     *
+*............................................................................*
+*Br  247 :gamma_ht  : gamma_ht/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =   13129516 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.14     *
+*............................................................................*
+*Br  248 :gamma_deltaPhiMin : gamma_deltaPhiMin/F                            *
+*Entries :  3779141 : Total  Size=   15129259 bytes  File Size  =   13542086 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br  249 :gamma_diffMetMht : gamma_diffMetMht/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =   13553923 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br  250 :gamma_mht_pt : gamma_mht_pt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13510633 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br  251 :gamma_mht_phi : gamma_mht_phi/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13898640 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br  252 :gamma_met_pt : gamma_met_pt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13521204 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br  253 :gamma_met_phi : gamma_met_phi/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   13886514 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.08     *
+*............................................................................*
+*Br  254 :zll_mt2   : zll_mt2/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =     201942 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  74.27     *
+*............................................................................*
+*Br  255 :zll_deltaPhiMin : zll_deltaPhiMin/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     229438 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.37     *
+*............................................................................*
+*Br  256 :zll_diffMetMht : zll_diffMetMht/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =     228759 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.57     *
+*............................................................................*
+*Br  257 :zll_met_pt : zll_met_pt/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =     227793 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.84     *
+*............................................................................*
+*Br  258 :zll_met_phi : zll_met_phi/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     230259 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.14     *
+*............................................................................*
+*Br  259 :zll_mht_pt : zll_mht_pt/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =     227043 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  66.06     *
+*............................................................................*
+*Br  260 :zll_mht_phi : zll_mht_phi/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     229868 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.25     *
+*............................................................................*
+*Br  261 :zll_mass  : zll_mass/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =     228931 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.52     *
+*............................................................................*
+*Br  262 :zll_pt    : zll_pt/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =     227421 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.95     *
+*............................................................................*
+*Br  263 :zll_eta   : zll_eta/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =     229839 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.26     *
+*............................................................................*
+*Br  264 :zll_phi   : zll_phi/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =     229937 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.23     *
+*............................................................................*
+*Br  265 :zll_ht    : zll_ht/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =     209060 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  71.74     *
+*............................................................................*
+*Br  266 :zll_mt2JECup : zll_mt2JECup/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     204328 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  73.41     *
+*............................................................................*
+*Br  267 :zll_deltaPhiMinJECup : zll_deltaPhiMinJECup/F                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      84258 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.01     *
+*............................................................................*
+*Br  268 :zll_diffMetMhtJECup : zll_diffMetMhtJECup/F                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =     228959 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.51     *
+*............................................................................*
+*Br  269 :zll_met_ptJECup : zll_met_ptJECup/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     228050 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.77     *
+*............................................................................*
+*Br  270 :zll_met_phiJECup : zll_met_phiJECup/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =     230803 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  64.99     *
+*............................................................................*
+*Br  271 :zll_mht_ptJECup : zll_mht_ptJECup/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     227682 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.88     *
+*............................................................................*
+*Br  272 :zll_mht_phiJECup : zll_mht_phiJECup/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =     230664 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.02     *
+*............................................................................*
+*Br  273 :zll_htJECup : zll_htJECup/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     209951 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  71.44     *
+*............................................................................*
+*Br  274 :zll_mt2JECdn : zll_mt2JECdn/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     203347 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  73.76     *
+*............................................................................*
+*Br  275 :zll_deltaPhiMinJECdn : zll_deltaPhiMinJECdn/F                      *
+*Entries :  3779141 : Total  Size=   15130036 bytes  File Size  =      84258 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.01     *
+*............................................................................*
+*Br  276 :zll_diffMetMhtJECdn : zll_diffMetMhtJECdn/F                        *
+*Entries :  3779141 : Total  Size=   15129937 bytes  File Size  =     228899 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.53     *
+*............................................................................*
+*Br  277 :zll_met_ptJECdn : zll_met_ptJECdn/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     228077 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.76     *
+*............................................................................*
+*Br  278 :zll_met_phiJECdn : zll_met_phiJECdn/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =     230856 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  64.97     *
+*............................................................................*
+*Br  279 :zll_mht_ptJECdn : zll_mht_ptJECdn/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     227733 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.86     *
+*............................................................................*
+*Br  280 :zll_mht_phiJECdn : zll_mht_phiJECdn/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =     230220 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.15     *
+*............................................................................*
+*Br  281 :zll_htJECdn : zll_htJECdn/F                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =     209779 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  71.50     *
+*............................................................................*
+*Br  282 :zllmt_mt2 : zllmt_mt2/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =     221475 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  67.72     *
+*............................................................................*
+*Br  283 :zllmt_deltaPhiMin : zllmt_deltaPhiMin/F                            *
+*Entries :  3779141 : Total  Size=   15129259 bytes  File Size  =     229908 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.24     *
+*............................................................................*
+*Br  284 :zllmt_diffMetMht : zllmt_diffMetMht/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =     228864 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.54     *
+*............................................................................*
+*Br  285 :zllmt_met_pt : zllmt_met_pt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     228333 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.69     *
+*............................................................................*
+*Br  286 :zllmt_met_phi : zllmt_met_phi/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     230339 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.12     *
+*............................................................................*
+*Br  287 :zllmt_mht_pt : zllmt_mht_pt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =     228252 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.71     *
+*............................................................................*
+*Br  288 :zllmt_mht_phi : zllmt_mht_phi/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     230343 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.12     *
+*............................................................................*
+*Br  289 :zllmt_ht  : zllmt_ht/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =     210700 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  71.19     *
+*............................................................................*
+*Br  290 :zllmt_mt  : zllmt_mt/F                                             *
+*Entries :  3779141 : Total  Size=   15128368 bytes  File Size  =     229005 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  65.50     *
+*............................................................................*
+*Br  291 :rl_mt2    : rl_mt2/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    8152043 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.84     *
+*............................................................................*
+*Br  292 :rl_deltaPhiMin : rl_deltaPhiMin/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =    8832963 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.70     *
+*............................................................................*
+*Br  293 :rl_diffMetMht : rl_diffMetMht/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    8845750 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.70     *
+*............................................................................*
+*Br  294 :rl_met_pt : rl_met_pt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    8840955 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.70     *
+*............................................................................*
+*Br  295 :rl_met_phi : rl_met_phi/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    9057433 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.66     *
+*............................................................................*
+*Br  296 :rl_mht_pt : rl_mht_pt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    8825570 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.70     *
+*............................................................................*
+*Br  297 :rl_mht_phi : rl_mht_phi/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    9061034 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.66     *
+*............................................................................*
+*Br  298 :rl_mass   : rl_mass/F                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    5737240 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   2.61     *
+*............................................................................*
+*Br  299 :rl_pt     : rl_pt/F                                                *
+*Entries :  3779141 : Total  Size=   15128071 bytes  File Size  =    8833788 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.70     *
+*............................................................................*
+*Br  300 :rl_eta    : rl_eta/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    9038227 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.66     *
+*............................................................................*
+*Br  301 :rl_phi    : rl_phi/F                                               *
+*Entries :  3779141 : Total  Size=   15128170 bytes  File Size  =    9061460 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.66     *
+*............................................................................*
+*Br  302 :rl_ht     : rl_ht/F                                                *
+*Entries :  3779141 : Total  Size=   15128071 bytes  File Size  =    8641082 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.74     *
+*............................................................................*
+*Br  303 :ngenLep   : ngenLep/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1578628 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.50     *
+*............................................................................*
+*Br  304 :genLep_pt : genLep_pt[ngenLep]/F                                   *
+*Entries :  3779141 : Total  Size=   25224698 bytes  File Size  =   13100693 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   1.92     *
+*............................................................................*
+*Br  305 :genLep_eta : genLep_eta[ngenLep]/F                                 *
+*Entries :  3779141 : Total  Size=   25224853 bytes  File Size  =   13285238 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   1.89     *
+*............................................................................*
+*Br  306 :genLep_phi : genLep_phi[ngenLep]/F                                 *
+*Entries :  3779141 : Total  Size=   25224853 bytes  File Size  =   13288104 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   1.89     *
+*............................................................................*
+*Br  307 :genLep_mass : genLep_mass[ngenLep]/F                               *
+*Entries :  3779141 : Total  Size=   25225008 bytes  File Size  =    7247845 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   3.47     *
+*............................................................................*
+*Br  308 :genLep_pdgId : genLep_pdgId[ngenLep]/I                             *
+*Entries :  3779141 : Total  Size=   25225156 bytes  File Size  =    6106735 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   4.12     *
+*............................................................................*
+*Br  309 :genLep_status : genLep_status[ngenLep]/I                           *
+*Entries :  3779141 : Total  Size=   25225311 bytes  File Size  =    5295367 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   4.75     *
+*............................................................................*
+*Br  310 :genLep_charge : genLep_charge[ngenLep]/F                           *
+*Entries :  3779141 : Total  Size=   25225318 bytes  File Size  =    5316477 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   4.73     *
+*............................................................................*
+*Br  311 :genLep_sourceId : genLep_sourceId[ngenLep]/I                       *
+*Entries :  3779141 : Total  Size=   25225621 bytes  File Size  =    4024827 *
+*Baskets :      149 : Basket Size=     269824 bytes  Compression=   6.25     *
+*............................................................................*
+*Br  312 :ngenStat23 : ngenStat23/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    2025028 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   7.41     *
+*............................................................................*
+*Br  313 :genStat23_pt : genStat23_pt[ngenStat23]/F                          *
+*Entries :  3779141 : Total  Size=  100938143 bytes  File Size  =   83681233 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   1.20     *
+*............................................................................*
+*Br  314 :genStat23_eta : genStat23_eta[ngenStat23]/F                        *
+*Entries :  3779141 : Total  Size=  100938256 bytes  File Size  =   86140009 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   1.16     *
+*............................................................................*
+*Br  315 :genStat23_phi : genStat23_phi[ngenStat23]/F                        *
+*Entries :  3779141 : Total  Size=  100938256 bytes  File Size  =   85807726 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   1.17     *
+*............................................................................*
+*Br  316 :genStat23_mass : genStat23_mass[ngenStat23]/F                      *
+*Entries :  3779141 : Total  Size=  100938369 bytes  File Size  =   50879542 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   1.97     *
+*............................................................................*
+*Br  317 :genStat23_pdgId : genStat23_pdgId[ngenStat23]/I                    *
+*Entries :  3779141 : Total  Size=  100938475 bytes  File Size  =   21601305 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   4.65     *
+*............................................................................*
+*Br  318 :genStat23_status : genStat23_status[ngenStat23]/I                  *
+*Entries :  3779141 : Total  Size=  100938588 bytes  File Size  =   11288243 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   8.89     *
+*............................................................................*
+*Br  319 :genStat23_charge : genStat23_charge[ngenStat23]/F                  *
+*Entries :  3779141 : Total  Size=  100938595 bytes  File Size  =   14433450 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   6.95     *
+*............................................................................*
+*Br  320 :genStat23_sourceId : genStat23_sourceId[ngenStat23]/I              *
+*Entries :  3779141 : Total  Size=  100938814 bytes  File Size  =   10809018 *
+*Baskets :      107 : Basket Size=    1078272 bytes  Compression=   9.28     *
+*............................................................................*
+*Br  321 :ngenGamma : ngenGamma/I                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    1934138 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   7.75     *
+*............................................................................*
+*Br  322 :genGamma_pt : genGamma_pt[ngenGamma]/F                             *
+*Entries :  3779141 : Total  Size=   24103207 bytes  File Size  =   12217062 *
+*Baskets :      152 : Basket Size=     257024 bytes  Compression=   1.97     *
+*............................................................................*
+*Br  323 :genGamma_eta : genGamma_eta[ngenGamma]/F                           *
+*Entries :  3779141 : Total  Size=   24103365 bytes  File Size  =   11956201 *
+*Baskets :      152 : Basket Size=     257024 bytes  Compression=   2.01     *
+*............................................................................*
+*Br  324 :genGamma_phi : genGamma_phi[ngenGamma]/F                           *
+*Entries :  3779141 : Total  Size=   24103365 bytes  File Size  =   11927114 *
+*Baskets :      152 : Basket Size=     257024 bytes  Compression=   2.01     *
+*............................................................................*
+*Br  325 :genGamma_motherId : genGamma_motherId[ngenGamma]/I                 *
+*Entries :  3779141 : Total  Size=   24104148 bytes  File Size  =    6047099 *
+*Baskets :      152 : Basket Size=     257536 bytes  Compression=   3.98     *
+*............................................................................*
+*Br  326 :ngenTau   : ngenTau/I                                              *
+*Entries :  3779141 : Total  Size=   15128269 bytes  File Size  =    1503183 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   9.98     *
+*............................................................................*
+*Br  327 :ngenTau1Prong : ngenTau1Prong/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    1184532 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  12.66     *
+*............................................................................*
+*Br  328 :ngenTau3Prong : ngenTau3Prong/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =     584807 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  25.65     *
+*............................................................................*
+*Br  329 :genTau_pt : genTau_pt[ngenTau]/F                                   *
+*Entries :  3779141 : Total  Size=   20171696 bytes  File Size  =    7360259 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   2.73     *
+*............................................................................*
+*Br  330 :genTau_eta : genTau_eta[ngenTau]/F                                 *
+*Entries :  3779141 : Total  Size=   20171865 bytes  File Size  =    7470717 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   2.69     *
+*............................................................................*
+*Br  331 :genTau_phi : genTau_phi[ngenTau]/F                                 *
+*Entries :  3779141 : Total  Size=   20171865 bytes  File Size  =    7465192 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   2.69     *
+*............................................................................*
+*Br  332 :genTau_mass : genTau_mass[ngenTau]/F                               *
+*Entries :  3779141 : Total  Size=   20172034 bytes  File Size  =    2748096 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   7.31     *
+*............................................................................*
+*Br  333 :genTau_pdgId : genTau_pdgId[ngenTau]/I                             *
+*Entries :  3779141 : Total  Size=   20172196 bytes  File Size  =    3358978 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   5.98     *
+*............................................................................*
+*Br  334 :genTau_status : genTau_status[ngenTau]/I                           *
+*Entries :  3779141 : Total  Size=   20172365 bytes  File Size  =    3352975 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   5.99     *
+*............................................................................*
+*Br  335 :genTau_charge : genTau_charge[ngenTau]/F                           *
+*Entries :  3779141 : Total  Size=   20172372 bytes  File Size  =    3382818 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   5.94     *
+*............................................................................*
+*Br  336 :genTau_sourceId : genTau_sourceId[ngenTau]/I                       *
+*Entries :  3779141 : Total  Size=   20172703 bytes  File Size  =    2747885 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   7.31     *
+*............................................................................*
+*Br  337 :genTau_decayMode : genTau_decayMode[ngenTau]/I                     *
+*Entries :  3779141 : Total  Size=   20172872 bytes  File Size  =    3887734 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   5.17     *
+*............................................................................*
+*Br  338 :genTau_leadTrackPt : genTau_leadTrackPt[ngenTau]/F                 *
+*Entries :  3779141 : Total  Size=   20173217 bytes  File Size  =    7402175 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   2.71     *
+*............................................................................*
+*Br  339 :genTau_neutralDaughters : genTau_neutralDaughters[ngenTau]/I       *
+*Entries :  3779141 : Total  Size=   20174055 bytes  File Size  =    3560651 *
+*Baskets :      163 : Basket Size=     215552 bytes  Compression=   5.64     *
+*............................................................................*
+*Br  340 :ngenLepFromTau : ngenLepFromTau/I                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =     995344 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  15.07     *
+*............................................................................*
+*Br  341 :genLepFromTau_pt : genLepFromTau_pt[ngenLepFromTau]/F              *
+*Entries :  3779141 : Total  Size=   16910967 bytes  File Size  =    3158275 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=   5.35     *
+*............................................................................*
+*Br  342 :genLepFromTau_eta : genLepFromTau_eta[ngenLepFromTau]/F            *
+*Entries :  3779141 : Total  Size=   16911150 bytes  File Size  =    3184313 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=   5.30     *
+*............................................................................*
+*Br  343 :genLepFromTau_phi : genLepFromTau_phi[ngenLepFromTau]/F            *
+*Entries :  3779141 : Total  Size=   16911150 bytes  File Size  =    3180381 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=   5.31     *
+*............................................................................*
+*Br  344 :genLepFromTau_mass : genLepFromTau_mass[ngenLepFromTau]/F          *
+*Entries :  3779141 : Total  Size=   16911333 bytes  File Size  =    1943672 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=   8.69     *
+*............................................................................*
+*Br  345 :genLepFromTau_pdgId : genLepFromTau_pdgId[ngenLepFromTau]/I        *
+*Entries :  3779141 : Total  Size=   16911509 bytes  File Size  =    1728888 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=   9.77     *
+*............................................................................*
+*Br  346 :genLepFromTau_status : genLepFromTau_status[ngenLepFromTau]/I      *
+*Entries :  3779141 : Total  Size=   16911692 bytes  File Size  =    1326204 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=  12.73     *
+*............................................................................*
+*Br  347 :genLepFromTau_charge : genLepFromTau_charge[ngenLepFromTau]/F      *
+*Entries :  3779141 : Total  Size=   16911699 bytes  File Size  =    1559756 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=  10.83     *
+*............................................................................*
+*Br  348 :genLepFromTau_sourceId : genLepFromTau_sourceId[ngenLepFromTau]/I  *
+*Entries :  3779141 : Total  Size=   16912058 bytes  File Size  =    1324919 *
+*Baskets :      177 : Basket Size=     180736 bytes  Compression=  12.75     *
+*............................................................................*
+*Br  349 :ngenLepFromZ : ngenLepFromZ/I                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =      75609 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.37     *
+*............................................................................*
+*Br  350 :ngenNuFromZ : ngenNuFromZ/I                                        *
+*Entries :  3779141 : Total  Size=   15128665 bytes  File Size  =      75516 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.62     *
+*............................................................................*
+*Br  351 :GenSusyMScan1 : GenSusyMScan1/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      75702 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.13     *
+*............................................................................*
+*Br  352 :GenSusyMScan2 : GenSusyMScan2/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      75702 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.13     *
+*............................................................................*
+*Br  353 :GenSusyMScan3 : GenSusyMScan3/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      75702 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.13     *
+*............................................................................*
+*Br  354 :GenSusyMScan4 : GenSusyMScan4/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      75702 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 198.13     *
+*............................................................................*
+*Br  355 :nLHEweight : nLHEweight/I                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =      83049 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.60     *
+*............................................................................*
+*Br  356 :LHEweight_wgt : LHEweight_wgt[nLHEweight]/F                        *
+*Entries :  3779141 : Total  Size=  151205317 bytes  File Size  =  108153922 *
+*Baskets :      102 : Basket Size=    1615872 bytes  Compression=   1.39     *
+*............................................................................*
+*Br  357 :njet      : njet/I                                                 *
+*Entries :  3779141 : Total  Size=   15127972 bytes  File Size  =    2889373 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.19     *
+*............................................................................*
+*Br  358 :jet_pt    : jet_pt[njet]/F                                         *
+*Entries :  3779141 : Total  Size=   93366789 bytes  File Size  =   77144985 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.20     *
+*............................................................................*
+*Br  359 :jet_eta   : jet_eta[njet]/F                                        *
+*Entries :  3779141 : Total  Size=   93366903 bytes  File Size  =   79220930 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.17     *
+*............................................................................*
+*Br  360 :jet_phi   : jet_phi[njet]/F                                        *
+*Entries :  3779141 : Total  Size=   93366903 bytes  File Size  =   78853332 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.18     *
+*............................................................................*
+*Br  361 :jet_mass  : jet_mass[njet]/F                                       *
+*Entries :  3779141 : Total  Size=   93367017 bytes  File Size  =   76835972 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.21     *
+*............................................................................*
+*Br  362 :jet_btagCSV : jet_btagCSV[njet]/F                                  *
+*Entries :  3779141 : Total  Size=   93367359 bytes  File Size  =   70972607 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.31     *
+*............................................................................*
+*Br  363 :jet_btagMVA : jet_btagMVA[njet]/F                                  *
+*Entries :  3779141 : Total  Size=   93367359 bytes  File Size  =   58076484 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.60     *
+*............................................................................*
+*Br  364 :jet_rawPt : jet_rawPt[njet]/F                                      *
+*Entries :  3779141 : Total  Size=   93367131 bytes  File Size  =   77180664 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.20     *
+*............................................................................*
+*Br  365 :jet_mcPt  : jet_mcPt[njet]/F                                       *
+*Entries :  3779141 : Total  Size=   93367017 bytes  File Size  =   73964619 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   1.25     *
+*............................................................................*
+*Br  366 :jet_mcFlavour : jet_mcFlavour[njet]/I                              *
+*Entries :  3779141 : Total  Size=   93367580 bytes  File Size  =   23914636 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   3.88     *
+*............................................................................*
+*Br  367 :jet_hadronFlavour : jet_hadronFlavour[njet]/I                      *
+*Entries :  3779141 : Total  Size=   93368036 bytes  File Size  =   11983727 *
+*Baskets :      108 : Basket Size=     998912 bytes  Compression=   7.75     *
+*............................................................................*
+*Br  368 :jet_qgl   : jet_qgl[njet]/F                                        *
+*Entries :  3779141 : Total  Size=   93366903 bytes  File Size  =    7268604 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=  12.77     *
+*............................................................................*
+*Br  369 :jet_area  : jet_area[njet]/F                                       *
+*Entries :  3779141 : Total  Size=   93367017 bytes  File Size  =   28930740 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   3.21     *
+*............................................................................*
+*Br  370 :jet_id    : jet_id[njet]/I                                         *
+*Entries :  3779141 : Total  Size=   93366782 bytes  File Size  =   14056113 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   6.60     *
+*............................................................................*
+*Br  371 :jet_puId  : jet_puId[njet]/I                                       *
+*Entries :  3779141 : Total  Size=   93367010 bytes  File Size  =   10250157 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   9.05     *
+*............................................................................*
+*Br  372 :jet_muf   : jet_muf[njet]/F                                        *
+*Entries :  3779141 : Total  Size=   93366903 bytes  File Size  =   14085043 *
+*Baskets :      108 : Basket Size=     998400 bytes  Compression=   6.59     *
+*............................................................................*
+*Br  373 :weight_lepsf : weight_lepsf/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =    4672736 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   3.21     *
+*............................................................................*
+*Br  374 :weight_lepsf_UP : weight_lepsf_UP/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =    5484761 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   2.73     *
+*............................................................................*
+*Br  375 :weight_lepsf_DN : weight_lepsf_DN/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =    5331436 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   2.81     *
+*............................................................................*
+*Br  376 :weight_lepsf_0l : weight_lepsf_0l/F                                *
+*Entries :  3779141 : Total  Size=   15129061 bytes  File Size  =     980002 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  15.30     *
+*............................................................................*
+*Br  377 :weight_lepsf_0l_UP : weight_lepsf_0l_UP/F                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =    1012159 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  14.82     *
+*............................................................................*
+*Br  378 :weight_lepsf_0l_DN : weight_lepsf_0l_DN/F                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =    1006982 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=  14.89     *
+*............................................................................*
+*Br  379 :weight_btagsf : weight_btagsf/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =   11618995 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.29     *
+*............................................................................*
+*Br  380 :weight_btagsf_heavy_UP : weight_btagsf_heavy_UP/F                  *
+*Entries :  3779141 : Total  Size=   15130234 bytes  File Size  =   11428496 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.31     *
+*............................................................................*
+*Br  381 :weight_btagsf_light_UP : weight_btagsf_light_UP/F                  *
+*Entries :  3779141 : Total  Size=   15130234 bytes  File Size  =   11829277 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.27     *
+*............................................................................*
+*Br  382 :weight_btagsf_heavy_DN : weight_btagsf_heavy_DN/F                  *
+*Entries :  3779141 : Total  Size=   15130234 bytes  File Size  =   11723604 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.28     *
+*............................................................................*
+*Br  383 :weight_btagsf_light_DN : weight_btagsf_light_DN/F                  *
+*Entries :  3779141 : Total  Size=   15130234 bytes  File Size  =   11236086 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.33     *
+*............................................................................*
+*Br  384 :weight_sigtrigsf : weight_sigtrigsf/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =      83793 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.00     *
+*............................................................................*
+*Br  385 :weight_dileptrigsf : weight_dileptrigsf/F                          *
+*Entries :  3779141 : Total  Size=   15129838 bytes  File Size  =      83979 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.60     *
+*............................................................................*
+*Br  386 :weight_phottrigsf : weight_phottrigsf/F                            *
+*Entries :  3779141 : Total  Size=   15129259 bytes  File Size  =      83886 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 178.80     *
+*............................................................................*
+*Br  387 :weight_pu : weight_pu/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =      83142 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.40     *
+*............................................................................*
+*Br  388 :weight_isr : weight_isr/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =    2462368 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  389 :weight_isr_UP : weight_isr_UP/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    2462469 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  390 :weight_isr_DN : weight_isr_DN/F                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =    3028505 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   4.95     *
+*............................................................................*
+*Br  391 :weight_scales_UP : weight_scales_UP/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =      83793 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.00     *
+*............................................................................*
+*Br  392 :weight_scales_DN : weight_scales_DN/F                              *
+*Entries :  3779141 : Total  Size=   15129160 bytes  File Size  =      83793 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.00     *
+*............................................................................*
+*Br  393 :weight_pdfs_UP : weight_pdfs_UP/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =      83607 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.39     *
+*............................................................................*
+*Br  394 :weight_pdfs_DN : weight_pdfs_DN/F                                  *
+*Entries :  3779141 : Total  Size=   15128962 bytes  File Size  =      83607 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.39     *
+*............................................................................*
+*Br  395 :weight_toppt : weight_toppt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =      83421 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.80     *
+*............................................................................*
+*Br  396 :genRecoil_pt : genRecoil_pt/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =   13566019 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   1.11     *
+*............................................................................*
+*Br  397 :genTop_pt : genTop_pt/F                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =      83142 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.40     *
+*............................................................................*
+*Br  398 :genTbar_pt : genTbar_pt/F                                          *
+*Entries :  3779141 : Total  Size=   15128566 bytes  File Size  =      83235 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 180.20     *
+*............................................................................*
+*Br  399 :genProd_pdgId : genProd_pdgId/I                                    *
+*Entries :  3779141 : Total  Size=   15128863 bytes  File Size  =      83514 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.60     *
+*............................................................................*
+*Br  400 :weight_pol_L : weight_pol_L/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =      83421 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.80     *
+*............................................................................*
+*Br  401 :weight_pol_R : weight_pol_R/F                                      *
+*Entries :  3779141 : Total  Size=   15128764 bytes  File Size  =      83421 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression= 179.80     *
+*............................................................................*
+*Br  402 :nisrMatch : nisrMatch/I                                            *
+*Entries :  3779141 : Total  Size=   15128467 bytes  File Size  =    2553138 *
+*Baskets :       93 : Basket Size=     161280 bytes  Compression=   5.87     *
+*............................................................................*

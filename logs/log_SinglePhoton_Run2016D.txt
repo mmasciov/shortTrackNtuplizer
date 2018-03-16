@@ -1,0 +1,7 @@
+nohup: ignoring input
+****************************
+* Welcome to ROOT v6.06/01 *
+****************************
+Loading libFWCoreFWLite.so from /home/users/dpgilber/CMSSW_8_0_26.
+WARNING: AutoLibraryloader::enable() and AutoLibraryLoader.h are deprecated.
+Use FWLiteEnabler::enable() and FWLiteEnabler.h instead

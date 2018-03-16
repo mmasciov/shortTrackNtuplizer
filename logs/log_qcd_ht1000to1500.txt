@@ -1,0 +1,419 @@
+nohup: ignoring input
+****************************
+* Welcome to ROOT v6.06/01 *
+****************************
+Loading libFWCoreFWLite.so from /home/users/dpgilber/CMSSW_8_0_26.
+WARNING: AutoLibraryloader::enable() and AutoLibraryLoader.h are deprecated.
+Use FWLiteEnabler::enable() and FWLiteEnabler.h instead
+processing branch  run
+processing branch  lumi
+processing branch  evt
+processing branch  ntracks
+processing branch  nshorttracks
+processing branch  nshorttracks_short
+processing branch  nshorttracks_trkshort
+processing branch  nshorttracks_trklong
+processing branch  track_isshort
+processing branch  track_ispixelonly
+processing branch  track_istrkshort
+processing branch  track_istrklong
+processing branch  track_pt
+processing branch  track_ptErr
+processing branch  track_eta
+processing branch  track_phi
+processing branch  track_nChi2
+processing branch  track_ipSigXY
+processing branch  track_ipBSSigXY
+processing branch  track_dxy
+processing branch  track_dxyBS
+processing branch  track_dxyErr
+processing branch  track_dz
+processing branch  track_dzBS
+processing branch  track_dzErr
+processing branch  track_valHits
+processing branch  track_pixHits
+processing branch  track_lostOuterHits
+processing branch  track_lostOuterPixHits
+processing branch  track_lostInnerHits
+processing branch  track_lostInnerPixHits
+processing branch  track_pixelLayersWithMeasurement
+processing branch  track_trackerLayersWithMeasurement
+processing branch  track_highPurity
+processing branch  track_charge
+processing branch  track_ismatched
+processing branch  track_gpidx
+processing branch  track_gppdgid
+processing branch  track_gpdr
+processing branch  track_sumPUChP
+processing branch  track_sumChP
+processing branch  track_sumChP0p3
+processing branch  track_sumChH
+processing branch  track_sumChHmini
+processing branch  track_sumNeuH
+processing branch  track_sumPh
+processing branch  track_sumNeuH0p05
+processing branch  track_sumPh0p05
+processing branch  track_dedx
+processing branch  track_dedxPixel
+processing branch  track_pfPdgId
+processing branch  track_pfCharge
+processing branch  track_pfDR
+processing branch  track_pfPt
+processing branch  track_pfEta
+processing branch  track_pfPhi
+processing branch  track_anypfPdgId
+processing branch  track_anypfCharge
+processing branch  track_anypfDR
+processing branch  track_anypfPt
+processing branch  track_anypfEta
+processing branch  track_anypfPhi
+processing branch  track_jetDR
+processing branch  track_jetPt
+processing branch  track_jetEta
+processing branch  track_jetPhi
+processing branch  track_iso
+processing branch  track_isonomin
+processing branch  track_reliso
+processing branch  track_relisonomin
+processing branch  track_iso_nocorr
+processing branch  track_reliso_nocorr
+processing branch  track_isocorr
+processing branch  track_relisocorr
+processing branch  ncharginos
+processing branch  gp_pdgid
+processing branch  gp_pt
+processing branch  gp_eta
+processing branch  gp_phi
+processing branch  gp_status
+processing branch  gp_decayXY
+******************************************************************************
+*Tree    :myTree    : myTree                                                 *
+*Entries :  4850746 : Total =     38877748647 bytes  File  Size = 21774966403 *
+*        :          : Tree compression factor =   1.79                       *
+******************************************************************************
+*Br    0 :run       : run/I                                                  *
+*Entries :  4850746 : Total  Size=   19480450 bytes  File Size  =     172280 *
+*Baskets :      730 : Basket Size=      26624 bytes  Compression= 112.80     *
+*............................................................................*
+*Br    1 :lumi      : lumi/I                                                 *
+*Entries :  4850746 : Total  Size=   19481186 bytes  File Size  =     271812 *
+*Baskets :      730 : Basket Size=      26624 bytes  Compression=  71.50     *
+*............................................................................*
+*Br    2 :evt       : evt/L                                                  *
+*Entries :  4850746 : Total  Size=   38881294 bytes  File Size  =   11057378 *
+*Baskets :      722 : Basket Size=      53760 bytes  Compression=   3.51     *
+*............................................................................*
+*Br    3 :ntracks   : ntracks/I                                              *
+*Entries :  4850746 : Total  Size=   19483394 bytes  File Size  =    5003946 *
+*Baskets :      730 : Basket Size=      26624 bytes  Compression=   3.88     *
+*............................................................................*
+*Br    4 :nshorttracks : nshorttracks/I                                      *
+*Entries :  4850746 : Total  Size=   19485629 bytes  File Size  =     173502 *
+*Baskets :      717 : Basket Size=      27136 bytes  Compression= 112.13     *
+*............................................................................*
+*Br    5 :nshorttracks_short : nshorttracks_short/I                          *
+*Entries :  4850746 : Total  Size=   19489967 bytes  File Size  =     175640 *
+*Baskets :      717 : Basket Size=      27136 bytes  Compression= 110.77     *
+*............................................................................*
+*Br    6 :nshorttracks_trkshort : nshorttracks_trkshort/I                    *
+*Entries :  4850746 : Total  Size=   19491996 bytes  File Size  =     173879 *
+*Baskets :      717 : Basket Size=      27136 bytes  Compression= 111.89     *
+*............................................................................*
+*Br    7 :nshorttracks_trklong : nshorttracks_trklong/I                      *
+*Entries :  4850746 : Total  Size=   19491273 bytes  File Size  =     171924 *
+*Baskets :      717 : Basket Size=      27136 bytes  Compression= 113.16     *
+*............................................................................*
+*Br    8 :track_isshort : track_isshort[ntracks]/I                           *
+*Entries :  4850746 : Total  Size=  355377282 bytes  File Size  =   12720156 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=  27.90     *
+*............................................................................*
+*Br    9 :track_ispixelonly : track_ispixelonly[ntracks]/I                   *
+*Entries :  4850746 : Total  Size=  355380314 bytes  File Size  =   12732035 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=  27.90     *
+*............................................................................*
+*Br   10 :track_istrkshort : track_istrkshort[ntracks]/I                     *
+*Entries :  4850746 : Total  Size=  355379653 bytes  File Size  =   12728586 *
+*Baskets :      753 : Basket Size=     497664 bytes  Compression=  27.92     *
+*............................................................................*
+*Br   11 :track_istrklong : track_istrklong[ntracks]/I                       *
+*Entries :  4850746 : Total  Size=  355378894 bytes  File Size  =   12702761 *
+*Baskets :      753 : Basket Size=     497664 bytes  Compression=  27.97     *
+*............................................................................*
+*Br   12 :track_pt  : track_pt[ntracks]/D                                    *
+*Entries :  4850746 : Total  Size=  691244244 bytes  File Size  =  648365667 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.07     *
+*............................................................................*
+*Br   13 :track_ptErr : track_ptErr[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  655239877 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   14 :track_eta : track_eta[ntracks]/D                                   *
+*Entries :  4850746 : Total  Size=  691244983 bytes  File Size  =  658944385 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   15 :track_phi : track_phi[ntracks]/D                                   *
+*Entries :  4850746 : Total  Size=  691244983 bytes  File Size  =  657518921 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   16 :track_nChi2 : track_nChi2[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  403576210 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.71     *
+*............................................................................*
+*Br   17 :track_ipSigXY : track_ipSigXY[ntracks]/D                           *
+*Entries :  4850746 : Total  Size=  691247939 bytes  File Size  =  656917811 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   18 :track_ipBSSigXY : track_ipBSSigXY[ntracks]/D                       *
+*Entries :  4850746 : Total  Size=  691249417 bytes  File Size  =  657172327 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   19 :track_dxy : track_dxy[ntracks]/D                                   *
+*Entries :  4850746 : Total  Size=  691244983 bytes  File Size  =  658371302 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   20 :track_dxyBS : track_dxyBS[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  658356518 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   21 :track_dxyErr : track_dxyErr[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  649540283 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   22 :track_dz  : track_dz[ntracks]/D                                    *
+*Entries :  4850746 : Total  Size=  691244244 bytes  File Size  =  660152357 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   23 :track_dzBS : track_dzBS[ntracks]/D                                 *
+*Entries :  4850746 : Total  Size=  691245722 bytes  File Size  =  651275623 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   24 :track_dzErr : track_dzErr[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  650063567 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   25 :track_valHits : track_valHits[ntracks]/I                           *
+*Entries :  4850746 : Total  Size=  355377282 bytes  File Size  =   92737544 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=   3.83     *
+*............................................................................*
+*Br   26 :track_pixHits : track_pixHits[ntracks]/I                           *
+*Entries :  4850746 : Total  Size=  355377282 bytes  File Size  =   57286569 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=   6.19     *
+*............................................................................*
+*Br   27 :track_lostOuterHits : track_lostOuterHits[ntracks]/I               *
+*Entries :  4850746 : Total  Size=  355381830 bytes  File Size  =   67970947 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   5.23     *
+*............................................................................*
+*Br   28 :track_lostOuterPixHits : track_lostOuterPixHits[ntracks]/I         *
+*Entries :  4850746 : Total  Size=  355384104 bytes  File Size  =   12996777 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=  27.33     *
+*............................................................................*
+*Br   29 :track_lostInnerHits : track_lostInnerHits[ntracks]/I               *
+*Entries :  4850746 : Total  Size=  355381830 bytes  File Size  =   44397084 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   8.00     *
+*............................................................................*
+*Br   30 :track_lostInnerPixHits : track_lostInnerPixHits[ntracks]/I         *
+*Entries :  4850746 : Total  Size=  355384104 bytes  File Size  =   42021957 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   8.45     *
+*............................................................................*
+*Br   31 :track_pixelLayersWithMeasurement :                                 *
+*         | track_pixelLayersWithMeasurement[ntracks]/I                      *
+*Entries :  4850746 : Total  Size=  355391684 bytes  File Size  =   51072847 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   6.96     *
+*............................................................................*
+*Br   32 :track_trackerLayersWithMeasurement :                               *
+*         | track_trackerLayersWithMeasurement[ntracks]/I                    *
+*Entries :  4850746 : Total  Size=  355393200 bytes  File Size  =   81373605 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   4.37     *
+*............................................................................*
+*Br   33 :track_highPurity : track_highPurity[ntracks]/I                     *
+*Entries :  4850746 : Total  Size=  355379653 bytes  File Size  =   31862950 *
+*Baskets :      753 : Basket Size=     497664 bytes  Compression=  11.15     *
+*............................................................................*
+*Br   34 :track_charge : track_charge[ntracks]/I                             *
+*Entries :  4850746 : Total  Size=  355376524 bytes  File Size  =   47469233 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=   7.48     *
+*............................................................................*
+*Br   35 :track_ismatched : track_ismatched[ntracks]/I                       *
+*Entries :  4850746 : Total  Size=  355378894 bytes  File Size  =   12702004 *
+*Baskets :      753 : Basket Size=     497664 bytes  Compression=  27.97     *
+*............................................................................*
+*Br   36 :track_gpidx : track_gpidx[ntracks]/I                               *
+*Entries :  4850746 : Total  Size=  355375766 bytes  File Size  =   12865391 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=  27.58     *
+*............................................................................*
+*Br   37 :track_gppdgid : track_gppdgid[ntracks]/I                           *
+*Entries :  4850746 : Total  Size=  355377282 bytes  File Size  =   12709251 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=  27.92     *
+*............................................................................*
+*Br   38 :track_gpdr : track_gpdr[ntracks]/D                                 *
+*Entries :  4850746 : Total  Size=  691245722 bytes  File Size  =   16119131 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=  42.85     *
+*............................................................................*
+*Br   39 :track_sumPUChP : track_sumPUChP[ntracks]/D                         *
+*Entries :  4850746 : Total  Size=  691248678 bytes  File Size  =  320444488 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   2.16     *
+*............................................................................*
+*Br   40 :track_sumChP : track_sumChP[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  366427374 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.88     *
+*............................................................................*
+*Br   41 :track_sumChP0p3 : track_sumChP0p3[ntracks]/D                       *
+*Entries :  4850746 : Total  Size=  691249417 bytes  File Size  =  296891381 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   2.33     *
+*............................................................................*
+*Br   42 :track_sumChH : track_sumChH[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  444915128 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.55     *
+*............................................................................*
+*Br   43 :track_sumChHmini : track_sumChHmini[ntracks]/D                     *
+*Entries :  4850746 : Total  Size=  691250156 bytes  File Size  =  396857561 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.74     *
+*............................................................................*
+*Br   44 :track_sumNeuH : track_sumNeuH[ntracks]/D                           *
+*Entries :  4850746 : Total  Size=  691247939 bytes  File Size  =  207389795 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   3.33     *
+*............................................................................*
+*Br   45 :track_sumPh : track_sumPh[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  328181972 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   2.10     *
+*............................................................................*
+*Br   46 :track_sumNeuH0p05 : track_sumNeuH0p05[ntracks]/D                   *
+*Entries :  4850746 : Total  Size=  691250895 bytes  File Size  =   63378626 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=  10.90     *
+*............................................................................*
+*Br   47 :track_sumPh0p05 : track_sumPh0p05[ntracks]/D                       *
+*Entries :  4850746 : Total  Size=  691249417 bytes  File Size  =  236142608 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   2.92     *
+*............................................................................*
+*Br   48 :track_dedx : track_dedx[ntracks]/D                                 *
+*Entries :  4850746 : Total  Size=  691245722 bytes  File Size  =  372590930 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.85     *
+*............................................................................*
+*Br   49 :track_dedxPixel : track_dedxPixel[ntracks]/D                       *
+*Entries :  4850746 : Total  Size=  691249417 bytes  File Size  =  455962839 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.51     *
+*............................................................................*
+*Br   50 :track_pfPdgId : track_pfPdgId[ntracks]/I                           *
+*Entries :  4850746 : Total  Size=  355377282 bytes  File Size  =   50512226 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=   7.03     *
+*............................................................................*
+*Br   51 :track_pfCharge : track_pfCharge[ntracks]/I                         *
+*Entries :  4850746 : Total  Size=  355378040 bytes  File Size  =   47436564 *
+*Baskets :      752 : Basket Size=     497664 bytes  Compression=   7.48     *
+*............................................................................*
+*Br   52 :track_pfDR : track_pfDR[ntracks]/D                                 *
+*Entries :  4850746 : Total  Size=  691245722 bytes  File Size  =  655275976 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   53 :track_pfPt : track_pfPt[ntracks]/D                                 *
+*Entries :  4850746 : Total  Size=  691245722 bytes  File Size  =  376530046 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.83     *
+*............................................................................*
+*Br   54 :track_pfEta : track_pfEta[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  383885713 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   55 :track_pfPhi : track_pfPhi[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  381460205 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   56 :track_anypfPdgId : track_anypfPdgId[ntracks]/I                     *
+*Entries :  4850746 : Total  Size=  355379653 bytes  File Size  =   59080961 *
+*Baskets :      753 : Basket Size=     497664 bytes  Compression=   6.01     *
+*............................................................................*
+*Br   57 :track_anypfCharge : track_anypfCharge[ntracks]/I                   *
+*Entries :  4850746 : Total  Size=  355380314 bytes  File Size  =   57104996 *
+*Baskets :      752 : Basket Size=     498176 bytes  Compression=   6.22     *
+*............................................................................*
+*Br   58 :track_anypfDR : track_anypfDR[ntracks]/D                           *
+*Entries :  4850746 : Total  Size=  691247939 bytes  File Size  =  655180053 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   59 :track_anypfPt : track_anypfPt[ntracks]/D                           *
+*Entries :  4850746 : Total  Size=  691247939 bytes  File Size  =  382027349 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   60 :track_anypfEta : track_anypfEta[ntracks]/D                         *
+*Entries :  4850746 : Total  Size=  691248678 bytes  File Size  =  389607985 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.77     *
+*............................................................................*
+*Br   61 :track_anypfPhi : track_anypfPhi[ntracks]/D                         *
+*Entries :  4850746 : Total  Size=  691248678 bytes  File Size  =  386746475 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.79     *
+*............................................................................*
+*Br   62 :track_jetDR : track_jetDR[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  651139812 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   63 :track_jetPt : track_jetPt[ntracks]/D                               *
+*Entries :  4850746 : Total  Size=  691246461 bytes  File Size  =  165419396 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   4.18     *
+*............................................................................*
+*Br   64 :track_jetEta : track_jetEta[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  176097526 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   3.92     *
+*............................................................................*
+*Br   65 :track_jetPhi : track_jetPhi[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  177217225 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   3.90     *
+*............................................................................*
+*Br   66 :track_iso : track_iso[ntracks]/D                                   *
+*Entries :  4850746 : Total  Size=  691244983 bytes  File Size  =  480123649 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.44     *
+*............................................................................*
+*Br   67 :track_isonomin : track_isonomin[ntracks]/D                         *
+*Entries :  4850746 : Total  Size=  691248678 bytes  File Size  =  487652637 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.42     *
+*............................................................................*
+*Br   68 :track_reliso : track_reliso[ntracks]/D                             *
+*Entries :  4850746 : Total  Size=  691247200 bytes  File Size  =  645063918 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.07     *
+*............................................................................*
+*Br   69 :track_relisonomin : track_relisonomin[ntracks]/D                   *
+*Entries :  4850746 : Total  Size=  691250895 bytes  File Size  =  654693448 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   70 :track_iso_nocorr : track_iso_nocorr[ntracks]/D                     *
+*Entries :  4850746 : Total  Size=  691250156 bytes  File Size  =  465818984 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   71 :track_reliso_nocorr : track_reliso_nocorr[ntracks]/D               *
+*Entries :  4850746 : Total  Size=  691253053 bytes  File Size  =  650185745 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   72 :track_isocorr : track_isocorr[ntracks]/D                           *
+*Entries :  4850746 : Total  Size=  691247939 bytes  File Size  =  324888592 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   2.13     *
+*............................................................................*
+*Br   73 :track_relisocorr : track_relisocorr[ntracks]/D                     *
+*Entries :  4850746 : Total  Size=  691250156 bytes  File Size  =  646091203 *
+*Baskets :      733 : Basket Size=     968704 bytes  Compression=   1.07     *
+*............................................................................*
+*Br   74 :ncharginos : ncharginos/I                                          *
+*Entries :  4850746 : Total  Size=   19484323 bytes  File Size  =     164193 *
+*Baskets :      717 : Basket Size=      27136 bytes  Compression= 118.49     *
+*............................................................................*
+*Br   75 :gp_pdgid  : gp_pdgid[ncharginos]/I                                 *
+*Entries :  4850746 : Total  Size=   19564445 bytes  File Size  =     265105 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  73.61     *
+*............................................................................*
+*Br   76 :gp_pt     : gp_pt[ncharginos]/D                                    *
+*Entries :  4850746 : Total  Size=   19560143 bytes  File Size  =     260806 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  74.80     *
+*............................................................................*
+*Br   77 :gp_eta    : gp_eta[ncharginos]/D                                   *
+*Entries :  4850746 : Total  Size=   19561582 bytes  File Size  =     262239 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  74.40     *
+*............................................................................*
+*Br   78 :gp_phi    : gp_phi[ncharginos]/D                                   *
+*Entries :  4850746 : Total  Size=   19561582 bytes  File Size  =     262239 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  74.40     *
+*............................................................................*
+*Br   79 :gp_status : gp_status[ncharginos]/I                                *
+*Entries :  4850746 : Total  Size=   19565884 bytes  File Size  =     266538 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  73.22     *
+*............................................................................*
+*Br   80 :gp_decayXY : gp_decayXY[ncharginos]/D                              *
+*Entries :  4850746 : Total  Size=   19567338 bytes  File Size  =     267971 *
+*Baskets :     1433 : Basket Size=      27136 bytes  Compression=  72.83     *
+*............................................................................*

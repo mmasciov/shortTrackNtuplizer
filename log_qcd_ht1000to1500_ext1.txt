@@ -1,0 +1,12 @@
+nohup: ignoring input
+****************************
+* Welcome to ROOT v6.06/01 *
+****************************
+Loading libFWCoreFWLite.so from /home/users/dpgilber/CMSSW_8_0_26.
+WARNING: AutoLibraryloader::enable() and AutoLibraryLoader.h are deprecated.
+Use FWLiteEnabler::enable() and FWLiteEnabler.h instead
+Error in <TFile::TFile>: file /nfs-6/userdata/dpgilber/MT2Babies/qcd_ht1000to1500_ext1.root does not exist
+Traceback (most recent call last):
+  File "treesort.py", line 16, in <module>
+    tout = tin.CloneTree(0)
+AttributeError: 'TObject' object has no attribute 'CloneTree'

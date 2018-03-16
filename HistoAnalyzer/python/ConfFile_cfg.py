@@ -8,7 +8,7 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("CommonTools.ParticleFlow.pfParticleSelection_cff")
 process.load("CommonTools.ParticleFlow.pfNoPileUpIso_cff")
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 process.options = cms.untracked.PSet( allowUnscheduled = cms.untracked.bool(True))
 
