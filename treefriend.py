@@ -70,6 +70,7 @@ print "Number of mt2 events: " + str(len(fzip))
 print "Number of st events: " + str(len(szip))
 
 lastY = 0
+
 for x in xrange(len(fzip)):
     if (x % 10000 == 0): print "Scanning through y values for x = " + str(x) + " starting from y = " + str(lastY)
     for y in xrange(lastY,len(szip)):
@@ -100,6 +101,9 @@ for x in xrange(len(fii)):
     if (x % 10000 == 0): print "Marking " + str(x) + "th event to be saved"
     felist.Enter(fii[x])
     selist.Enter(sii[x])
+    if (x >= 41060000):
+        print str(x) + "th mt2 event: " + str(fii[x])
+        print str(x) + "th st event: " + str(sii[x])
 
 print "Saving events"
 

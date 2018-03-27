@@ -9,8 +9,9 @@ INDIR=/nfs-6/userdata/dpgilber/ShortTrackBabies
 #declare -a Samples=(qcd_ht1500to2000_ext1)
 #declare -a Samples=(zinv_zpt100to200)
 #declare -a Samples=(zinv_zpt200toInf)
-declare -a Samples=(ttsl_fromTbar)
+#declare -a Samples=(ttsl_fromTbar)
 #declare -a Samples=(SinglePhoton_Run2016D)
+declare -a Samples=(dyjetstoll_incl_ext1)
 
 for SAMPLE in ${Samples[@]}; do
     eval "nohup nice -n 10 python treesort.py ${INDIR}/${SAMPLE}.root newtree/myTree ${INDIR}/${SAMPLE}_sorted.root >& logs/log_${SAMPLE}.txt &"
