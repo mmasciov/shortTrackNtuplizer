@@ -79,7 +79,7 @@ ls -a
 echo "[wrapper] directory contents are"
 ls
 
-COMMAND="python treefriend.py ${SORTED_MT2_FILE_FULLPATH} ${TREENAME_MT2} ${SORTED_ST_FILE_FULLPATH} ${TREENAME_ST} ${COPYDIR}/${FILENAME}_friend.root"
+COMMAND="python treefriend.py ${SORTED_MT2_FILE_FULLPATH} ${TREENAME_MT2} ${SORTED_ST_FILE_FULLPATH} ${TREENAME_ST} ${SORTED_FILENAME}_friend.root"
 
 echo "[wrapper] running: ${COMMAND}"
 

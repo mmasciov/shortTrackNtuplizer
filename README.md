@@ -78,4 +78,4 @@ crab submit -c python/crabConfig_MC.py (or python/crabConfig_Data.py)
 
 9. For friending, ./friend_condor.sh </path/to/sorted/MT2/on/hadoop> </path/to/sorted/ST/on/hadoop> </output/path/relative/to/your/hadoop/home>
 
-10. See step 7
+10. See step 7. Friending finishes much more quickly than sorting for the same files.
