@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("Demo")
 
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch//store/data/Run2016G/MET/AOD/23Sep2016-v1/90001/064B5624-258B-E611-A1BC-0090FAA573B0.root')
+    fileNames = cms.untracked.vstring('root://cmsxrootd.fnal.gov//store/data/Run2016H/HTMHT/AOD/PromptReco-v2/000/281/976/00000/16555B4F-5A89-E611-9873-FA163EABA242.root')
 )
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)
