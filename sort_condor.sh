@@ -14,7 +14,7 @@ done
 UNIVERSE="vanilla"
 EXE="wrapper_sort.sh"
 INPUT="wrapper_sort.sh, job_input/input.tar.gz"
-SITE="T2_US_UCSD"
+#SITE="T2_US_UCSD T2_US_Nebraska"
 PROXY=$(voms-proxy-info -path)
 USERNAME=$(whoami)
 
@@ -51,17 +51,19 @@ echo "[sort_condor] copying output to ${COPYDIR}"
 if [ ! -d "${COPYDIR}" ]; then
     echo "[sort_condor] ${COPYDIR} does not exist, making it..."
     mkdir -p ${COPYDIR}
+    chmod 777 ${COPYDIR}
 fi
 
 Grid_Resource="condor cmssubmit-r1.t2.ucsd.edu glidein-collector.t2.ucsd.edu"
+# To get on large enough memory machines, need to omit desired site statements
+#+DESIRED_Sites=\"${SITE}\"
+#+remote_DESIRED_Sites=\"T2_US_UCSD\"
 echo "
 universe=${UNIVERSE}
 when_to_transfer_output = ON_EXIT
 #the actual executable to run is not transfered by its name.
 #In fact, some sites may do weird things like renaming it and such.
 transfer_input_files=${INPUT}
-+DESIRED_Sites=\"${SITE}\"
-+remote_DESIRED_Sites=\"T2_US_UCSD\"
 +Owner = undefined
 log=${LOG}
 output=${OUT}
@@ -70,7 +72,15 @@ notification=Never
 x509userproxy=${PROXY}
 " > condor_${COPYDIRBASE##*/}.cmd
 for FILE in `ls ${UNSORTED_FILE_DIR}/*.root`; do
+# Very few machines have the memory required for some of the larger files. We need to make that clear or the job fails, but
+# asking for enormous memory for every job limits the machines available to us, and misuses valuable resources. Get the 
+# size on disk of the file and ask for twice that much memory to be safe.
+# Disk size is kB by default, so add an M to make MB explicit..
+let "FILESIZE=`stat --printf="%s" ${FILE}`"
+let "MEMREQUESTMB=${FILESIZE} * 2 / 1000000"
 echo "
+request_memory=${MEMREQUESTMB}
+request_disk=${MEMREQUESTMB}M
 executable=${EXE}
 transfer_executable=True
 arguments=`echo ${FILE##*/} | sed 's/\.root//g'` ${FILE} ${TREENAME} ${COPYDIR}
