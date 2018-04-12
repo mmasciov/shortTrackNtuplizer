@@ -533,16 +533,16 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	 } else if(p.pixelEndcapHitFilter(hit)) {
 	   PixelEndcapHitPattern |= 1<<(layer-1);
 	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of PixelEndcap" << std::endl;
-	 } else if (p.stripTIBHitFilter) {
+	 } else if (p.stripTIBHitFilter(hit)) {
 	   TrackerInnerBarrelHitPattern |= 1<<(layer-1);
 	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerInnerBarrel" << std::endl;
-	 } else if (p.stripTIDHitFilter) {
+	 } else if (p.stripTIDHitFilter(hit)) {
 	   TrackerInnerDiskHitPattern |= 1<<(layer-1);
 	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerInnerDisk" << std::endl;
-	 } else if (p.stripTOBHitFilter) {
+	 } else if (p.stripTOBHitFilter(hit)) {
 	   TrackerOuterBarrelHitPattern |= 1<<(layer-1);
 	   // std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerOuterBarrel" << std::endl;
-	 } else if (p.stripTECHitFilter) {
+	 } else if (p.stripTECHitFilter(hit)) {
 	   TrackerEndcapHitPattern |= 1<<(layer-1);
 	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerEndcap" << std::endl;
 	 }
