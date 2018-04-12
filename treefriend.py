@@ -48,41 +48,49 @@ st = sf.Get(stn).Clone()
 Ns = st.GetEntries()
 
 # first tree run, lumi, evt, index
-fr=[]
-fl=[]
-fe=[]
-fi=[]
+fr=[None]*Nf
+fl=[None]*Nf
+fe=[None]*Nf
+fi=[None]*Nf
 
-for index in range(0,Nf):
-    if (index % 10000 == 0): print index
+ft.SetBranchStatus("*",0)
+ft.SetBranchStatus("run",1)
+ft.SetBranchStatus("lumi",1)
+ft.SetBranchStatus("evt",1)
+st.SetBranchStatus("*",0)
+st.SetBranchStatus("run",1)
+st.SetBranchStatus("lumi",1)
+st.SetBranchStatus("evt",1)
+
+for index in xrange(Nf):
     ft.GetEntry(index)
-    fr.append(ft.run)
-    fl.append(ft.lumi)
-    fe.append(ft.evt)
-    fi.append(index)
+    fr[index] = ft.run
+    fl[index] = ft.lumi
+    fe[index] = ft.evt
+    fi[index] = index
 
 fzip = zip(fr,fl,fe,fi)
 
 # second tree run, lumi, evt, index
-sr=[]
-sl=[]
-se=[]
-si=[]
+sr=[None]*Ns
+sl=[None]*Ns
+se=[None]*Ns
+si=[None]*Ns
 
-for index in range(0,Ns):
-    if (index % 10000 == 0): print index
+for index in xrange(Ns):
     st.GetEntry(index)
-    sr.append(st.run)
-    sl.append(st.lumi)
-    se.append(st.evt)
-    si.append(index)
+    sr[index] = st.run
+    sl[index] = st.lumi
+    se[index] = st.evt
+    si[index] = index
 
 szip = zip(sr,sl,se,si)
 
 # Indices of matched entries in each tree. fii[i] points to the same event as sii[i], but fii[i] is mot necessarily the same *number* as sii[i],
 # as they may be at different positions within their respective sorted trees.
-fii = []
-sii = []
+isize = min(Nf,Ns)
+fii = [None]*isize
+sii = [None]*isize
 
 print "Number of mt2 events: " + str(len(fzip))
 print "Number of st events: " + str(len(szip))
@@ -91,9 +99,9 @@ print "Number of st events: " + str(len(szip))
 # at a location before the last match in the second tree. 
 lastY = 0
 
-for x in xrange(len(fzip)):
+for x in xrange(Nf):
     if (x % 10000 == 0): print "Scanning through y values for x = " + str(x) + " starting from y = " + str(lastY)
-    for y in xrange(lastY,len(szip)):
+    for y in xrange(lastY,Ns):
         if fzip[x][0]==szip[y][0] and fzip[x][1]==szip[y][1] and fzip[x][2]==szip[y][2]:
             # Found a match, save the respective indices
             fii.append(fzip[x][3])
@@ -125,6 +133,13 @@ for x in xrange(len(fii)):
 
 print "Saving events"
 
+ft.SetBranchStatus("*",1)
+st.SetBranchStatus("*",1)
+# Don't want/need identical branches in each tree
+st.SetBranchStatus("run",0)
+st.SetBranchStatus("lumi",0)
+st.SetBranchStatus("evt",0)
+
 ft.SetEventList(felist)
 st.SetEventList(selist)
 
@@ -140,9 +155,6 @@ ff.Close()
 print "First output tree finished"
 
 # Copy the filtered st tree ("second tree") into the output st tree
-st.SetBranchStatus("run", False)
-st.SetBranchStatus("lumi", False)
-st.SetBranchStatus("evt", False)
 otst = st.CopyTree("")
 otst.SetName(otstn)
 otst.SetTitle(otstt)

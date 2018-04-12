@@ -21,17 +21,25 @@ tout = tin.CloneTree(0)
 
 N = tin.GetEntries()
 
-r=[]
-l=[]
-e=[]
-i=[]
+bmark = ROOT.TBenchmark()
+bmark.Start("benchmark")
 
-for index in range(0,N):
+r=[None]*N
+l=[None]*N
+e=[None]*N
+i=[None]*N
+
+tin.SetBranchStatus("*",0)
+tin.SetBranchStatus("run",1)
+tin.SetBranchStatus("lumi",1)
+tin.SetBranchStatus("evt",1)
+
+for index in xrange(N):
     tin.GetEntry(index)
-    r.append(tin.run)
-    l.append(tin.lumi)
-    e.append(tin.evt)
-    i.append(index)
+    r[index] = tin.run
+    l[index] = tin.lumi
+    e[index] = tin.evt
+    i[index] = index
 
 # zipped arrays    
 za = zip(r,l,e,i)
@@ -40,29 +48,33 @@ zas = sorted(za, key = lambda x:(x[0],x[1],x[2]))
 # sorted indices
 ii = [zas[x][3] for x in range(0,len(zas))]
 
-next = ROOT.TIter(tin.GetListOfBranches())
-bin = ROOT.TBranch()
+branchlist = ROOT.TIter(tin.GetListOfBranches())
 bout = ROOT.TBranch()
 
 # Loop over all branches
-bin = next()
-while bin:
-    if not bin:
-        break
+for bin in branchlist:
+    tin.SetBranchStatus(bin.GetName(),1)
     # Get branch with same name as branch to-be-copied
     bout = tout.GetBranch(bin.GetName())
     print "processing branch ", bin.GetName()
     # LoadBaskets forces the entire input branch into memory. Necessary for random access.
     bin.LoadBaskets()
-    for index in range(0,N):
+    for index in xrange(N):
         # Place branch entry that was sorted into position index into the index-th entry of the output tree
         bin.GetEntry(ii[index])
         bout.Fill()
     bin.DropBaskets()
+    tin.SetBranchStatus(bin.GetName(),0)
     tout.AutoSave()
     # Perhaps an explicit bout.DropBaskets() could be useful here?
-    bin = next()
 tout.SetEntries(N)
 tout.Print()
 tout.AutoSave()
 fout.Close()
+
+bmark.Stop("benchmark")    
+print "\n"
+print "------------------------------"
+print "CPU Time:   {0:.5f} s\n".format(bmark.GetCpuTime("benchmark"))
+print "Real Time:  {0:.5f} s\n".format(bmark.GetRealTime("benchmark"))
+print "\n"
