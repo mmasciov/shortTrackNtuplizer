@@ -88,24 +88,28 @@ szip = zip(sr,sl,se,si)
 
 # Indices of matched entries in each tree. fii[i] points to the same event as sii[i], but fii[i] is mot necessarily the same *number* as sii[i],
 # as they may be at different positions within their respective sorted trees.
+# The final length of fii and sii are in practice very close to the length of the smaller list. Pre-allocate so we don't end up copying a many-millions-
+# entry array multiple times in large files, and use current to keep track of where we are in this pre-allocated space.
 isize = min(Nf,Ns)
 fii = [None]*isize
 sii = [None]*isize
+current = 0
 
-print "Number of mt2 events: " + str(len(fzip))
-print "Number of st events: " + str(len(szip))
+print "Number of mt2 events: " + str(Nf)
+print "Number of st events: " + str(Ns)
 
 # Keep track of last location we found a match. Since trees are sorted, we'll never find a match for the next entry in the first tree 
 # at a location before the last match in the second tree. 
 lastY = 0
-
+# Use mt2 as the reference list and search for matches in st (arbitrarily)
 for x in xrange(Nf):
     if (x % 10000 == 0): print "Scanning through y values for x = " + str(x) + " starting from y = " + str(lastY)
     for y in xrange(lastY,Ns):
         if fzip[x][0]==szip[y][0] and fzip[x][1]==szip[y][1] and fzip[x][2]==szip[y][2]:
             # Found a match, save the respective indices
-            fii.append(fzip[x][3])
-            sii.append(szip[y][3])
+            fii[current] = fzip[x][3]
+            sii[current] = szip[y][3]
+            current += 1
             lastY=y
             if (len(fii) % 10000 == 0): print "total matches = " + str(len(fii))
             break
@@ -122,11 +126,7 @@ for x in xrange(Nf):
 felist = ROOT.TEventList()
 selist = ROOT.TEventList()
 
-if len(fii) != len(sii):
-    print "Nope, something went wrong :("
-    exit(1)
-
-for x in xrange(len(fii)):
+for x in xrange(current):
     if ( (x+1) % 10000 == 0): print "Marking " + str(x+1) + "th event to be saved"
     felist.Enter(fii[x])
     selist.Enter(sii[x])
