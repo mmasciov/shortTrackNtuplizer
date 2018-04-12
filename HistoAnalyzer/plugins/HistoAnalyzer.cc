@@ -104,28 +104,40 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   //  int pileup;
   int ntracks;
   int nshorttracks;
+  // pixel-only + trkshort
   int nshorttracks_short;
+  // roughly speaking, short tracks with < 7 layers
   int nshorttracks_trkshort;
+  // roughly speaking, short tracks with >= 7 layers
   int nshorttracks_trklong;
   int track_isshort[maxntracks];
+  // no hits outside pixel, 3 layers in 2016
   int track_ispixelonly[maxntracks];
   int track_istrkshort[maxntracks];
   int track_istrklong[maxntracks];
-  double track_pt[maxntracks];
-  double track_ptErr[maxntracks];
-  double track_eta[maxntracks];
-  double track_phi[maxntracks];
-  double track_nChi2[maxntracks];
-  double track_ipSigXY[maxntracks];
-  double track_ipBSSigXY[maxntracks];
-  double track_dxy[maxntracks];
-  double track_dxyBS[maxntracks];
-  double track_dxyErr[maxntracks];
-  double track_dz[maxntracks];
-  double track_dzBS[maxntracks];
-  double track_dzErr[maxntracks];
+  float track_pt[maxntracks];
+  float track_ptErr[maxntracks];
+  float track_eta[maxntracks];
+  float track_phi[maxntracks];
+  float track_nChi2[maxntracks];
+  float track_ipSigXY[maxntracks];
+  float track_ipBSSigXY[maxntracks];
+  float track_dxy[maxntracks];
+  float track_dxyBS[maxntracks];
+  float track_dxyErr[maxntracks];
+  float track_dz[maxntracks];
+  float track_dzBS[maxntracks];
+  float track_dzErr[maxntracks];
+  // Least significant bit (right-most) is layer 1, then read 2,3,4... to the left
+  int track_trackerHitPattern[maxntracks];
   int track_valHits[maxntracks]; 
   int track_pixHits[maxntracks]; 
+  // Location of last hits, relative to extrapolted closest approach to true CMS center (~PV)
+  /* Mysteriously not always available
+  float track_outerX[maxntracks];
+  float track_outerY[maxntracks];
+  float track_outerZ[maxntracks];
+  */
   int track_lostOuterHits[maxntracks]; 
   int track_lostOuterPixHits[maxntracks]; 
   int track_lostInnerHits[maxntracks]; 
@@ -137,97 +149,100 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   int track_ismatched[maxntracks];
   int track_gpidx[maxntracks];
   int track_gppdgid[maxntracks];
-  double track_gpdr[maxntracks];
+  float track_gpdr[maxntracks];
 
+  // Nearest charge PF candidate information
   int track_pfPdgId[maxntracks];
   int track_pfCharge[maxntracks];
-  double track_pfDR[maxntracks];
-  double track_pfPt[maxntracks];
-  double track_pfEta[maxntracks];
-  double track_pfPhi[maxntracks];
+  float track_pfDR[maxntracks];
+  float track_pfPt[maxntracks];
+  float track_pfEta[maxntracks];
+  float track_pfPhi[maxntracks];
 
+  // Nearest PF candidate information, including neutrals (may be repeat of above)
   int track_anypfPdgId[maxntracks];
   int track_anypfCharge[maxntracks];
-  double track_anypfDR[maxntracks];
-  double track_anypfPt[maxntracks];
-  double track_anypfEta[maxntracks];
-  double track_anypfPhi[maxntracks];
+  float track_anypfDR[maxntracks];
+  float track_anypfPt[maxntracks];
+  float track_anypfEta[maxntracks];
+  float track_anypfPhi[maxntracks];
 
-  double track_jetDR[maxntracks];
-  double track_jetPt[maxntracks];
-  double track_jetEta[maxntracks];
-  double track_jetPhi[maxntracks];
+  float track_jetDR[maxntracks];
+  float track_jetPt[maxntracks];
+  float track_jetEta[maxntracks];
+  float track_jetPhi[maxntracks];
 
-  double track_sumPUChP[maxntracks];
-  double minDr_sumPUChP = 0.0;
-  double maxDr_sumPUChP = 0.3;
-  double minPt_sumPUChP = 0.0;
+  float track_sumPUChP[maxntracks];
+  float minDr_sumPUChP = 0.0;
+  float maxDr_sumPUChP = 0.3;
+  float minPt_sumPUChP = 0.0;
 
-  double track_sumChP[maxntracks];
-  double minDr_sumChP = 0.0;
-  double maxDr_sumChP = 0.01;
-  double minPt_sumChP = 0.0;
+  float track_sumChP[maxntracks];
+  float minDr_sumChP = 0.0;
+  float maxDr_sumChP = 0.01;
+  float minPt_sumChP = 0.0;
 
-  double track_sumChP0p3[maxntracks];
-  double minDr_sumChP0p3 = 0.0;
-  double maxDr_sumChP0p3 = 0.3;
-  double minPt_sumChP0p3 = 0.0;
+  float track_sumChP0p3[maxntracks];
+  float minDr_sumChP0p3 = 0.0;
+  float maxDr_sumChP0p3 = 0.3;
+  float minPt_sumChP0p3 = 0.0;
 
-  double track_sumChH[maxntracks];
-  double minDr_sumChH = 0.0001;
-  double maxDr_sumChH = 0.3;
-  double minPt_sumChH = 0.0;
+  float track_sumChH[maxntracks];
+  float minDr_sumChH = 0.0001;
+  float maxDr_sumChH = 0.3;
+  float minPt_sumChH = 0.0;
   
-  double track_sumChHmini[maxntracks];
-  double minDr_sumChHmini = 0.0001;
-  double minDrmini_sumChHmini =0.05;
-  double maxDr_sumChHmini = 0.2;
-  double minPt_sumChHmini = 0.0;
+  float track_sumChHmini[maxntracks];
+  float minDr_sumChHmini = 0.0001;
+  float minDrmini_sumChHmini =0.05;
+  float maxDr_sumChHmini = 0.2;
+  float minPt_sumChHmini = 0.0;
   
-  double track_sumNeuH[maxntracks];
-  double minDr_sumNeuH = 0.01;
-  double maxDr_sumNeuH = 0.3;
-  double minPt_sumNeuH = 0.5;
+  float track_sumNeuH[maxntracks];
+  float minDr_sumNeuH = 0.01;
+  float maxDr_sumNeuH = 0.3;
+  float minPt_sumNeuH = 0.5;
 
-  double track_sumPh[maxntracks];
-  double minDr_sumPh = 0.01;
-  double maxDr_sumPh = 0.3;
-  double minPt_sumPh = 0.5;
+  float track_sumPh[maxntracks];
+  float minDr_sumPh = 0.01;
+  float maxDr_sumPh = 0.3;
+  float minPt_sumPh = 0.5;
 
-  double track_sumNeuH0p05[maxntracks];
-  double minDr_sumNeuH0p05 = 0.0;
-  double maxDr_sumNeuH0p05 = 0.05;
-  double minPt_sumNeuH0p05 = 0.0;
+  float track_sumNeuH0p05[maxntracks];
+  float minDr_sumNeuH0p05 = 0.0;
+  float maxDr_sumNeuH0p05 = 0.05;
+  float minPt_sumNeuH0p05 = 0.0;
 
-  double track_sumPh0p05[maxntracks];
-  double minDr_sumPh0p05 = 0.0;
-  double maxDr_sumPh0p05 = 0.05;
-  double minPt_sumPh0p05 = 0.0;
+  float track_sumPh0p05[maxntracks];
+  float minDr_sumPh0p05 = 0.0;
+  float maxDr_sumPh0p05 = 0.05;
+  float minPt_sumPh0p05 = 0.0;
 
-  double track_dedx[maxntracks];
-  double track_dedxPixel[maxntracks];
+  float track_dedx[maxntracks];
+  float track_dedxPixel[maxntracks];
 
-  double track_iso[maxntracks];
-  double track_isonomin[maxntracks];
-  double track_reliso[maxntracks];
-  double track_relisonomin[maxntracks];  
-  double track_iso_nocorr[maxntracks];
-  double track_reliso_nocorr[maxntracks];  
-  double track_isocorr[maxntracks];
-  double track_relisocorr[maxntracks];
+  // PF-only, cone size 0.3, delta-beta corrected, min cand pt at least 0.5 GeV to be included
+  float track_iso[maxntracks];
+  float track_isonomin[maxntracks];
+  float track_reliso[maxntracks];
+  float track_relisonomin[maxntracks];  
+  float track_iso_nocorr[maxntracks];
+  float track_reliso_nocorr[maxntracks];  
+  float track_isocorr[maxntracks];
+  float track_relisocorr[maxntracks];
   
   int ncharginos=0;
   int gp_pdgid[maxntracks];
   int gp_status[maxntracks];
-  double gp_pt[maxntracks];
-  double gp_eta[maxntracks];
-  double gp_phi[maxntracks];
-  double gp_decayXY[maxntracks];
+  float gp_pt[maxntracks];
+  float gp_eta[maxntracks];
+  float gp_phi[maxntracks];
+  float gp_decayXY[maxntracks];
 
 //  int njets;
-//  double ht;
-//  double met_pt;
-//  double met_phi;
+//  float ht;
+//  float met_pt;
+//  float met_phi;
 
 };
 
@@ -430,13 +445,13 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        ++itTrack) {
      
      reco::TrackRef trackRef = reco::TrackRef(tracks, itref);
-     double thisdedx = (*dedxs)[trackRef].dEdx(); //dedxs.get(trackRef.key()).dEdx();
-     double thisdedxpixel=0.0;
+     float thisdedx = (*dedxs)[trackRef].dEdx(); //dedxs.get(trackRef.key()).dEdx();
+     float thisdedxpixel=0.0;
      const reco::DeDxHitInfo* thishitinfo = (*dedxpixels)[trackRef].get();
      
      itref++;
 
-     if(itTrack->pt()<10.0){
+     if(itTrack->pt()<15.0){
 
        ntracks--;
        continue;
@@ -444,7 +459,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      }
      
      track_dedx[it] = thisdedx;
-     std::vector<double> charge_vec;
+     std::vector<float> charge_vec;
      
      if(thishitinfo == NULL)
        thisdedxpixel=0.0;
@@ -455,7 +470,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        for(unsigned int ih=0; ih<thishitinfo->size(); ++ih){
 	 
 	 
-	 double Norm=3.61e-06;
+	 float Norm=3.61e-06;
 	 
 	 if(thishitinfo->pixelCluster(ih) != nullptr){
 	   charge_vec.push_back(Norm*(thishitinfo->charge(ih))/(thishitinfo->pathlength(ih)));
@@ -481,15 +496,34 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_pt[it] = itTrack->pt();
      track_ptErr[it] = itTrack->ptError();
      track_eta[it] = itTrack->eta();
-     track_phi[it] = itTrack->phi();
      track_pixHits[it] = itTrack->hitPattern().numberOfValidPixelHits();
      track_valHits[it] = itTrack->numberOfValidHits();
+     /*     track_outerX[it] = itTrack->outerX();
+     track_outerY[it] = itTrack->outerY();
+     track_outerZ[it] = itTrack->outerZ();
+     */
      track_lostOuterPixHits[it] = itTrack->hitPattern().numberOfLostPixelHits(reco::HitPattern::MISSING_OUTER_HITS);
      track_lostOuterHits[it] = itTrack->hitPattern().numberOfLostHits(reco::HitPattern::MISSING_OUTER_HITS);
      track_lostInnerPixHits[it] = itTrack->hitPattern().numberOfLostPixelHits(reco::HitPattern::MISSING_INNER_HITS);
      track_lostInnerHits[it] = itTrack->hitPattern().numberOfLostHits(reco::HitPattern::MISSING_INNER_HITS);
      track_pixelLayersWithMeasurement[it] = itTrack->hitPattern().pixelLayersWithMeasurement();
      track_trackerLayersWithMeasurement[it] = itTrack->hitPattern().trackerLayersWithMeasurement();
+     // Based on: https://github.com/cms-sw/cmssw/blob/master/DataFormats/TrackReco/interface/HitPattern.h#L87
+     // And for 8X: https://github.com/cms-sw/cmssw/blob/CMSSW_8_0_20_patchX/DataFormats/TrackReco/interface/HitPattern.h#L90
+     // Least significant bit (right most) is layer 1, layers increase to left...
+     int trackerHitPattern = 0; 
+     const reco::HitPattern &p = itTrack->hitPattern();
+     for (int i_hit = 0; i_hit < p.numberOfHits(reco::HitPattern::TRACK_HITS); i_hit++) { // This needs to be p.numberOfAllHits in 9X
+       int hit = p.getHitPattern(reco::HitPattern::TRACK_HITS,i_hit);
+       if (p.validHitFilter(hit) && p.trackerHitFilter(hit)) {
+	 int layer = p.getLayer(hit);
+	 // std::cout << "In track " << i_hit << ", found a valid hit in tracker layer: " << layer << std::endl;
+	 trackerHitPattern += (1<<(layer-1)); // layer starts from 1, don't want to skip bit 0
+	 // std::cout << "After adding that layer to the trackerHitPattern, it is: " << std::bitset<8>(trackerHitPattern) << std::endl;
+       }
+     }
+     // std::cout << "Filling hit pattern: " << std::bitset<8>(trackerHitPattern) << std::endl;
+     track_trackerHitPattern[it] = trackerHitPattern;
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
      track_dxy[it] = itTrack->dxy(PV0.position());
@@ -528,7 +562,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	 TVector3 thisPF;
 	 thisPF.SetPtEtaPhi(itPF->pt(),itPF->eta(),itPF->phi());
 	 
-	 double thisDRPFT =  thisT.DeltaR(thisPF);
+	 float thisDRPFT =  thisT.DeltaR(thisPF);
 	 if(thisDRPFT < track_pfDR[it]){
 	   
 	   track_pfDR[it]    =thisDRPFT;
@@ -544,7 +578,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        TVector3 thisAnyPF;
        thisAnyPF.SetPtEtaPhi(itPF->pt(),itPF->eta(),itPF->phi());
        
-       double thisDRAnyPFT =  thisT.DeltaR(thisAnyPF);
+       float thisDRAnyPFT =  thisT.DeltaR(thisAnyPF);
        if(thisDRAnyPFT < track_anypfDR[it]){
 	 
 	 track_anypfDR[it]    =thisDRAnyPFT;
@@ -572,7 +606,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        TVector3 thisJet;
        thisJet.SetPtEtaPhi(itJet->pt(),itJet->eta(),itJet->phi());
 
-       double thisDRJetT =  thisT.DeltaR(thisJet);
+       float thisDRJetT =  thisT.DeltaR(thisJet);
        if(thisDRJetT < track_jetDR[it]){
 	 
 	 track_jetDR[it]   =thisDRJetT;
@@ -638,7 +672,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        TVector3 thisPFChH;
        thisPFChH.SetPtEtaPhi(itPFChH->pt(),itPFChH->eta(),itPFChH->phi());
        
-       maxDr_sumChHmini = std::max(minDrmini_sumChHmini, std::min(maxDr_sumChHmini, 10.0/thisT.Pt()));
+       maxDr_sumChHmini = std::max(minDrmini_sumChHmini, std::min(maxDr_sumChHmini, float (10.0/thisT.Pt())) );
 
        if( thisT.DeltaR(thisPFChH)<minDr_sumChHmini || thisT.DeltaR(thisPFChH)>maxDr_sumChHmini ) {
 	 continue;
@@ -740,25 +774,61 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_istrkshort[it] = 0;
      track_istrklong[it] = 0;
      
+     bool PixEqTracker = track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it];
+     bool PixLtTracker = track_trackerLayersWithMeasurement[it]<track_pixelLayersWithMeasurement[it];
+     bool PtSelection = track_pt[it] > 15;
+     bool EtaSelection = std::fabs(track_eta[it]) < 2.4;
+     bool dxySelection = std::fabs(track_dxy[it]) < 0.2;
+     bool dzSelection = std::fabs(track_dz[it]) < 0.05;
+     bool dxyTightSelection = std::fabs(track_dxy[it]) < 0.01;
+     bool NeuIso0p05Selection = track_sumNeuH0p05[it] + track_sumPh0p05[it] < 10;
+     bool NeuRelIso0p05Selection = ( track_sumNeuH0p05[it] + track_sumPh0p05[it] ) / track_pt[it] < 0.1;
+     bool ChIsoSelection = track_sumChP[it] < 10;
+     bool ChRelIsoSelection = track_sumChP[it] / track_pt[it] < 0.1;
+     bool PFinCone = track_pfDR[it] < 0.1;
+     bool PFPdgIdVeto = std::abs(track_pfPdgId[it]) == 11 || std::abs(track_pfPdgId[it]) == 13;
+     bool RelIsoSelection = track_reliso[it] < 0.2;
+     bool AbsIsoSelection = track_iso[it] < 10;
+     bool PixHitsSelection = track_pixHits[it] >= 2;
+     bool PixLayersSelection = track_pixelLayersWithMeasurement[it] >= 2;
+     bool LostInnerHitsSelection = track_lostInnerHits[it] == 0;
+     bool LostInnerPixHitsSelection = track_lostInnerPixHits[it] == 0;
+     bool LostOuterHitsSelection = track_lostOuterHits[it] >= 2;
+     bool PtErrSelection = track_ptErr[it]/(track_pt[it]*track_pt[it]) < 0.2;
+     bool PtErrTightSelection = track_ptErr[it]/(track_pt[it]*track_pt[it]) < 0.02;     
+     bool PtErrSuperTightSelection = track_ptErr[it]/(track_pt[it]*track_pt[it]) < 0.005;     
+     bool ShortSelection = track_trackerLayersWithMeasurement[it] < 7;
+     bool LongSelection = track_trackerLayersWithMeasurement[it] >= 7;
+     bool PuritySelection = track_highPurity[it] == 1;
 
-     if( track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it] && track_pt[it]>15. && std::fabs(track_eta[it])<2.4 && std::fabs(track_dxy[it])<0.02 && (std::fabs(track_dxy[it])<0.01 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && std::fabs(track_dz[it])<0.05 && !((track_sumNeuH0p05[it]+track_sumPh0p05[it])>10 || (track_sumNeuH0p05[it]+track_sumPh0p05[it])/track_pt[it]>0.1) && !(track_sumChP[it]>10 || track_sumChP[it]/track_pt[it]>0.1) && !(track_pfDR[it]<0.1 && (abs(track_pfPdgId[it])==11 || std::abs(track_pfPdgId[it])==13)) && track_reliso[it]<0.2 && (track_reliso[it]<0.2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && track_iso[it]<10.0 && track_pixHits[it]>=2 && track_pixelLayersWithMeasurement[it]>=2 && track_lostInnerHits[it]==0 && track_lostInnerPixHits[it]==0 && (track_lostOuterHits[it]>=2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it])  && track_ptErr[it]/(track_pt[it]*track_pt[it])<0.2 && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.02 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.005 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it] || track_trackerLayersWithMeasurement[it]<7) && track_highPurity[it]==1 ){
-	 
+     // ( dxyTightSelection || PixEqTracker ) is irrelevant for pixel only, where PixEqTracker is already required (will always pass the OR)
+     // (RelIsoSelection || PixEqTrack) is irrelevant for pixel only, where both are applied separately anyway
+     // LostOuterHits is irrelevant for pixel only since it is OR'd with PixEqTracker
+     // Tighter PtErr selections are irrelevant for pixel only since they are OR'd with the PixEqTracker requirement
+     if (PixEqTracker && PtSelection && EtaSelection && dxySelection && dzSelection && NeuIso0p05Selection && NeuRelIso0p05Selection && ChIsoSelection && ChRelIsoSelection && 
+	 !(PFinCone && PFPdgIdVeto) && RelIsoSelection && AbsIsoSelection && PixHitsSelection && PixLayersSelection && LostInnerHitsSelection && LostInnerPixHitsSelection 
+	 && PtErrSelection && PuritySelection ) {	 
 	 track_isshort[it] = 1;
 	 track_ispixelonly[it] = 1;
 	 nshorttracks++;
-	 nshorttracks_short++;
-	 
+	 nshorttracks_short++;	 
        }
-       else  if( track_trackerLayersWithMeasurement[it]>track_pixelLayersWithMeasurement[it] && track_trackerLayersWithMeasurement[it]<7 && track_pt[it]>15. && std::fabs(track_eta[it])<2.4 && std::fabs(track_dxy[it])<0.02 && (std::fabs(track_dxy[it])<0.01 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && std::fabs(track_dz[it])<0.05 && !(track_pfDR[it]<0.1 && (abs(track_pfPdgId[it])==11 || std::abs(track_pfPdgId[it])==13)) && !(track_sumChP[it]>10 || track_sumChP[it]/track_pt[it]>0.1) && !((track_sumNeuH0p05[it]+track_sumPh0p05[it])>10 || (track_sumNeuH0p05[it]+track_sumPh0p05[it])/track_pt[it]>0.1) && !(track_iso[it]>10.0 || track_reliso[it]>0.2) && (track_reliso[it]<0.2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && track_pixHits[it]>=2 && track_pixelLayersWithMeasurement[it]>=2 && track_lostInnerHits[it]==0 && track_lostInnerPixHits[it]==0 && (track_lostOuterHits[it]>=2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it])  && track_ptErr[it]/(track_pt[it]*track_pt[it])<0.2 && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.02 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.005 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it] || track_trackerLayersWithMeasurement[it]<7) && track_highPurity[it]==1 ){
-
+     // PixEqTracker always fails here, so the dxyTightSelection must pass, making dxySelection irrelevant
+     // PixEqTracker always fails, and ShortSelection always succeeds if we get to PtErrSelection, so only PtErrTightSelection matters
+     else if (PixLtTracker && ShortSelection && PtSelection && EtaSelection && dxyTightSelection && dzSelection && !(PFinCone && PFPdgIdVeto) 
+	      && NeuIso0p05Selection && NeuRelIso0p05Selection && ChIsoSelection && ChRelIsoSelection && AbsIsoSelection && RelIsoSelection && PixHitsSelection && PixLayersSelection 
+	      && LostInnerHitsSelection && LostInnerPixHitsSelection && LostOuterHitsSelection && PtErrTightSelection && PuritySelection) {
 	 track_isshort[it] = 1;
 	 track_istrkshort[it] = 1;
 	 nshorttracks++;
 	 nshorttracks_trkshort++;
-
        }
-       else if( track_trackerLayersWithMeasurement[it]>track_pixelLayersWithMeasurement[it] && track_trackerLayersWithMeasurement[it]>=7 && track_pt[it]>15. && std::fabs(track_eta[it])<2.4 && std::fabs(track_dxy[it])<0.02 && (std::fabs(track_dxy[it])<0.01 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && std::fabs(track_dz[it])<0.05 && !(track_pfDR[it]<0.1 && (abs(track_pfPdgId[it])==11 || std::abs(track_pfPdgId[it])==13)) && !(track_sumChP[it]>10 || track_sumChP[it]/track_pt[it]>0.1) && !((track_sumNeuH0p05[it]+track_sumPh0p05[it])>10 || (track_sumNeuH0p05[it]+track_sumPh0p05[it])/track_pt[it]>0.1) && !(track_iso[it]>10.0 || track_reliso[it]>0.2) && (track_reliso[it]<0.2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && track_pixHits[it]>=2 && track_pixelLayersWithMeasurement[it]>=2 && track_lostInnerHits[it]==0 && track_lostInnerPixHits[it]==0 && (track_lostOuterHits[it]>=2 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it])  && track_ptErr[it]/(track_pt[it]*track_pt[it])<0.2 && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.02 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it]) && (track_ptErr[it]/(track_pt[it]*track_pt[it])<0.005 || track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it] || track_trackerLayersWithMeasurement[it]<7) && track_highPurity[it]==1 ){
-
+     // LongSelection implies PixLtTracker
+     // PixEqTracker always fails, so dxyTightSelection must succeed
+     // PtErrSuperTightSelection applies since layers > 7
+     else if (LongSelection && PtSelection && EtaSelection && dxyTightSelection && dzSelection && !(PFinCone && PFPdgIdVeto) 
+	      && NeuIso0p05Selection && NeuRelIso0p05Selection && ChIsoSelection && ChRelIsoSelection && AbsIsoSelection && RelIsoSelection 
+	      && PixHitsSelection && PixLayersSelection && LostInnerHitsSelection && LostInnerPixHitsSelection && LostOuterHitsSelection && PtErrSuperTightSelection && PuritySelection) {
 	 track_isshort[it] = 1;
 	 track_istrklong[it] = 1;
 	 nshorttracks++;
@@ -775,14 +845,14 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      TVector3 thisCh;
      thisCh.SetPtEtaPhi(gp_pt[c],gp_eta[c],gp_phi[c]);
      
-     double mindr=99;
+     float mindr=99;
      int trkidx=-99;
      for(int tr=0; tr<ntracks; ++tr){
        
        TVector3 thisTrack;
        thisTrack.SetPtEtaPhi(track_pt[tr],track_eta[tr],track_phi[tr]);
 
-       double thisdr = thisTrack.DeltaR(thisCh);
+       float thisdr = thisTrack.DeltaR(thisCh);
        if(thisdr<mindr){
 	 
 	 mindr=thisdr;
@@ -837,82 +907,87 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_ispixelonly", track_ispixelonly, "track_ispixelonly[ntracks]/I");
   myTree->Branch("track_istrkshort", track_istrkshort, "track_istrkshort[ntracks]/I");
   myTree->Branch("track_istrklong", track_istrklong, "track_istrklong[ntracks]/I");
-  myTree->Branch("track_pt", track_pt, "track_pt[ntracks]/D");
-  myTree->Branch("track_ptErr", track_ptErr, "track_ptErr[ntracks]/D");
-  myTree->Branch("track_eta", track_eta, "track_eta[ntracks]/D");
-  myTree->Branch("track_phi", track_phi, "track_phi[ntracks]/D");
-  myTree->Branch("track_nChi2", track_nChi2, "track_nChi2[ntracks]/D");
-  myTree->Branch("track_ipSigXY", track_ipSigXY, "track_ipSigXY[ntracks]/D");
-  myTree->Branch("track_ipBSSigXY", track_ipBSSigXY, "track_ipBSSigXY[ntracks]/D");
-  myTree->Branch("track_dxy", track_dxy, "track_dxy[ntracks]/D");
-  myTree->Branch("track_dxyBS", track_dxyBS, "track_dxyBS[ntracks]/D");
-  myTree->Branch("track_dxyErr", track_dxyErr, "track_dxyErr[ntracks]/D");
-  myTree->Branch("track_dz", track_dz, "track_dz[ntracks]/D");
-  myTree->Branch("track_dzBS", track_dzBS, "track_dzBS[ntracks]/D");
-  myTree->Branch("track_dzErr", track_dzErr, "track_dzErr[ntracks]/D");
+  myTree->Branch("track_pt", track_pt, "track_pt[ntracks]/F");
+  myTree->Branch("track_ptErr", track_ptErr, "track_ptErr[ntracks]/F");
+  myTree->Branch("track_eta", track_eta, "track_eta[ntracks]/F");
+  myTree->Branch("track_phi", track_phi, "track_phi[ntracks]/F");
+  myTree->Branch("track_nChi2", track_nChi2, "track_nChi2[ntracks]/F");
+  myTree->Branch("track_ipSigXY", track_ipSigXY, "track_ipSigXY[ntracks]/F");
+  myTree->Branch("track_ipBSSigXY", track_ipBSSigXY, "track_ipBSSigXY[ntracks]/F");
+  myTree->Branch("track_dxy", track_dxy, "track_dxy[ntracks]/F");
+  myTree->Branch("track_dxyBS", track_dxyBS, "track_dxyBS[ntracks]/F");
+  myTree->Branch("track_dxyErr", track_dxyErr, "track_dxyErr[ntracks]/F");
+  myTree->Branch("track_dz", track_dz, "track_dz[ntracks]/F");
+  myTree->Branch("track_dzBS", track_dzBS, "track_dzBS[ntracks]/F");
+  myTree->Branch("track_dzErr", track_dzErr, "track_dzErr[ntracks]/F");
   myTree->Branch("track_valHits", track_valHits, "track_valHits[ntracks]/I");
   myTree->Branch("track_pixHits", track_pixHits, "track_pixHits[ntracks]/I");
+  /*  myTree->Branch("track_outerX", track_outerX, "track_outerX[ntracks]/F");
+  myTree->Branch("track_outerY", track_outerY, "track_outerY[ntracks]/F");
+  myTree->Branch("track_outerZ", track_outerZ, "track_outerZ[ntracks]/F");
+  */
   myTree->Branch("track_lostOuterHits", track_lostOuterHits, "track_lostOuterHits[ntracks]/I");
   myTree->Branch("track_lostOuterPixHits", track_lostOuterPixHits, "track_lostOuterPixHits[ntracks]/I");
   myTree->Branch("track_lostInnerHits", track_lostInnerHits, "track_lostInnerHits[ntracks]/I");
   myTree->Branch("track_lostInnerPixHits", track_lostInnerPixHits, "track_lostInnerPixHits[ntracks]/I");
   myTree->Branch("track_pixelLayersWithMeasurement", track_pixelLayersWithMeasurement, "track_pixelLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_trackerLayersWithMeasurement", track_trackerLayersWithMeasurement, "track_trackerLayersWithMeasurement[ntracks]/I");
+  myTree->Branch("track_trackerHitPattern", track_trackerHitPattern, "track_trackerHitPattern[ntracks]/I");
   myTree->Branch("track_highPurity", track_highPurity, "track_highPurity[ntracks]/I");
   myTree->Branch("track_charge", track_charge, "track_charge[ntracks]/I");
   myTree->Branch("track_ismatched", track_ismatched, "track_ismatched[ntracks]/I");
   myTree->Branch("track_gpidx", track_gpidx, "track_gpidx[ntracks]/I");
   myTree->Branch("track_gppdgid", track_gppdgid, "track_gppdgid[ntracks]/I");
-  myTree->Branch("track_gpdr", track_gpdr, "track_gpdr[ntracks]/D");
+  myTree->Branch("track_gpdr", track_gpdr, "track_gpdr[ntracks]/F");
 
-  myTree->Branch("track_sumPUChP", track_sumPUChP, "track_sumPUChP[ntracks]/D");
-  myTree->Branch("track_sumChP", track_sumChP, "track_sumChP[ntracks]/D");
-  myTree->Branch("track_sumChP0p3", track_sumChP0p3, "track_sumChP0p3[ntracks]/D");
-  myTree->Branch("track_sumChH", track_sumChH, "track_sumChH[ntracks]/D");
-  myTree->Branch("track_sumChHmini", track_sumChHmini, "track_sumChHmini[ntracks]/D");
-  myTree->Branch("track_sumNeuH", track_sumNeuH, "track_sumNeuH[ntracks]/D");
-  myTree->Branch("track_sumPh", track_sumPh, "track_sumPh[ntracks]/D");
-  myTree->Branch("track_sumNeuH0p05", track_sumNeuH0p05, "track_sumNeuH0p05[ntracks]/D");
-  myTree->Branch("track_sumPh0p05", track_sumPh0p05, "track_sumPh0p05[ntracks]/D");
+  myTree->Branch("track_sumPUChP", track_sumPUChP, "track_sumPUChP[ntracks]/F");
+  myTree->Branch("track_sumChP", track_sumChP, "track_sumChP[ntracks]/F");
+  myTree->Branch("track_sumChP0p3", track_sumChP0p3, "track_sumChP0p3[ntracks]/F");
+  myTree->Branch("track_sumChH", track_sumChH, "track_sumChH[ntracks]/F");
+  myTree->Branch("track_sumChHmini", track_sumChHmini, "track_sumChHmini[ntracks]/F");
+  myTree->Branch("track_sumNeuH", track_sumNeuH, "track_sumNeuH[ntracks]/F");
+  myTree->Branch("track_sumPh", track_sumPh, "track_sumPh[ntracks]/F");
+  myTree->Branch("track_sumNeuH0p05", track_sumNeuH0p05, "track_sumNeuH0p05[ntracks]/F");
+  myTree->Branch("track_sumPh0p05", track_sumPh0p05, "track_sumPh0p05[ntracks]/F");
 
-  myTree->Branch("track_dedx", track_dedx, "track_dedx[ntracks]/D");
-  myTree->Branch("track_dedxPixel", track_dedxPixel, "track_dedxPixel[ntracks]/D");
+  myTree->Branch("track_dedx", track_dedx, "track_dedx[ntracks]/F");
+  myTree->Branch("track_dedxPixel", track_dedxPixel, "track_dedxPixel[ntracks]/F");
   
   myTree->Branch("track_pfPdgId", track_pfPdgId, "track_pfPdgId[ntracks]/I");
   myTree->Branch("track_pfCharge", track_pfCharge, "track_pfCharge[ntracks]/I");
-  myTree->Branch("track_pfDR", track_pfDR, "track_pfDR[ntracks]/D");
-  myTree->Branch("track_pfPt", track_pfPt, "track_pfPt[ntracks]/D");
-  myTree->Branch("track_pfEta", track_pfEta, "track_pfEta[ntracks]/D");
-  myTree->Branch("track_pfPhi", track_pfPhi, "track_pfPhi[ntracks]/D");
+  myTree->Branch("track_pfDR", track_pfDR, "track_pfDR[ntracks]/F");
+  myTree->Branch("track_pfPt", track_pfPt, "track_pfPt[ntracks]/F");
+  myTree->Branch("track_pfEta", track_pfEta, "track_pfEta[ntracks]/F");
+  myTree->Branch("track_pfPhi", track_pfPhi, "track_pfPhi[ntracks]/F");
 
   myTree->Branch("track_anypfPdgId",  track_anypfPdgId,  "track_anypfPdgId[ntracks]/I");
   myTree->Branch("track_anypfCharge", track_anypfCharge, "track_anypfCharge[ntracks]/I");
-  myTree->Branch("track_anypfDR",     track_anypfDR,     "track_anypfDR[ntracks]/D");
-  myTree->Branch("track_anypfPt",     track_anypfPt,     "track_anypfPt[ntracks]/D");
-  myTree->Branch("track_anypfEta",    track_anypfEta,    "track_anypfEta[ntracks]/D");
-  myTree->Branch("track_anypfPhi",    track_anypfPhi,    "track_anypfPhi[ntracks]/D");
+  myTree->Branch("track_anypfDR",     track_anypfDR,     "track_anypfDR[ntracks]/F");
+  myTree->Branch("track_anypfPt",     track_anypfPt,     "track_anypfPt[ntracks]/F");
+  myTree->Branch("track_anypfEta",    track_anypfEta,    "track_anypfEta[ntracks]/F");
+  myTree->Branch("track_anypfPhi",    track_anypfPhi,    "track_anypfPhi[ntracks]/F");
 
-  myTree->Branch("track_jetDR", track_jetDR, "track_jetDR[ntracks]/D");
-  myTree->Branch("track_jetPt", track_jetPt, "track_jetPt[ntracks]/D");
-  myTree->Branch("track_jetEta", track_jetEta, "track_jetEta[ntracks]/D");;
-  myTree->Branch("track_jetPhi", track_jetPhi, "track_jetPhi[ntracks]/D");;
+  myTree->Branch("track_jetDR", track_jetDR, "track_jetDR[ntracks]/F");
+  myTree->Branch("track_jetPt", track_jetPt, "track_jetPt[ntracks]/F");
+  myTree->Branch("track_jetEta", track_jetEta, "track_jetEta[ntracks]/F");;
+  myTree->Branch("track_jetPhi", track_jetPhi, "track_jetPhi[ntracks]/F");;
 
-  myTree->Branch("track_iso", track_iso, "track_iso[ntracks]/D");
-  myTree->Branch("track_isonomin", track_isonomin, "track_isonomin[ntracks]/D");
-  myTree->Branch("track_reliso", track_reliso, "track_reliso[ntracks]/D");
-  myTree->Branch("track_relisonomin", track_relisonomin, "track_relisonomin[ntracks]/D");  
-  myTree->Branch("track_iso_nocorr", track_iso_nocorr, "track_iso_nocorr[ntracks]/D");
-  myTree->Branch("track_reliso_nocorr", track_reliso_nocorr, "track_reliso_nocorr[ntracks]/D");  
-  myTree->Branch("track_isocorr", track_isocorr, "track_isocorr[ntracks]/D");
-  myTree->Branch("track_relisocorr", track_relisocorr, "track_relisocorr[ntracks]/D");
+  myTree->Branch("track_iso", track_iso, "track_iso[ntracks]/F");
+  myTree->Branch("track_isonomin", track_isonomin, "track_isonomin[ntracks]/F");
+  myTree->Branch("track_reliso", track_reliso, "track_reliso[ntracks]/F");
+  myTree->Branch("track_relisonomin", track_relisonomin, "track_relisonomin[ntracks]/F");  
+  myTree->Branch("track_iso_nocorr", track_iso_nocorr, "track_iso_nocorr[ntracks]/F");
+  myTree->Branch("track_reliso_nocorr", track_reliso_nocorr, "track_reliso_nocorr[ntracks]/F");  
+  myTree->Branch("track_isocorr", track_isocorr, "track_isocorr[ntracks]/F");
+  myTree->Branch("track_relisocorr", track_relisocorr, "track_relisocorr[ntracks]/F");
 
   myTree->Branch("ncharginos", &ncharginos, "ncharginos/I");
   myTree->Branch("gp_pdgid", gp_pdgid, "gp_pdgid[ncharginos]/I");
-  myTree->Branch("gp_pt", gp_pt, "gp_pt[ncharginos]/D");
-  myTree->Branch("gp_eta", gp_eta, "gp_eta[ncharginos]/D");
-  myTree->Branch("gp_phi", gp_phi, "gp_phi[ncharginos]/D");
+  myTree->Branch("gp_pt", gp_pt, "gp_pt[ncharginos]/F");
+  myTree->Branch("gp_eta", gp_eta, "gp_eta[ncharginos]/F");
+  myTree->Branch("gp_phi", gp_phi, "gp_phi[ncharginos]/F");
   myTree->Branch("gp_status", gp_status, "gp_status[ncharginos]/I");
-  myTree->Branch("gp_decayXY", gp_decayXY, "gp_decayXY[ncharginos]/D");
+  myTree->Branch("gp_decayXY", gp_decayXY, "gp_decayXY[ncharginos]/F");
 
 }
 

@@ -64,18 +64,17 @@ crab submit -c python/crabConfig_MC.py (or python/crabConfig_Data.py)
 
 2. Place files you wish to sort into directories on hadoop, and make sure that the only root files in these directories are files you want to sort with the same tree name (ie, don't mix MT2 and ST trees).
 
-3. chmod 777 -R /the/hadoop/directory/containing/files/you/want/to/sort
 
-4. Make a directory to contain the output, if it doesn't already exist, and chmod 777 it.
+3. Make a directory to contain the output, if it doesn't already exist, and chmod 777 it.
 
-5. ./sort_condor.sh </path/to/hadoop/directory/containing/unsorted/files> </path/to/output/dir/relative/to/your/hadoop/home> <mt2 or newtree/myTree (for ST)>
+4. ./sort_condor.sh </path/to/hadoop/directory/containing/unsorted/files> </path/to/output/dir/relative/to/your/hadoop/home> <mt2 or newtree/myTree (for ST)>
 
-6. In the previous step, note that the second path is relative to your /hadoop/cms/store/user/${USERNAME} area while the first is absolute. Thus, you can run on somebody else's unsorted sources, but the output will always be in your hadoop space.
+5. In the previous step, note that the second path is relative to your /hadoop/cms/store/user/${USERNAME} area while the first is absolute. Thus, you can run on somebody else's unsorted sources, but the output will always be in your hadoop space.
 
-7. condor_submit condor_cmd_output_by_previous_script.cmd
+6. condor_submit condor_cmd_output_by_previous_script.cmd
 
-8. condor_q ${USERNAME} should show your jobs as Running within no more than ~10 min. If they're Idle or Held, there's a problem.
+7. condor_q ${USERNAME} should show your jobs as Running within no more than ~10 minutes unless your effective priority is very high (low numbers are better, check with condor_userprio --allusers), or you're sorting a very large file that will be accepted by only a few machines, which happen to be occupied. 
 
-9. For friending, ./friend_condor.sh </path/to/sorted/MT2/on/hadoop> </path/to/sorted/ST/on/hadoop> </output/path/relative/to/your/hadoop/home>
+8. For friending, ./friend_condor.sh </path/to/sorted/MT2/on/hadoop> </path/to/sorted/ST/on/hadoop> </output/path/relative/to/your/hadoop/home>
 
-10. See step 7. Friending finishes much more quickly than sorting for the same files.
+9. See step 7. Friending finishes much more quickly than sorting for the same files.
