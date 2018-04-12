@@ -517,12 +517,14 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        int hit = p.getHitPattern(reco::HitPattern::TRACK_HITS,i_hit);
        if (p.validHitFilter(hit) && p.trackerHitFilter(hit)) {
 	 int layer = p.getLayer(hit);
-	 // std::cout << "In track " << i_hit << ", found a valid hit in tracker layer: " << layer << std::endl;
-	 trackerHitPattern += (1<<(layer-1)); // layer starts from 1, don't want to skip bit 0
-	 // std::cout << "After adding that layer to the trackerHitPattern, it is: " << std::bitset<32>(trackerHitPattern) << std::endl;
+	 //	 std::cout << "In track " << it << ", found a valid hit in tracker layer: " << layer << std::endl;
+	 // Use |= here instead of the more familiar += as a one-line way to prevent cases where there are multiple 
+	 // hits in the same layer from doubly setting the bit and causing overflow.
+	 trackerHitPattern |= (1<<(layer-1)); // (layer-1) because layer starts from 1, don't want to skip bit 0
+	 //std::cout << "After adding that layer to the trackerHitPattern, it is: " << std::bitset<32>(trackerHitPattern) << std::endl;
        }
      }
-     // std::cout << "Filling hit pattern: " << std::bitset<32>(trackerHitPattern) << std::endl;
+     //std::cout << "Filling hit pattern: " << std::bitset<32>(trackerHitPattern) << std::endl;
      track_trackerHitPattern[it] = trackerHitPattern;
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
