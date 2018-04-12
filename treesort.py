@@ -46,7 +46,7 @@ za = zip(r,l,e,i)
 # zipped arrays sorted
 zas = sorted(za, key = lambda x:(x[0],x[1],x[2]))
 # sorted indices
-ii = [zas[x][3] for x in range(0,len(zas))]
+ii = [x[3] for x in zas]
 
 branchlist = ROOT.TIter(tin.GetListOfBranches())
 bout = ROOT.TBranch()
