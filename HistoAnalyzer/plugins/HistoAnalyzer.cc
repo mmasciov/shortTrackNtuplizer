@@ -519,10 +519,10 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	 int layer = p.getLayer(hit);
 	 // std::cout << "In track " << i_hit << ", found a valid hit in tracker layer: " << layer << std::endl;
 	 trackerHitPattern += (1<<(layer-1)); // layer starts from 1, don't want to skip bit 0
-	 // std::cout << "After adding that layer to the trackerHitPattern, it is: " << std::bitset<8>(trackerHitPattern) << std::endl;
+	 // std::cout << "After adding that layer to the trackerHitPattern, it is: " << std::bitset<32>(trackerHitPattern) << std::endl;
        }
      }
-     // std::cout << "Filling hit pattern: " << std::bitset<8>(trackerHitPattern) << std::endl;
+     // std::cout << "Filling hit pattern: " << std::bitset<32>(trackerHitPattern) << std::endl;
      track_trackerHitPattern[it] = trackerHitPattern;
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
@@ -775,7 +775,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_istrklong[it] = 0;
      
      bool PixEqTracker = track_trackerLayersWithMeasurement[it]==track_pixelLayersWithMeasurement[it];
-     bool PixLtTracker = track_trackerLayersWithMeasurement[it]<track_pixelLayersWithMeasurement[it];
+     bool PixLtTracker = track_trackerLayersWithMeasurement[it]>track_pixelLayersWithMeasurement[it];
      bool PtSelection = track_pt[it] > 15;
      bool EtaSelection = std::fabs(track_eta[it]) < 2.4;
      bool dxySelection = std::fabs(track_dxy[it]) < 0.2;
