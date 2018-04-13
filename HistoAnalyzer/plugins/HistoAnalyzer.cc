@@ -117,8 +117,8 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   int track_istrklong[maxntracks];
   float track_pt[maxntracks];
   float track_ptErr[maxntracks];
-  float track_eta[maxntracks];
-  float track_phi[maxntracks];
+  float track_eta[maxntracks]; 
+  float track_phi[maxntracks]; 
   float track_nChi2[maxntracks];
   float track_ipSigXY[maxntracks];
   float track_ipBSSigXY[maxntracks];
@@ -137,11 +137,12 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   int track_TECHitPattern[maxntracks]; // Tracker Endcap
   int track_valHits[maxntracks]; 
   int track_pixHits[maxntracks]; 
-  // Location of last hits, relative to extrapolted closest approach to true CMS center (~PV)
-  /* Mysteriously not always available
+  /* RECO only
+  // Location of last hits and ID of last component detecting track, relative to detector center
   float track_outerX[maxntracks];
   float track_outerY[maxntracks];
   float track_outerZ[maxntracks];
+  int track_outerDetId[maxntracks];
   */
   int track_lostOuterHits[maxntracks]; 
   int track_lostOuterPixHits[maxntracks]; 
@@ -501,12 +502,17 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_pt[it] = itTrack->pt();
      track_ptErr[it] = itTrack->ptError();
      track_eta[it] = itTrack->eta();
+     /* RECO only
+     // Origin of the Track coordinate system with respect to the detector's origin
+     const Point OriginTrack = itTrack->referencePoint(); 
+     track_outerDetId[it] = itTrack->outerDetId();
+     // These guys are with respect to OriginTrack, so transform to detector coordinates
+     track_outerX[it] = itTrack->outerX() + OriginTrack.x();
+     track_outerY[it] = itTrack->outerY() + OriginTrack.y();
+     track_outerZ[it] = itTrack->outerZ() + OriginTrack.z();
+     */
      track_pixHits[it] = itTrack->hitPattern().numberOfValidPixelHits();
      track_valHits[it] = itTrack->numberOfValidHits();
-     /*     track_outerX[it] = itTrack->outerX();
-     track_outerY[it] = itTrack->outerY();
-     track_outerZ[it] = itTrack->outerZ();
-     */
      track_lostOuterPixHits[it] = itTrack->hitPattern().numberOfLostPixelHits(reco::HitPattern::MISSING_OUTER_HITS);
      track_lostOuterHits[it] = itTrack->hitPattern().numberOfLostHits(reco::HitPattern::MISSING_OUTER_HITS);
      track_lostInnerPixHits[it] = itTrack->hitPattern().numberOfLostPixelHits(reco::HitPattern::MISSING_INNER_HITS);
@@ -811,7 +817,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      bool PixLtTracker = track_trackerLayersWithMeasurement[it]>track_pixelLayersWithMeasurement[it];
      bool PtSelection = track_pt[it] > 15;
      bool EtaSelection = std::fabs(track_eta[it]) < 2.4;
-     bool dxySelection = std::fabs(track_dxy[it]) < 0.2;
+     bool dxySelection = std::fabs(track_dxy[it]) < 0.02;
      bool dzSelection = std::fabs(track_dz[it]) < 0.05;
      bool dxyTightSelection = std::fabs(track_dxy[it]) < 0.01;
      bool NeuIso0p05Selection = track_sumNeuH0p05[it] + track_sumPh0p05[it] < 10;
@@ -955,7 +961,8 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_dzErr", track_dzErr, "track_dzErr[ntracks]/F");
   myTree->Branch("track_valHits", track_valHits, "track_valHits[ntracks]/I");
   myTree->Branch("track_pixHits", track_pixHits, "track_pixHits[ntracks]/I");
-  /*  myTree->Branch("track_outerX", track_outerX, "track_outerX[ntracks]/F");
+  /*
+  myTree->Branch("track_outerX", track_outerX, "track_outerX[ntracks]/F");
   myTree->Branch("track_outerY", track_outerY, "track_outerY[ntracks]/F");
   myTree->Branch("track_outerZ", track_outerZ, "track_outerZ[ntracks]/F");
   */
