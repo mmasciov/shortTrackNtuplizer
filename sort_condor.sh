@@ -46,11 +46,14 @@ gzip ${DIR}/job_input/input.tar
 cd ${DIR}
 
 echo "[sort_condor] running on files in ${UNSORTED_FILE_DIR}"
+echo "[sort_condor] making it public..."
+chmod 777 -R ${UNSORTED_FILE_DIR}
 echo "[sort_condor] copying output to ${COPYDIR}"
 
 if [ ! -d "${COPYDIR}" ]; then
     echo "[sort_condor] ${COPYDIR} does not exist, making it..."
     mkdir -p ${COPYDIR}
+    echo "[sort_condor] making it public..."
     chmod 777 ${COPYDIR}
 fi
 
