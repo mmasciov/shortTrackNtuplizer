@@ -2,7 +2,7 @@
 # HTCondor friend submission script
 
 if [ "$#" -ne 3 ]; then
-    echo "Usage: ./sort_condor.sh SORTED_MT2_DIR SORTED_ST_DIR OUTPUT_DIR_RELATIVE_TO_YOUR_HADOOP_HOME"
+    echo "Usage: ./friend_condor.sh SORTED_FILE_DIR_MT2 SORTED_FILE_DIR_ST OUTPUT_DIR_RELATIVE_TO_HADOOP_BASE"
     exit 1
 fi
 
@@ -23,6 +23,11 @@ SORTED_FILE_DIR_MT2=$1
 SORTED_FILE_DIR_ST=$2
 COPYDIRBASE=$3
 COPYDIR=/hadoop/cms/store/user/${USERNAME}/${COPYDIRBASE}
+
+echo "[friend_condor] Making input and output directories public"
+chmod 777 -R ${SORTED_FILE_DIR_MT2}
+chmod 777 -R ${SORTED_FILE_DIR_ST}
+chmod 777 ${COPYDIR}
 
 LOGDIR="/data/tmp/${USERNAME}/condor_submit_logs/$COPYDIRBASE"
 OUTDIR="/data/tmp/${USERNAME}/condor_job_logs/$COPYDIRBASE"
