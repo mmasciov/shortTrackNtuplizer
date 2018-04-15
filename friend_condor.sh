@@ -47,6 +47,8 @@ fi
 
 DIR=$PWD
 rm ${DIR}/job_input/input.*
+echo "[friend_condor] copying .py sources into job_input, then making tarball"
+source copy_job_inputs.sh
 tar -hcf ${DIR}/job_input/input.tar job_input/*
 gzip ${DIR}/job_input/input.tar
 cd ${DIR}
