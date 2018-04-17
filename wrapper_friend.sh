@@ -41,13 +41,13 @@ ls -alrth ${SORTED_MT2_FILE_FULLPATH}
 if [ $? -ne 0 ]; then
     echo "[wrapper] could not find mt2 input file, trying xrootd instead"
     FILESHORT=${SORTED_MT2_FILE_FULLPATH#/hadoop/cms}
-    xrdfs xrootd.t2.ucsd.edu ls ${FILESHORT}
+    xrdfs redirector.t2.ucsd.edu ls ${FILESHORT}
     if [ $? -ne 0 ]; then
         echo "[wrapper] could not find mt2 input file with xrootd either, exiting"
         exit 1
     else
         echo "[wrapper] found file with xrootd, will proceed"
-        SORTED_MT2_FILE_FULLPATH="root://xrootd.t2.ucsd.edu/"${FILESHORT}
+        SORTED_MT2_FILE_FULLPATH="root://redirector.t2.ucsd.edu/"${FILESHORT}
     fi
 fi
 # Is st file accessible?
@@ -56,13 +56,13 @@ ls -alrth ${SORTED_ST_FILE_FULLPATH}
 if [ $? -ne 0 ]; then
     echo "[wrapper] could not find st input file, trying xrootd instead"
     FILESHORT=${SORTED_ST_FILE_FULLPATH#/hadoop/cms}
-    xrdfs xrootd.t2.ucsd.edu ls ${FILESHORT}
+    xrdfs redirector.t2.ucsd.edu ls ${FILESHORT}
     if [ $? -ne 0 ]; then
         echo "[wrapper] could not find mt2 input file with xrootd either, exiting"
         exit 1
     else
         echo "[wrapper] found file with xrootd, will proceed"
-        SORTED_ST_FILE_FULLPATH="root://xrootd.t2.ucsd.edu/"${FILESHORT}
+        SORTED_ST_FILE_FULLPATH="root://redirector.t2.ucsd.edu/"${FILESHORT}
     fi
 fi
 

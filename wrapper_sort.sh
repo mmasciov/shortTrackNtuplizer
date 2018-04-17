@@ -39,13 +39,13 @@ ls -alrth ${UNSORTED_FILE_FULLPATH}
 if [ $? -ne 0 ]; then
     echo "[wrapper] could not find input file, trying xrootd instead"
     FILESHORT=${UNSORTED_FILE_FULLPATH#/hadoop/cms}
-    xrdfs xrootd.t2.ucsd.edu ls ${FILESHORT}
+    xrdfs redirector.t2.ucsd.edu ls ${FILESHORT}
     if [ $? -ne 0 ]; then
         echo "[wrapper] could not find input file with xrootd either, exiting"
         exit 1
     else
         echo "[wrapper] found file with xrootd, will proceed"
-        UNSORTED_FILE_FULLPATH="root://xrootd.t2.ucsd.edu/"${FILESHORT}
+        UNSORTED_FILE_FULLPATH="root://redirector.t2.ucsd.edu/"${FILESHORT}
     fi
 fi
 
