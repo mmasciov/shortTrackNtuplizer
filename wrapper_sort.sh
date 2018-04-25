@@ -11,10 +11,10 @@ echo "[wrapper] UNSORTED_FILE_FULLPATH      = " ${UNSORTED_FILE_FULLPATH}
 echo "[wrapper] TREENAME  = " ${TREENAME}
 echo "[wrapper] COPYDIR   = " ${COPYDIR}
 
-CMSSW_VERSION=CMSSW_9_4_1
+CMSSW_VERSION=CMSSW_8_0_26
 
 echo "[wrapper] setting env"
-export SCRAM_ARCH=slc6_amd64_gcc630
+export SCRAM_ARCH=slc6_amd64_gcc530
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 OLDDIR=`pwd`
 cd /cvmfs/cms.cern.ch/$SCRAM_ARCH/cms/cmssw/$CMSSW_VERSION/src
@@ -37,7 +37,7 @@ echo "[wrapper] checking input file with ls"
 ls -alrth ${UNSORTED_FILE_FULLPATH}
 # If not...
 if [ $? -ne 0 ]; then
-    echo "[wrapper] could not find input file, trying xrootd instead"
+    echo "[wrapper] could not find input file locally, trying xrootd instead"
     FILESHORT=${UNSORTED_FILE_FULLPATH#/hadoop/cms}
     xrdfs redirector.t2.ucsd.edu ls ${FILESHORT}
     if [ $? -ne 0 ]; then
