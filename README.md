@@ -82,6 +82,8 @@ Sorting is typically the rate-limiting step.
 
 Again, inputs are absolute and output is relative to your hadoop home, and you should provide a new (sub)directory for each input to avoid tragic name collisions (unless it is your intent to overwrite an older run). Friending using minifriend_condor.sh consumes more processor-hours than friending using friend_condor.sh, but we typically have an excess of small nodes so that de facto many small jobs are faster than a few large jobs, and the grid craps out on jobs that are too large.
 
+To avoid having literally millions of (tiny) friend files in the output directory, a new output subdirectory is created indexed per mt2 source file. Typically, each subdirectory will contain ~100,000 friended events scattered across a few files. Merge to suit.
+
 # Condor Submission Using Old Workflow (Small files only):
 
 WARNING: While this method is algorithmically faster, it de facto takes longer because the grid is very efficient at handling many small jobs but very slow at handling a few large jobs. On very large input files (mostly data) the jobs take too long and end up in an eviction cycle (R>I>R>I>...) even if there are nodes available large enough to handle them. You should probably just run interactively on any sample small enough to use this procedure effectively.

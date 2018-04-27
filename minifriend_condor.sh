@@ -80,11 +80,12 @@ notification=Never
 x509userproxy=${PROXY}
 " > condor_${COPYDIRBASE##*/}.cmd
 for FILEMT2 in `ls ${SORTED_FILE_DIR_MT2}/*.root`; do
-    #FILENUMMT2=`echo ${FILEMT2##*_} | sed 's/\sorted.root//g'`
     FILENUMMT2=${FILEMT2%%_sorted.root} 
     FILENUMMT2=${FILENUMMT2##*_}
+    COPYDIRSUB=${COPYDIR}/${FILENUMMT2}
+    mkdir -p ${COPYDIRSUB}
+    chmod 777 ${COPYDIRSUB}
     for FILEST in `ls ${SORTED_FILE_DIR_ST}/*.root`; do
-	#FILENUMST=`echo ${FILEST##*_} | sed 's/\sorted.root//g'`
 	FILENUMST=${FILEST%%_sorted.root} 
 	FILENUMST=${FILENUMST##*_}
 	let "FILESIZEMT2=`stat --printf="%s" ${FILEMT2}`"
@@ -97,7 +98,7 @@ request_memory=${MEMREQUESTMB}
 request_disk=${MEMREQUESTMB}M
 executable=${EXE}
 transfer_executable=True
-arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIR}
+arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIRSUB}
 queue
 " >> condor_${COPYDIRBASE##*/}.cmd
 	done
