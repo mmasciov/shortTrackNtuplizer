@@ -31,7 +31,7 @@ print stn
 print ofn
 
 # First file
-ff = ROOT.TFile(ffn, "READ")
+ff = ROOT.TFile.Open(ffn, "READ")
 # First tree
 ft = ff.Get(ftn).Clone()
 
@@ -41,7 +41,7 @@ Nf = ft.GetEntries()
 print "Nf = " + str(Nf)
 
 # Second file
-sf = ROOT.TFile(sfn, "READ")
+sf = ROOT.TFile.Open(sfn, "READ")
 # Second tree
 st = sf.Get(stn).Clone()
 

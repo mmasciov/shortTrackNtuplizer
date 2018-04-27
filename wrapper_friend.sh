@@ -1,14 +1,13 @@
 #!/bin/bash
 
-SORTED_FILENAME=$1
+OUTPUT_FILENAME=$1
 SORTED_MT2_FILE_FULLPATH=$2
 SORTED_ST_FILE_FULLPATH=$3
-SORTED_FILE=${UNSORTED_FILE}_sorted.root
 TREENAME_MT2=mt2
 TREENAME_ST=myTree
 COPYDIR=$4
 
-echo "[wrapper] SORTED_FILENAME    = " ${SORTED_FILENAME}
+echo "[wrapper] OUTPUT_FILENAME    = " ${OUTPUT_FILENAME}
 echo "[wrapper] SORTED_MT2_FILE_FULLPATH      = " ${SORTED_MT2_FILE_FULLPATH}
 echo "[wrapper] SORTED_ST_FILE_FULLPATH      = " ${SORTED_ST_FILE_FULLPATH}
 echo "[wrapper] COPYDIR   = " ${COPYDIR}
@@ -79,7 +78,7 @@ ls -a
 echo "[wrapper] directory contents are"
 ls
 
-COMMAND="python treefriend.py ${SORTED_MT2_FILE_FULLPATH} ${TREENAME_MT2} ${SORTED_ST_FILE_FULLPATH} ${TREENAME_ST} ${SORTED_FILENAME}_friend.root"
+COMMAND="python treefriend.py ${SORTED_MT2_FILE_FULLPATH} ${TREENAME_MT2} ${SORTED_ST_FILE_FULLPATH} ${TREENAME_ST} ${OUTPUT_FILENAME}_friend.root"
 
 echo "[wrapper] running: ${COMMAND}"
 
@@ -89,7 +88,7 @@ echo "[wrapper] output is"
 ls
 
 echo "[wrapper] copying file"
-OUTPUT=`ls | grep ${SORTED_FILENAME}`
+OUTPUT=`ls | grep ${OUTPUT_FILENAME}`
 echo "[wrapper] OUTPUT = " ${OUTPUT}
 
 if [ ! -d "${COPYDIR}" ]; then
