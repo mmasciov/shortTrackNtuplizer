@@ -2,7 +2,7 @@ import ROOT
 import os,sys
 
 if len(sys.argv) < 3:
-    print "Example: python mergetree.py <outname> <mt2 or newtree/myTree> <list of files to merge>"
+    print "Example: python mergetree.py <mt2 or newtree/myTree> <list of files to merge>"
     exit(1)
 
 treename=sys.argv[1]
