@@ -68,7 +68,7 @@ Note: It is good practice to produce all of your condor submission files before 
 condor_submit condor_merge_XXX.cmd
 ```
 
-The merging script strips the newtree from ST babies, leaving a top-level myTree TTree. Thus, all ST example commands from here on assume you've done the merging. You *must* do this merging process first, or else the number of jobs in the final friending step explodes unacceptably. This is very fast anyway. merge_condor.sh is currently set to merge 10 files at a time. You may need to tweak this depending on baby size. Too large (>10GB) and condor breaks in the sorting step. Too small and too many jobs are created (< 1GB). Anything in between is fine.
+The merging script strips the newtree from ST babies, leaving a top-level myTree TTree. Thus, all ST example commands from here on assume you've done the merging. You *must* do this merging process first, or else the number of jobs in the final friending step explodes unacceptably. This is very fast anyway. merge_condor.sh is currently set to merge 10 files at a time. You may need to tweak this depending on baby size. Too large (>10GB) and condor breaks in the sorting step. Too small and too many jobs are created (< 1GB). Anything in between is fine. Merging as written can only run at UCSD, as it's simpler and running at remote sites is overkill for such quick jobs.
 
 2. For each input directory created in the merging step, do:
 ``` bash
