@@ -60,14 +60,22 @@ crab submit -c python/crabConfig_MC.py (or python/crabConfig_Data.py)
 
 # Condor Submission Using minifriend Workflow:
 
-1. Locate your unsorted baby directory. You'll need a to run a separate condor submission for each.
+Note: It is good practice to produce all of your condor submission files before proceeding to the submission step. The submission file production process edits the payload sent to nodes, and has a chance to break a submission in progress if you run them too close together.
 
-2. For each input directory, do:
-``` bash
-./sort_condor.sh </path/to/unsorted/babies/on/hadoop> </path/to/output/dir/relative/to/hadoop/name/for/sorted/files> <mt2 OR newtree/myTree (for ST)>
+1. Merge both MT2 and ST babies using 
+```
+./merge_condor.sh </path/to/raw/babies/on/hadoop> </path/for/merged/babies/on/hadoop/relative/to/your/hadoop/home> <mt2 OR newtree/myTree (for ST)>
+condor_submit condor_merge_XXX.cmd
 ```
 
-Provide a new output (sub)directory for each input directory to avoid name collisions. Note that the output directory is to be given relative to your /hadoop/store/cms/user/${USERNAME} directory for convenience while the input directory is absolute (so you can run on babies stored anywhere). Note: Produce all of your condor submission files before proceeding to the submission step. The submission file production process edits the payload sent to nodes, and will break things if you very recently submitted a set of jobs still in the process of being assigned to nodes.
+The merging script strips the newtree from ST babies, leaving a top-level myTree TTree. Thus, all ST example commands from here on assume you've done the merging. You *must* do this merging process first, or else the number of jobs in the final friending step explodes unacceptably. This is very fast anyway. merge_condor.sh is currently set to merge 10 files at a time. You may need to tweak this depending on baby size. Too large (>10GB) and condor breaks in the sorting step. Too small and too many jobs are created (< 1GB). Anything in between is fine.
+
+2. For each input directory created in the merging step, do:
+``` bash
+./sort_condor.sh </path/to/unsorted/babies/on/hadoop> </path/to/output/dir/relative/to/hadoop/name/for/sorted/files> <mt2 OR myTree (for ST)>
+```
+
+Provide a new output (sub)directory for each input directory to avoid name collisions. Note that the output directory is to be given relative to your /hadoop/store/cms/user/${USERNAME} directory for convenience while the input directory is absolute (so you can run on babies stored anywhere). 
 
 3. condor_submit condor_cmd_output_by_previous_script.cmd
 
@@ -82,7 +90,6 @@ Sorting is typically the rate-limiting step.
 
 Again, inputs are absolute and output is relative to your hadoop home, and you should provide a new (sub)directory for each input to avoid tragic name collisions (unless it is your intent to overwrite an older run). Friending using minifriend_condor.sh consumes more processor-hours than friending using friend_condor.sh, but we typically have an excess of small nodes so that de facto many small jobs are faster than a few large jobs, and the grid craps out on jobs that are too large.
 
-To avoid having literally millions of (tiny) friend files in the output directory, a new output subdirectory is created indexed per mt2 source file. Typically, each subdirectory will contain ~100,000 friended events scattered across a few files. Merge to suit.
 
 # Condor Submission Using Old Workflow (Small files only):
 

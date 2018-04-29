@@ -49,15 +49,11 @@ gzip ${DIR}/job_input/input.tar
 cd ${DIR}
 
 echo "[sort_condor] running on files in ${UNSORTED_FILE_DIR}"
-echo "[sort_condor] making it public..."
-chmod 777 -R ${UNSORTED_FILE_DIR}
 echo "[sort_condor] copying output to ${COPYDIR}"
 
 if [ ! -d "${COPYDIR}" ]; then
     echo "[sort_condor] ${COPYDIR} does not exist, making it..."
     mkdir -p ${COPYDIR}
-    echo "[sort_condor] making it public..."
-    chmod 777 ${COPYDIR}
 fi
 
 Grid_Resource="condor cmssubmit-r1.t2.ucsd.edu glidein-collector.t2.ucsd.edu"
@@ -87,12 +83,13 @@ FILEID=`echo ${FILE##*/} | sed 's/\.root//g'`
 let "FILESIZE=`stat --printf="%s" ${FILE}`"
 let "MEMREQUESTMB=${FILESIZE} / 1000000"
 let "MEMREQUESTMB=${MEMREQUESTMB} + ${MEMREQUESTMB} / 5"
+TASKNAME=`echo SORTING_${FILEID} | tr '-' '_'`
 echo "
 request_memory=${MEMREQUESTMB}
 request_disk=${MEMREQUESTMB}M
 executable=${EXE}
 transfer_executable=True
-+taskname=SORTING_${FILEID}
++taskname=
 arguments=`echo ${FILE##*/} | sed 's/\.root//g'` ${FILE} ${TREENAME} ${COPYDIR}
 queue
 " >> condor_${COPYDIRBASE##*/}.cmd

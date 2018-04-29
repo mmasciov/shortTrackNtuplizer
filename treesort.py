@@ -4,6 +4,7 @@ import os,sys
 if len(sys.argv)!=4:
     print "Example (mt2): python treesort.py myfile.root mt2 myfile_sorted.root"
     print "Example (st): python treesort.py myfile.root newtree/myTree myfile_sorted.root"
+    print "Remember that merged st trees have only myTree, no newtree directory"
     exit(1)
 
 finname  = sys.argv[1]

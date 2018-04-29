@@ -12,10 +12,10 @@ echo "[wrapper] SORTED_MT2_FILE_FULLPATH      = " ${SORTED_MT2_FILE_FULLPATH}
 echo "[wrapper] SORTED_ST_FILE_FULLPATH      = " ${SORTED_ST_FILE_FULLPATH}
 echo "[wrapper] COPYDIR   = " ${COPYDIR}
 
-CMSSW_VERSION=CMSSW_9_4_1
+CMSSW_VERSION=CMSSW_8_0_26
 
 echo "[wrapper] setting env"
-export SCRAM_ARCH=slc6_amd64_gcc630
+export SCRAM_ARCH=slc6_amd64_gcc530
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 OLDDIR=`pwd`
 cd /cvmfs/cms.cern.ch/$SCRAM_ARCH/cms/cmssw/$CMSSW_VERSION/src

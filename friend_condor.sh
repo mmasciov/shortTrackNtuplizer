@@ -14,8 +14,7 @@ done
 UNIVERSE="vanilla"
 EXE="wrapper_friend.sh"
 INPUT="wrapper_friend.sh, job_input/input.tar.gz"
-# some of the larger nodes won't take your file if you prefer a site that isn't them, but we need these nodes for larger files
-#SITE="T2_US_UCSD"
+SITE="T2_US_UCSD,T2_US_Wisconsin,T2_US_Florida,T2_US_Nebraska,T2_US_Caltech,UCSB"
 PROXY=$(voms-proxy-info -path)
 USERNAME=$(whoami)
 
@@ -62,12 +61,9 @@ if [ ! -d "${COPYDIR}" ]; then
     mkdir -p ${COPYDIR}
 fi
 
-Grid_Resource="condor cmssubmit-r1.t2.ucsd.edu glidein-collector.t2.ucsd.edu"
-# To get on large enough memory machines, need to omit desired site statements
-#+DESIRED_Sites=\"${SITE}\"
-#+remote_DESIRED_Sites=\"T2_US_UCSD\"
 echo "
 universe=${UNIVERSE}
++DESIRED_Sites=\"${SITE}\"
 when_to_transfer_output = ON_EXIT
 #the actual executable to run is not transfered by its name.
 #In fact, some sites may do weird things like renaming it and such.
