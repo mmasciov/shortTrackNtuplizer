@@ -129,12 +129,7 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   float track_dzBS[maxntracks];
   float track_dzErr[maxntracks];
   // Least significant bit (right-most) is layer 1, then read left
-  int track_PBHitPattern[maxntracks]; // Pixel Barrel
-  int track_PEHitPattern[maxntracks]; // Pixel Endcap
-  int track_TIBHitPattern[maxntracks]; // Tracker Inner Barrel
-  int track_TOBHitPattern[maxntracks]; // Tracker Outer Barrel
-  int track_TIDHitPattern[maxntracks]; // Tracker Inner Disk
-  int track_TECHitPattern[maxntracks]; // Tracker Endcap
+  int track_HitSignature[maxntracks];
   int track_valHits[maxntracks]; 
   int track_pixHits[maxntracks]; 
   /* RECO only
@@ -519,49 +514,19 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_lostInnerHits[it] = itTrack->hitPattern().numberOfLostHits(reco::HitPattern::MISSING_INNER_HITS);
      track_pixelLayersWithMeasurement[it] = itTrack->hitPattern().pixelLayersWithMeasurement();
      track_trackerLayersWithMeasurement[it] = itTrack->hitPattern().trackerLayersWithMeasurement();
-     // Based on: https://github.com/cms-sw/cmssw/blob/master/DataFormats/TrackReco/interface/HitPattern.h#L87
-     // And for 8X: https://github.com/cms-sw/cmssw/blob/CMSSW_8_0_20_patchX/DataFormats/TrackReco/interface/HitPattern.h#L90
      // Least significant bit (right most) is layer 1, layers increase to left...
-     int PixelBarrelHitPattern = 0;
-     int PixelEndcapHitPattern = 0;
-     int TrackerInnerBarrelHitPattern = 0;
-     int TrackerOuterBarrelHitPattern = 0;
-     int TrackerInnerDiskHitPattern = 0;
-     int TrackerEndcapHitPattern = 0;
-     const reco::HitPattern &p = itTrack->hitPattern();
-     for (int i_hit = 0; i_hit < p.numberOfHits(reco::HitPattern::TRACK_HITS); i_hit++) { // This needs to be p.numberOfAllHits in 9X
-       int hit = p.getHitPattern(reco::HitPattern::TRACK_HITS,i_hit);
-       if (p.validHitFilter(hit) && p.trackerHitFilter(hit)) {
-	 int layer = p.getLayer(hit);
-	 if (p.pixelBarrelHitFilter(hit)) {
-	   PixelBarrelHitPattern |= 1<<(layer-1);
-	   // std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of PixelBarrel" << std::endl;
-	 } else if(p.pixelEndcapHitFilter(hit)) {
-	   PixelEndcapHitPattern |= 1<<(layer-1);
-	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of PixelEndcap" << std::endl;
-	 } else if (p.stripTIBHitFilter(hit)) {
-	   TrackerInnerBarrelHitPattern |= 1<<(layer-1);
-	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerInnerBarrel" << std::endl;
-	 } else if (p.stripTIDHitFilter(hit)) {
-	   TrackerInnerDiskHitPattern |= 1<<(layer-1);
-	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerInnerDisk" << std::endl;
-	 } else if (p.stripTOBHitFilter(hit)) {
-	   TrackerOuterBarrelHitPattern |= 1<<(layer-1);
-	   // std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerOuterBarrel" << std::endl;
-	 } else if (p.stripTECHitFilter(hit)) {
-	   TrackerEndcapHitPattern |= 1<<(layer-1);
-	   //std::cout << "Found a valid hit in track " << it << " in layer " << layer << " of TrackerEndcap" << std::endl;
-	 }
-	 // Use |= here instead of the more familiar += as a one-line way to prevent cases where there are multiple 
-	 // hits in the same layer from doubly setting the bit and causing overflow.
-       }
+     int signature = 0; int lastLayer = -1; int lastSubdet = -1; int overallLayer = -1;
+     const reco::HitPattern &hp = itTrack->hitPattern();
+     for (int i_hit = 0; i_hit < hp.numberOfHits(reco::HitPattern::TRACK_HITS); i_hit++) { // numberOfAllHits in 9X
+       const int hit = hp.getHitPattern(reco::HitPattern::TRACK_HITS,i_hit);
+       if (!hp.trackerHitFilter(hit)) break; // Don't care about muon chamber hits or anything happening in the calorimeters
+       // Layers are only defined per substructure. Check that we're not getting a second hit in the same layer of the same substructure.
+       int layer = hp.getLayer(hit); // Which layer of subdetector?
+       int subdet = hp.getSubStructure(hit); // Pixel Barrel/Disk, Tracker Inner/Outer Barrel, Tracker Disk/Endcap?
+       if (layer != lastLayer || subdet != lastSubdet) {lastSubdet = subdet; lastLayer = layer; overallLayer++;}
+       if (hp.validHitFilter(hit)) signature |= (1 << overallLayer); // If missing, there'll end up being a 0 in this bit
      }
-     track_PBHitPattern[it] = PixelBarrelHitPattern;
-     track_PEHitPattern[it] = PixelEndcapHitPattern;
-     track_TIBHitPattern[it] = TrackerInnerBarrelHitPattern;
-     track_TOBHitPattern[it] = TrackerOuterBarrelHitPattern;
-     track_TIDHitPattern[it] = TrackerInnerDiskHitPattern;
-     track_TECHitPattern[it] = TrackerEndcapHitPattern;
+     track_HitSignature[it] = signature;
 
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
@@ -972,12 +937,7 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_lostInnerPixHits", track_lostInnerPixHits, "track_lostInnerPixHits[ntracks]/I");
   myTree->Branch("track_pixelLayersWithMeasurement", track_pixelLayersWithMeasurement, "track_pixelLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_trackerLayersWithMeasurement", track_trackerLayersWithMeasurement, "track_trackerLayersWithMeasurement[ntracks]/I");
-  myTree->Branch("track_PBHitPattern", track_PBHitPattern, "track_PBHitPattern[ntracks]/I");
-  myTree->Branch("track_PEHitPattern", track_PEHitPattern, "track_PEHitPattern[ntracks]/I");
-  myTree->Branch("track_TIBHitPattern", track_TIBHitPattern, "track_TIBHitPattern[ntracks]/I");
-  myTree->Branch("track_TOBHitPattern", track_TOBHitPattern, "track_TOBHitPattern[ntracks]/I");
-  myTree->Branch("track_TIDHitPattern", track_TIDHitPattern, "track_TIDHitPattern[ntracks]/I");
-  myTree->Branch("track_TECHitPattern", track_TECHitPattern, "track_TECHitPattern[ntracks]/I");
+  myTree->Branch("track_HitSignature", track_HitSignature, "track_HitSignature[ntracks]/I");
   myTree->Branch("track_highPurity", track_highPurity, "track_highPurity[ntracks]/I");
   myTree->Branch("track_charge", track_charge, "track_charge[ntracks]/I");
   myTree->Branch("track_ismatched", track_ismatched, "track_ismatched[ntracks]/I");

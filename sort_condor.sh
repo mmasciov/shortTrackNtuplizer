@@ -15,7 +15,8 @@ UNIVERSE="vanilla"
 EXE="wrapper_sort.sh"
 INPUT="wrapper_sort.sh, job_input/input.tar.gz"
 # some of the larger nodes won't take your file if you prefer a site that isn't them, but we need these nodes for larger files
-SITE="T2_US_UCSD,T2_US_Wisconsin,T2_US_Florida,T2_US_Nebraska,T2_US_Caltech,UCSB"
+SITE="T2_US_UCSD"
+#SITE="T2_US_UCSD,T2_US_Wisconsin,T2_US_Florida,T2_US_Nebraska,T2_US_Caltech,UCSB"
 PROXY=$(voms-proxy-info -path)
 USERNAME=$(whoami)
 
@@ -58,7 +59,6 @@ fi
 
 Grid_Resource="condor cmssubmit-r1.t2.ucsd.edu glidein-collector.t2.ucsd.edu"
 # Some large memory machines won't take us unless we omit desired site statements
-#+remote_DESIRED_Sites=\"T2_US_UCSD\"
 echo "
 universe=${UNIVERSE}
 +DESIRED_Sites=\"${SITE}\"

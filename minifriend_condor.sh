@@ -12,9 +12,10 @@ do echo "No Proxy found issuing \"voms-proxy-init -voms cms\""
 done
 
 UNIVERSE="vanilla"
-EXE="wrapper_minifriend.sh"
-INPUT="wrapper_minifriend.sh, job_input/input.tar.gz"
-SITE="T2_US_UCSD,T2_US_Wisconsin,T2_US_Florida,T2_US_Nebraska,T2_US_Caltech,UCSB"
+EXE="wrapper_friend.sh"
+INPUT="wrapper_friend.sh, job_input/input.tar.gz"
+#SITE="T2_US_UCSD,T2_US_Wisconsin,T2_US_Florida,T2_US_Nebraska,T2_US_Caltech,UCSB"
+SITE="T2_US_UCSD"
 PROXY=$(voms-proxy-info -path)
 USERNAME=$(whoami)
 
@@ -71,7 +72,7 @@ output=${OUT}
 error =${ERR}
 notification=Never
 x509userproxy=${PROXY}
-" > condor_${COPYDIRBASE##*/}.cmd
+" > condor_minifriend_${COPYDIRBASE##*/}.cmd
 for FILEMT2 in `ls ${SORTED_FILE_DIR_MT2}/*.root`; do
     FILENUMMT2=${FILEMT2%%_sorted.root} 
     FILENUMMT2=${FILENUMMT2##*_}
@@ -89,9 +90,9 @@ for FILEMT2 in `ls ${SORTED_FILE_DIR_MT2}/*.root`; do
 	echo "
 executable=${EXE}
 transfer_executable=True
-arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIRSUB}
+arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIR}
 queue
-" >> condor_${COPYDIRBASE##*/}.cmd
+" >> condor_minifriend_${COPYDIRBASE##*/}.cmd
 	done
 done
 
