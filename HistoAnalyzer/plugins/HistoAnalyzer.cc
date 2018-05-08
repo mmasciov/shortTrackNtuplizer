@@ -146,6 +146,7 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   int track_charge[maxntracks];
   int track_pixelLayersWithMeasurement[maxntracks];
   int track_trackerLayersWithMeasurement[maxntracks];
+  int track_algorithm[maxntracks];
   int track_highPurity[maxntracks];
   int track_ismatched[maxntracks];
   int track_gpidx[maxntracks];
@@ -528,6 +529,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      }
      track_HitSignature[it] = signature;
 
+     track_algorithm[it] = itTrack->algo();
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
      track_dxy[it] = itTrack->dxy(PV0.position());
@@ -938,6 +940,7 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_pixelLayersWithMeasurement", track_pixelLayersWithMeasurement, "track_pixelLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_trackerLayersWithMeasurement", track_trackerLayersWithMeasurement, "track_trackerLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_HitSignature", track_HitSignature, "track_HitSignature[ntracks]/I");
+  myTree->Branch("track_algorithm", track_algorithm, "track_algorithm[ntracks]/I");
   myTree->Branch("track_highPurity", track_highPurity, "track_highPurity[ntracks]/I");
   myTree->Branch("track_charge", track_charge, "track_charge[ntracks]/I");
   myTree->Branch("track_ismatched", track_ismatched, "track_ismatched[ntracks]/I");
