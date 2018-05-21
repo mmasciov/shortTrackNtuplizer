@@ -62,14 +62,23 @@ st.SetBranchStatus("run",1)
 st.SetBranchStatus("lumi",1)
 st.SetBranchStatus("evt",1)
 
+# Use these sets to check if there's at least a chance of a match
+set_fr=set([])
+set_fl=set([])
+set_fe=set([])
+set_sr=set([])
+set_sl=set([])
+set_se=set([])
+
 for index in xrange(Nf):
     ft.GetEntry(index)
     fr[index] = ft.run
     fl[index] = ft.lumi
     fe[index] = ft.evt
     fi[index] = index
-
-fzip = zip(fr,fl,fe,fi)
+    set_fr.add(ft.run)
+    set_fl.add(ft.lumi)
+    set_fe.add(ft.evt)
 
 # second tree run, lumi, evt, index
 sr=[None]*Ns
@@ -83,7 +92,16 @@ for index in xrange(Ns):
     sl[index] = st.lumi
     se[index] = st.evt
     si[index] = index
+    set_sr.add(st.run)
+    set_sl.add(st.lumi)
+    set_se.add(st.evt)
 
+# Abort if no chance of a match
+if len(set_fr.intersection(set_sr)) == 0 or len(set_fl.intersection(set_sl)) == 0 or len(set_fe.intersection(set_se)) == 0: 
+    print "No common runs, lumis, or evts. Abort."
+    exit(1)
+
+fzip = zip(fr,fl,fe,fi)
 szip = zip(sr,sl,se,si)
 
 # Indices of matched entries in each tree. fii[i] points to the same event as sii[i], but fii[i] is mot necessarily the same *number* as sii[i],
@@ -113,7 +131,7 @@ for x in xrange(Nf):
             lastY=y
             if (len(fii) % 10000 == 0): print "total matches = " + str(len(fii))
             break
-        else: # The first three mean there can be no match for our first event; we've overshot. Skip if so. Otherwise, continue.
+        else: # The first three mean there can be no match for our event; we've overshot. Skip if so. Otherwise, continue.
             if fzip[x][0]<szip[y][0]:
                 break
             elif fzip[x][0]==szip[y][0] and fzip[x][1]<szip[y][1]:

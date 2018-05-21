@@ -388,6 +388,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        
        if( abs(itgp->pdgId())!=1000024 )
 	 continue;
+
        if( itgp->numberOfDaughters()<2 )
 	 continue;
        
@@ -421,7 +422,6 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	 
 	 TVector3 decayvec = dv-pv;
 	 gp_decayXY[ich]=TMath::Sqrt(decayvec.X()*decayvec.X()+decayvec.Y()*decayvec.Y());
-	 
 	 ++ich;
 	 
        }
@@ -497,6 +497,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_pt[it] = itTrack->pt();
      track_ptErr[it] = itTrack->ptError();
      track_eta[it] = itTrack->eta();
+     track_phi[it] = itTrack->phi();
      /* RECO only
      // Origin of the Track coordinate system with respect to the detector's origin
      const Point OriginTrack = itTrack->referencePoint(); 

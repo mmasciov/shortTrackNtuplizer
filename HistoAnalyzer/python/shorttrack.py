@@ -48,8 +48,7 @@ wjets_files=[
 wjets_dict=dict(zip(wjets_tags,wjets_files))
 
 
-zinv_tags = ["zinv_ht100to200_nonext","zinv_ht200to400_nonext","zinv_ht400to600_nonext","zinv_ht400to600_ext1","zinv_ht600to800_nonext","zinv_ht800to1200_nonext"
-           "zinv_ht1200to2500_nonext","zinv_ht2500toInf_nonext"]
+zinv_tags = ["zinv_ht100to200_nonext","zinv_ht200to400_nonext","zinv_ht400to600_nonext","zinv_ht400to600_ext1","zinv_ht600to800_nonext","zinv_ht800to1200_nonext", "zinv_ht1200to2500_nonext","zinv_ht2500toInf_nonext"]
 zinv_files=[
 "/ZJetsToNuNu_HT-100To200_13TeV-madgraph/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM",
 "/ZJetsToNuNu_HT-200To400_13TeV-madgraph/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM",

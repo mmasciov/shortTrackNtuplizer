@@ -72,7 +72,7 @@ output=${OUT}
 error =${ERR}
 notification=Never
 x509userproxy=${PROXY}
-" > condor_minifriend_${COPYDIRBASE##*/}.cmd
+" > condor/condor_minifriend_${COPYDIRBASE##*/}.cmd
 for FILEMT2 in `ls ${SORTED_FILE_DIR_MT2}/*.root`; do
     FILENUMMT2=${FILEMT2%%_sorted.root} 
     FILENUMMT2=${FILENUMMT2##*_}
@@ -92,8 +92,8 @@ executable=${EXE}
 transfer_executable=True
 arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIR}
 queue
-" >> condor_minifriend_${COPYDIRBASE##*/}.cmd
+" >> condor/condor_minifriend_${COPYDIRBASE##*/}.cmd
 	done
 done
 
-echo "[minifriend_condor] wrote condor_minifriend_${COPYDIRBASE##*/}.cmd" 
+echo "[minifriend_condor] wrote condor/condor_minifriend_${COPYDIRBASE##*/}.cmd" 

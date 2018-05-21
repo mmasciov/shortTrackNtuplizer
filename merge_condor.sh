@@ -69,14 +69,14 @@ output=${OUT}
 error =${ERR}
 notification=Never
 x509userproxy=${PROXY}
-" > condor_merge_${COPYDIRBASE##*/}.cmd
+" > condor/condor_merge_${COPYDIRBASE##*/}.cmd
 filearray=($(ls ${UNMERGED_FILE_DIR}/*.root))
 nfiles=${#filearray[@]}
-for ((i=1;i<=nfiles;i+=10)); do
+for ((i=1;i<=nfiles;i+=5)); do
 TASKNAME=`echo MERGING_${i}_${COPYDIRBASE##*/} | tr '-' '_'`
 FILES=""
-let "index=$i / 10 + 1"
-    for ((j=i;j<=nfiles && j<i+10;j++)); do
+let "index=$i / 5 + 1"
+    for ((j=i;j<=nfiles && j<i+5;j++)); do
 	FILES="$FILES${filearray[j]}," 
     done
 echo "
@@ -85,7 +85,7 @@ transfer_executable=True
 +taskname=${TASKNAME}
 arguments=${FILES} ${TREENAME} ${COPYDIR} merged_${index}.root
 queue
-" >> condor_merge_${COPYDIRBASE##*/}.cmd
+" >> condor/condor_merge_${COPYDIRBASE##*/}.cmd
 done
 
-echo "[sort_condor] wrote condor_merge_${COPYDIRBASE##*/}.cmd" 
+echo "[sort_condor] wrote condor/condor_merge_${COPYDIRBASE##*/}.cmd" 

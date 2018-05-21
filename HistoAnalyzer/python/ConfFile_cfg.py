@@ -8,8 +8,8 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("CommonTools.ParticleFlow.pfParticleSelection_cff")
 process.load("CommonTools.ParticleFlow.pfNoPileUpIso_cff")
 
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(30) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(30) )
 
 process.options = cms.untracked.PSet( allowUnscheduled = cms.untracked.bool(True))
 
@@ -21,12 +21,12 @@ process.source = cms.Source("PoolSource",
 #        "root://cms-xrd-global.cern.ch//store/data/Run2016G/MET/AOD/23Sep2016-v1/90001/064B5624-258B-E611-A1BC-0090FAA573B0.root"
 #        "root://cmsxrootd.fnal.gov//store/data/Run2016H/HTMHT/AOD/PromptReco-v2/000/281/976/00000/16555B4F-5A89-E611-9873-FA163EABA242.root"
 #        "file:/nfs-6/userdata/dpgilber/ElectronShortTracks/ttsl_fromT_0to9.root"
-        "file:/nfs-6/userdata/dpgilber/AOD_Testfile/ttsl_fromT_testfile.root"
+#        "file:/nfs-6/userdata/dpgilber/AOD_Testfile/ttsl_fromT_testfile.root"
+        "file:/nfs-6/userdata/mmasciov/AOD_2016_10k.root"
     )                       
 )
 
 process.newtree = cms.EDAnalyzer('HistoAnalyzer',
-                                 ###     , tracks = cms.untracked.InputTag('ctfWithMaterialTracks')
                               vertexs = cms.untracked.InputTag('offlinePrimaryVertices'),
                               tracks = cms.untracked.InputTag('generalTracks'),
                               dedxs = cms.untracked.InputTag('dedxHarmonic2'),
@@ -40,7 +40,8 @@ process.newtree = cms.EDAnalyzer('HistoAnalyzer',
                               pfAllPhs = cms.untracked.InputTag('pfAllPhotons'),
                               pfAllChPs = cms.untracked.InputTag('pfAllChargedParticles'),
                               pfAllPUChPs = cms.untracked.InputTag('pfPileUpAllChargedParticles'),
-                              genparts = cms.untracked.InputTag('generalTracks'),
+                              genparts = cms.untracked.InputTag('genParticles'),
+#                              genparts = cms.untracked.InputTag('genParticlePlusGeant'),
                               )
 
 process.TFileService = cms.Service("TFileService",

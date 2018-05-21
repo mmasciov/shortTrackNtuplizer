@@ -73,7 +73,7 @@ output=${OUT}
 error =${ERR}
 notification=Never
 x509userproxy=${PROXY}
-" > condor_${COPYDIRBASE##*/}.cmd
+" > condor/condor_sort_${COPYDIRBASE##*/}.cmd
 for FILE in `ls ${UNSORTED_FILE_DIR}/*.root`; do
 # Very few machines have the memory required for some of the larger files. We need to make that clear or the job fails, but
 # asking for enormous memory for every job limits the machines available to us, and misuses valuable resources. Get the 
@@ -92,7 +92,7 @@ transfer_executable=True
 +taskname=
 arguments=`echo ${FILE##*/} | sed 's/\.root//g'` ${FILE} ${TREENAME} ${COPYDIR}
 queue
-" >> condor_${COPYDIRBASE##*/}.cmd
+" >> condor/condor_sort_${COPYDIRBASE##*/}.cmd
 done
 
-echo "[sort_condor] wrote condor_${COPYDIRBASE##*/}.cmd" 
+echo "[sort_condor] wrote condor/condor_sort_${COPYDIRBASE##*/}.cmd" 
