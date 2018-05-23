@@ -47,11 +47,7 @@ st = sf.Get(stn).Clone()
 
 Ns = st.GetEntries()
 
-# first tree run, lumi, evt, index
-fr=[None]*Nf
-fl=[None]*Nf
-fe=[None]*Nf
-fi=[None]*Nf
+print "Ns = " +str(Ns)
 
 ft.SetBranchStatus("*",0)
 ft.SetBranchStatus("run",1)
@@ -63,91 +59,41 @@ st.SetBranchStatus("lumi",1)
 st.SetBranchStatus("evt",1)
 
 # Use these sets to check if there's at least a chance of a match
-set_fr=set([])
-set_fl=set([])
-set_fe=set([])
-set_sr=set([])
-set_sl=set([])
-set_se=set([])
+list_f = [None]*Nf
+list_s = [None]*Ns
 
 for index in xrange(Nf):
     ft.GetEntry(index)
-    fr[index] = ft.run
-    fl[index] = ft.lumi
-    fe[index] = ft.evt
-    fi[index] = index
-    set_fr.add(ft.run)
-    set_fl.add(ft.lumi)
-    set_fe.add(ft.evt)
-
-# second tree run, lumi, evt, index
-sr=[None]*Ns
-sl=[None]*Ns
-se=[None]*Ns
-si=[None]*Ns
+    list_f[index] = (ft.run, ft.lumi, ft.evt)
 
 for index in xrange(Ns):
     st.GetEntry(index)
-    sr[index] = st.run
-    sl[index] = st.lumi
-    se[index] = st.evt
-    si[index] = index
-    set_sr.add(st.run)
-    set_sl.add(st.lumi)
-    set_se.add(st.evt)
+    list_s[index] = (st.run, st.lumi, st.evt)
 
-# Abort if no chance of a match
-if len(set_fr.intersection(set_sr)) == 0 or len(set_fl.intersection(set_sl)) == 0 or len(set_fe.intersection(set_se)) == 0: 
-    print "No common runs, lumis, or evts. Abort."
-    exit(1)
 
-fzip = zip(fr,fl,fe,fi)
-szip = zip(sr,sl,se,si)
+print "Converting to sets"
+set_f = set(list_f)
+set_s = set(list_s)
 
-# Indices of matched entries in each tree. fii[i] points to the same event as sii[i], but fii[i] is mot necessarily the same *number* as sii[i],
-# as they may be at different positions within their respective sorted trees.
-# The final length of fii and sii are in practice very close to the length of the smaller list. Pre-allocate so we don't end up copying a many-millions-
-# entry array multiple times in large files, and use current to keep track of where we are in this pre-allocated space.
-isize = min(Nf,Ns)
-fii = [None]*isize
-sii = [None]*isize
-current = 0
+print "Finding matches"
+matches = set_f.intersection(set_s)
 
-print "Number of mt2 events: " + str(Nf)
-print "Number of st events: " + str(Ns)
+print "Number of matches is: " + str(len(matches))
+if len(matches) == 0: exit(1)
+
+print "Making dicts"
+dict_f = dict(zip(list_f,range(Nf)))
+dict_s = dict(zip(list_s,range(Ns)))
 
 # Keep track of last location we found a match. Since trees are sorted, we'll never find a match for the next entry in the first tree 
 # at a location before the last match in the second tree. 
-lastY = 0
-# Use mt2 as the reference list and search for matches in st (arbitrarily)
-for x in xrange(Nf):
-    if (x % 10000 == 0): print "Scanning through y values for x = " + str(x) + " starting from y = " + str(lastY)
-    for y in xrange(lastY,Ns):
-        if fzip[x][0]==szip[y][0] and fzip[x][1]==szip[y][1] and fzip[x][2]==szip[y][2]:
-            # Found a match, save the respective indices
-            fii[current] = fzip[x][3]
-            sii[current] = szip[y][3]
-            current += 1
-            lastY=y
-            if (len(fii) % 10000 == 0): print "total matches = " + str(len(fii))
-            break
-        else: # The first three mean there can be no match for our event; we've overshot. Skip if so. Otherwise, continue.
-            if fzip[x][0]<szip[y][0]:
-                break
-            elif fzip[x][0]==szip[y][0] and fzip[x][1]<szip[y][1]:
-                break
-            elif fzip[x][0]==szip[y][0]and fzip[x][1]==szip[y][1] and fzip[x][2]<szip[y][2]:
-                break
-            else:
-                continue
 
+print "Marking events to be saved"
 felist = ROOT.TEventList()
 selist = ROOT.TEventList()
-
-for x in xrange(current):
-    if ( (x+1) % 10000 == 0): print "Marking " + str(x+1) + "th event to be saved"
-    felist.Enter(fii[x])
-    selist.Enter(sii[x])
+for m in matches:
+    felist.Enter(dict_f[m])
+    selist.Enter(dict_s[m])
 
 print "Saving events"
 
