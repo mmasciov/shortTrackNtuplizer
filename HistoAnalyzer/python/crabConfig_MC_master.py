@@ -1,12 +1,12 @@
 from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
-#config.General.requestName = 'stoppedTracks_ttsl_fromT_ext1'
+config.General.requestName = 'stoppedTracks_ttsl_fromT'
 #config.General.requestName = 'stoppedTracks_ttdl_nonext_fixed'
 #config.General.requestName = 'stoppedTracks_wjets_incl'
 #config.General.requestName = 'stoppedTracks_wjets_ht2500toInf_ext1'
 #config.General.requestName = 'stoppedTracks_zinv_ht400to600_ext1'
-config.General.requestName = 'stoppedTracks_zinv_Zpt100to200'
+#config.General.requestName = 'stoppedTracks_zinv_Zpt100to200'
 #config.General.requestName = 'stoppedTracks_qcd_ht2000toInf_ext1'
 #config.General.requestName = 'stoppedTracks_dyjetstoll_ht600to800'
 #config.General.requestName = 'stoppedTracks_gjets0p4_ht600toInf'
@@ -21,7 +21,7 @@ config.JobType.psetName = 'ConfFile_cfg.py'
 # Remember to change output dataset tag below
 
 ### ttsl
-#config.Data.inputDataset = '/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
+config.Data.inputDataset = '/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 #config.Data.inputDataset = '/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 #config.Data.inputDataset = '/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/AODSIM'
 #config.Data.inputDataset = '/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/AODSIM'
@@ -60,7 +60,7 @@ config.JobType.psetName = 'ConfFile_cfg.py'
 #config.Data.inputDataset = '/ZJetsToNuNu_HT-1200To2500_13TeV-madgraph/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 #config.Data.inputDataset = '/ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 # By Zpt
-config.Data.inputDataset = '/ZJetsToNuNu_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
+#config.Data.inputDataset = '/ZJetsToNuNu_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 #config.Data.inputDataset = '/ZJetsToNuNu_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
 ### QCD
 #config.Data.inputDataset = '/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM'
@@ -104,11 +104,11 @@ config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 10
 config.Data.outLFNDirBase = '/store/user/dpgilber/'
 config.Data.publication = False
-#config.Data.outputDatasetTag = 'ttsl_fromT_ext1'
+config.Data.outputDatasetTag = 'ttsl_fromT'
 #config.Data.outputDatasetTag = 'ttdl_nonext_fixed'
 #config.Data.outputDatasetTag = 'wjets_ht2500toInf_ext1'
 #config.Data.outputDatasetTag = 'zinv_ht400to600_ext1'
-config.Data.outputDatasetTag = 'zinv_Zpt100to200'
+#config.Data.outputDatasetTag = 'zinv_Zpt100to200'
 #config.Data.outputDatasetTag = 'qcd_ht2000toInf_ext1'
 #config.Data.outputDatasetTag = 'dyjetstoll_ht600to800'
 #config.Data.outputDatasetTag = 'gjets0p4_ht600toInf'

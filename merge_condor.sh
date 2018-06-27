@@ -72,11 +72,11 @@ x509userproxy=${PROXY}
 " > condor/condor_merge_${COPYDIRBASE##*/}.cmd
 filearray=($(ls ${UNMERGED_FILE_DIR}/*.root))
 nfiles=${#filearray[@]}
-for ((i=1;i<=nfiles;i+=5)); do
+for ((i=1;i<=nfiles;i+=10)); do
 TASKNAME=`echo MERGING_${i}_${COPYDIRBASE##*/} | tr '-' '_'`
 FILES=""
-let "index=$i / 5 + 1"
-    for ((j=i;j<=nfiles && j<i+5;j++)); do
+let "index=$i / 10 + 1"
+    for ((j=i;j<=nfiles && j<i+10;j++)); do
 	FILES="$FILES${filearray[j]}," 
     done
 echo "

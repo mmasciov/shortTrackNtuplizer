@@ -20,6 +20,8 @@ elif (first == "wjets"):
     tagsToRun = st.wjets_tags
 elif (first == "zinv"):
     tagsToRun = st.zinv_tags
+elif (first == "zinvzpt"):
+    tagsToRun = st.zinvzpt_tags
 elif (first == "qcd"):
     tagsToRun = st.qcd_tags
 elif (first == "dy"):

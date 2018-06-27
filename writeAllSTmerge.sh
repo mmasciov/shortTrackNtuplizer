@@ -1,0 +1,66 @@
+#!/bin/bash
+
+INDIR=/hadoop/cms/store/user/dpgilber/
+
+declare -a indirs=(
+#DY
+DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_incl_ext1/180607_012418/0000
+DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_incl_ext2/180607_012429/0000
+DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht100to200_nonext/180607_012454/0000
+DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht200to400_nonext/180607_012520/0000
+DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht200to400_ext1/180607_012532/0000
+DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht400to600_nonext/180606_064006/0000
+DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht400to600_ext1/180607_012557/0000
+DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_ht600to800_nonext/180607_012610/0000
+DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/dy_1200to2500_nonext/180607_012636/0000
+#QCD
+QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht300to500_nonext/180607_012148/0000
+QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht300to500_ext1/180607_012200/0000
+QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht500to700_nonext/180607_012211/0000
+QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht500to700_ext1/180607_012223/0000
+QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht700to1000_nonext/180607_012236/0000
+QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht700to1000_ext1/180607_012249/0000
+QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht1000to1500_nonext/180607_012304/0000
+QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht1000to1500_ext1/180607_012315/0000
+QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_1500to2000_nonext/180607_012326/0000
+QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_1500to2000_ext1/180607_012339/0000
+QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/qcd_ht2000toInf_ext1/180607_012407/0000
+#WJets
+WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_incl_nonext/180607_011212/0000
+WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht200to400_nonext/180606_062750/0000
+WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht200to400_ext1/180607_011258/0000
+WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht400to600_nonext/180607_011324/0000
+WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht400to600_ext1/180607_011546/0000
+WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht800to1200_nonext/180607_011831/0000
+WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht800to1200_ext1/180607_011843/0000
+WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht1200to2500_nonext/180607_011854/0000
+WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht2500toInf_nonext/180607_011905/0000
+WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/wjets_ht2500toInf_ext1/180607_011916/0000
+#TTbar
+TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/ttdl_nonext/180607_011047/0000
+TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/ttdl_ext1/180607_011100/0000
+TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/ttsl_fromT_nonext/180607_010953/0000
+TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/ttsl_fromTbar_nonext/180607_011005/0000
+TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/ttsl_fromTbar_ext1/180607_011036/0000
+#Zinv
+ZJetsToNuNu_HT-100To200_13TeV-madgraph/zinv_ht100to200_nonext/180607_011927/0000
+ZJetsToNuNu_HT-200To400_13TeV-madgraph/zinv_ht200to400_nonext/180607_011941/0000
+ZJetsToNuNu_HT-400To600_13TeV-madgraph/zinv_ht400to600_nonext/180607_011952/0000
+ZJetsToNuNu_HT-400To600_13TeV-madgraph/zinv_ht400to600_ext1/180607_012003/0000
+ZJetsToNuNu_HT-600To800_13TeV-madgraph/zinv_ht600to800_nonext/180607_012015/0000
+ZJetsToNuNu_HT-1200To2500_13TeV-madgraph/zinv_ht1200to2500_nonext/180607_012037/0000
+ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph/zinv_ht2500toInf_nonext/180607_012052/0000
+#singletop
+ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/singletop_tchan4f/180607_011136/0000
+ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/singletop_tw/180607_011148/0000
+ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/singletop_tbarw/180607_011201/0000
+ST_tWll_5f_LO_13TeV-MadGraph-pythia8/singletop_twz/180607_011111/0000
+)
+
+for dir in ${indirs[@]}; do
+    tag=${dir#*/}
+    tag=${tag%%/*}
+    command="./merge_condor.sh $INDIR/${dir} ST_GenVertex/merge/${tag} newtree/myTree"
+    echo $command
+    eval $command
+done

@@ -61,8 +61,17 @@ zinv_files=[
 ]
 zinv_dict=dict(zip(zinv_tags,zinv_files))
 
+zinvzpt_tags = ["zinv_zpt200toInf_nonext","zinv_zpt200toInf_ext1","zinv_zpt100to200_nonext","zinv_zpt100to200_ext1"]
+zinvzpt_files=[
+"/ZJetsToNuNu_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM",
+"/ZJetsToNuNu_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/AODSIM",
+"/ZJetsToNuNu_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM",
+"/ZJetsToNuNu_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/AODSIM"
+]
+zinvzpt_dict=dict(zip(zinvzpt_tags,zinvzpt_files))
+
 qcd_tags=["qcd_ht300to500_nonext","qcd_ht300to500_ext1","qcd_ht500to700_nonext","qcd_ht500to700_ext1","qcd_ht700to1000_nonext","qcd_ht700to1000_ext1","qcd_ht1000to1500_nonext",
-          "qcd_ht1000to1500_ext1","qcd_1500to2000_nonext","qcd_2000to1500_ext1","qcd_ht2000toInf_nonext","qcd_ht2000toInf_ext1"]
+          "qcd_ht1000to1500_ext1","qcd_1500to2000_nonext","qcd_1500to2000_ext1","qcd_ht2000toInf_nonext","qcd_ht2000toInf_ext1"]
 qcd_files=[
 "/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/AODSIM",                          
 "/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16DR80Premix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/AODSIM",                     
@@ -98,12 +107,13 @@ dy_files=[
 ]
 dy_dict=dict(zip(dy_tags,dy_files))
 
-mc_tags=ttsl_tags+ttdl_tags+singletop_tags+wjets_tags+zinv_tags+qcd_tags+dy_tags
+mc_tags=ttsl_tags+ttdl_tags+singletop_tags+wjets_tags+zinv_tags+zinvzpt_tags+qcd_tags+dy_tags
 mc_dict=ttsl_dict
 mc_dict.update(ttdl_dict)
 mc_dict.update(singletop_dict)
 mc_dict.update(wjets_dict)
 mc_dict.update(zinv_dict)
+mc_dict.update(zinvzpt_dict)
 mc_dict.update(qcd_dict)
 mc_dict.update(dy_dict)
 
