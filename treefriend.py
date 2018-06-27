@@ -70,7 +70,6 @@ for index in xrange(Ns):
     st.GetEntry(index)
     list_s[index] = (st.run, st.lumi, st.evt)
 
-
 print "Converting to sets"
 set_f = set(list_f)
 set_s = set(list_s)
@@ -84,9 +83,6 @@ if len(matches) == 0: exit(1)
 print "Making dicts"
 dict_f = dict(zip(list_f,range(Nf)))
 dict_s = dict(zip(list_s,range(Ns)))
-
-# Keep track of last location we found a match. Since trees are sorted, we'll never find a match for the next entry in the first tree 
-# at a location before the last match in the second tree. 
 
 print "Marking events to be saved"
 felist = ROOT.TEventList()
