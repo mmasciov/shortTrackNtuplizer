@@ -20,6 +20,8 @@ elif (first == "wjets"):
     tagsToRun = st.wjets_tags
 elif (first == "zinv"):
     tagsToRun = st.zinv_tags
+elif (first == "zinvzpt"):
+    tagsToRun = st.zinvzpt_tags
 elif (first == "qcd"):
     tagsToRun = st.qcd_tags
 elif (first == "dy"):
@@ -38,4 +40,5 @@ for tag in tagsToRun:
         lineToWrite = partial.replace("<DATASET>",st.full_dict[tag])
         newConfig.write(lineToWrite)
     newConfig.close()
-    os.system("echo \"crab submit -c crabConfig.py\"")
+    os.system("echo \"crab submit -c crabConfig.py for {0}\"".format(tag))
+    os.system("crab submit -c crabConfig.py")

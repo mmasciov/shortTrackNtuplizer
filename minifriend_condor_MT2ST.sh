@@ -59,6 +59,8 @@ fi
 
 # Regenerating this every iteration is slow
 STFILELIST=`ls ${SORTED_FILE_DIR_ST}/*.root`
+OUTTAG=${COPYDIRBASE%/*}
+OUTTAG=${OUTTAG##*/}_${COPYDIRBASE##*/}
 echo "
 universe=${UNIVERSE}
 +DESIRED_Sites=\"${SITE}\"
@@ -72,7 +74,7 @@ output=${OUT}
 error =${ERR}
 notification=Never
 x509userproxy=${PROXY}
-" > condor/condor_minifriend_${COPYDIRBASE##*/}.cmd
+" > condor/condor_minifriend_${OUTTAG}.cmd
 for FILEMT2 in `ls ${SORTED_FILE_DIR_MT2}/*.root`; do
     FILENUMMT2=${FILEMT2%%_sorted.root} 
     FILENUMMT2=${FILENUMMT2##*_}
@@ -92,8 +94,8 @@ executable=${EXE}
 transfer_executable=True
 arguments=MT2-${FILENUMMT2}_ST-${FILENUMST} ${FILEMT2} ${FILEST} ${COPYDIR}
 queue
-" >> condor/condor_minifriend_${COPYDIRBASE##*/}.cmd
+" >> condor/condor_minifriend_${OUTTAG}.cmd
 	done
 done
 
-echo "[minifriend_condor] wrote condor/condor_minifriend_${COPYDIRBASE##*/}.cmd" 
+echo "[minifriend_condor] wrote condor/condor_minifriend_${OUTTAG}.cmd" 

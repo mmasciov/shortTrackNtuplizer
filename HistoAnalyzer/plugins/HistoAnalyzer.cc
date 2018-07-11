@@ -42,6 +42,7 @@
 #include "DataFormats/METReco/interface/PFMET.h"
 #include "DataFormats/HepMCCandidate/interface/GenParticle.h"
 #include "DataFormats/HepMCCandidate/interface/GenParticleFwd.h"  
+#include "DataFormats/Candidate/interface/Candidate.h"
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "CommonTools/UtilAlgos/interface/TFileService.h"
 #include "TMath.h"
@@ -146,6 +147,10 @@ class HistoAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   int track_charge[maxntracks];
   int track_pixelLayersWithMeasurement[maxntracks];
   int track_trackerLayersWithMeasurement[maxntracks];
+  float genVertexDist;
+  float genVertexDistMin;
+  float genVertexZ;
+  float track_gendz[maxntracks];
   int track_algorithm[maxntracks];
   int track_highPurity[maxntracks];
   int track_ismatched[maxntracks];
@@ -295,10 +300,7 @@ HistoAnalyzer::HistoAnalyzer(const edm::ParameterSet& iConfig)
    consumes<reco::PFJetCollection>(pfjetTags_);
    consumes<std::vector<reco::PFMET>>(pfmetTags_);
    
-   if(issignal)
-     consumes<std::vector<reco::GenParticle>>(genpartTags_);
-   else
-     consumes<reco::TrackCollection>(genpartTags_);
+   consumes<std::vector<reco::GenParticle>>(genpartTags_);
 }
 
 
@@ -364,13 +366,31 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    iEvent.getByLabel(pfmetTags_,pfmet);
 
    Handle<std::vector<reco::GenParticle>> genparts;
-   if(issignal){
-     iEvent.getByLabel(genpartTags_, genparts);
-   }
+   iEvent.getByLabel(genpartTags_, genparts);
 
    reco::PFMET Met = (*pfmet->begin());
 
-   reco::Vertex PV0 = *(vertexs->begin());
+   reco::Vertex PV0 = (*vertexs->begin());   
+
+   reco::Vertex::Point priVertex = PV0.position();
+   std::vector<reco::GenParticle>::const_iterator gpit = genparts->begin();
+   while ((*gpit).status() != 1) {gpit++;} // Find a status 1 particle and take its vertex; they're all the same
+   reco::Candidate::Point genVertex = (*gpit).vertex();
+   float deltaX = priVertex.x() - genVertex.x();
+   float deltaY = priVertex.y() - genVertex.y();
+   float deltaZ = priVertex.z() - genVertex.z();
+   genVertexZ = genVertex.z();
+   float d_sq = (deltaX * deltaX) + (deltaY * deltaY) + (deltaZ * deltaZ);
+   genVertexDist = sqrt(d_sq);
+   genVertexDistMin = genVertexDist;
+   for(std::vector<reco::Vertex>::const_iterator itv = vertexs->begin() + 1; itv != vertexs->end(); itv++) {
+     reco::Vertex::Point recoVertex = (*itv).position();
+     deltaX = recoVertex.x() - genVertex.x();
+     deltaY = recoVertex.y() - genVertex.y();
+     deltaZ = recoVertex.z() - genVertex.z();
+     d_sq = (deltaX * deltaX) + (deltaY * deltaY) + (deltaZ * deltaZ);
+     genVertexDistMin = std::min(genVertexDistMin, (float) sqrt(d_sq));
+   }
 
    run = iEvent.eventAuxiliary().run() ;
    lumi = iEvent.eventAuxiliary().luminosityBlock();
@@ -389,6 +409,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
        
        if( abs(itgp->pdgId())!=1000024 )
 	 continue;
+
        if( itgp->numberOfDaughters()<2 )
 	 continue;
        
@@ -422,7 +443,6 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	 
 	 TVector3 decayvec = dv-pv;
 	 gp_decayXY[ich]=TMath::Sqrt(decayvec.X()*decayvec.X()+decayvec.Y()*decayvec.Y());
-	 
 	 ++ich;
 	 
        }
@@ -498,15 +518,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_pt[it] = itTrack->pt();
      track_ptErr[it] = itTrack->ptError();
      track_eta[it] = itTrack->eta();
-     /* RECO only
-     // Origin of the Track coordinate system with respect to the detector's origin
-     const Point OriginTrack = itTrack->referencePoint(); 
-     track_outerDetId[it] = itTrack->outerDetId();
-     // These guys are with respect to OriginTrack, so transform to detector coordinates
-     track_outerX[it] = itTrack->outerX() + OriginTrack.x();
-     track_outerY[it] = itTrack->outerY() + OriginTrack.y();
-     track_outerZ[it] = itTrack->outerZ() + OriginTrack.z();
-     */
+     track_phi[it] = itTrack->phi();
      track_pixHits[it] = itTrack->hitPattern().numberOfValidPixelHits();
      track_valHits[it] = itTrack->numberOfValidHits();
      track_lostOuterPixHits[it] = itTrack->hitPattern().numberOfLostPixelHits(reco::HitPattern::MISSING_OUTER_HITS);
@@ -518,7 +530,7 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      // Least significant bit (right most) is layer 1, layers increase to left...
      int signature = 0; int lastLayer = -1; int lastSubdet = -1; int overallLayer = -1;
      const reco::HitPattern &hp = itTrack->hitPattern();
-     for (int i_hit = 0; i_hit < hp.numberOfHits(reco::HitPattern::TRACK_HITS); i_hit++) { // numberOfAllHits in 9X
+     for (int i_hit = 0; i_hit < hp.numberOfAllHits(reco::HitPattern::TRACK_HITS); i_hit++) { // numberOfAllHits in 9X
        const int hit = hp.getHitPattern(reco::HitPattern::TRACK_HITS,i_hit);
        if (!hp.trackerHitFilter(hit)) break; // Don't care about muon chamber hits or anything happening in the calorimeters
        // Layers are only defined per substructure. Check that we're not getting a second hit in the same layer of the same substructure.
@@ -532,13 +544,14 @@ HistoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
      track_algorithm[it] = itTrack->algo();
      track_highPurity[it] = (itTrack->quality(reco::Track::highPurity) ? 1 : 0);
      track_nChi2[it] = itTrack->normalizedChi2();
-     track_dxy[it] = itTrack->dxy(PV0.position());
+     track_dxy[it] = itTrack->dxy(priVertex);
      track_dxyBS[it] = itTrack->dxy(beamspot);
      track_dxyErr[it] = itTrack->dxyError();
-     track_dz[it] = itTrack->dz(PV0.position());
+     track_dz[it] = itTrack->dz(priVertex);
+     track_gendz[it] = itTrack->dz(genVertex);
      track_dzBS[it] = itTrack->dz(beamspot);
      track_dzErr[it] = itTrack->dzError();
-     track_ipSigXY[it] = std::abs(itTrack->dxy(PV0.position())/itTrack->dxyError());
+     track_ipSigXY[it] = std::abs(itTrack->dxy(priVertex)/itTrack->dxyError());
      track_ipBSSigXY[it] = std::abs(itTrack->dxy(beamspot)/itTrack->dxyError());
 
      TVector3 thisT;
@@ -924,6 +937,7 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_dxyBS", track_dxyBS, "track_dxyBS[ntracks]/F");
   myTree->Branch("track_dxyErr", track_dxyErr, "track_dxyErr[ntracks]/F");
   myTree->Branch("track_dz", track_dz, "track_dz[ntracks]/F");
+  myTree->Branch("track_gendz", track_gendz, "track_gendz[ntracks]/F");
   myTree->Branch("track_dzBS", track_dzBS, "track_dzBS[ntracks]/F");
   myTree->Branch("track_dzErr", track_dzErr, "track_dzErr[ntracks]/F");
   myTree->Branch("track_valHits", track_valHits, "track_valHits[ntracks]/I");
@@ -940,6 +954,9 @@ HistoAnalyzer::beginJob()
   myTree->Branch("track_pixelLayersWithMeasurement", track_pixelLayersWithMeasurement, "track_pixelLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_trackerLayersWithMeasurement", track_trackerLayersWithMeasurement, "track_trackerLayersWithMeasurement[ntracks]/I");
   myTree->Branch("track_HitSignature", track_HitSignature, "track_HitSignature[ntracks]/I");
+  myTree->Branch("genVertexDist", &genVertexDist, "genVertexDist/F");
+  myTree->Branch("genVertexDistMin", &genVertexDistMin, "genVertexDistMin/F");
+  myTree->Branch("genVertexZ", &genVertexZ, "genVertexZ/F");
   myTree->Branch("track_algorithm", track_algorithm, "track_algorithm[ntracks]/I");
   myTree->Branch("track_highPurity", track_highPurity, "track_highPurity[ntracks]/I");
   myTree->Branch("track_charge", track_charge, "track_charge[ntracks]/I");
